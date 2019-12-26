@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/*去除标签的默认间距*/
+*{ 
+    margin: 0px; 
+    padding: 0px;
+}
+/*去除超链接默认下划线*/
+a{
+    text-decoration: none;
+}
+/*浮动*/
+.fl{ 
+    float: left;
+}
+.fr{ 
+    float: right;
+}
+.clearFix{ 
+    zoom: 1;  
+}
+.clearFix:after,.clearFix::before{ 
+    content: ''; 
+    display: block; 
+    height: 0; 
+    visibility: hidden; 
+    clear: both; 
+}
+/*解决body直接子元素设置百分比高度无法获取的问题*/
+html,body{
+    height: 100%;
+}
+
+/*列表和表单*/
+ul,li{
+    list-style: none;
+}
+/* 解决因图片撑起容器高度产生偏差的问题  */
+img{
+    vertical-align: middle;
+}
+/* 去除表单元素的边框和轮廓 */
+input,button,textarea{
+    border: none;
+    outline: none;
+}
+/*  */
+.hide{
+    display: none;
+}
