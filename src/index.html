@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zn-CN">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +8,121 @@
 </head>
 <body>
     <!-- 头部 -->
-    <header>
-
+    <header id="head">
+        <div class="site-topbar">
+            <div class="container clearFix">
+                <div class="topbar-info fl">
+                    <a href="./static/pages/login.html" target="_blank">你好，请登录</a>
+                    <span class="sep"></span>
+                    <a href="./static/pages/register.html" target="_blank">注册</a>
+                </div>
+                <div class="user-info fl hide">
+                    <a href="javascript:;" class="user-name">
+                        <span class="name">用户名</span>
+                        <i class="iconfont"></i>
+                    </a>
+                    <ul class="user-menu">
+                        <li><a href="./static/pages/customerCenter.html">个人中心</a></li>
+                        <li><a href="javascript:;">退出登录</a></li>
+                    </ul>
+                </div>
+                <div class="topbar-nav fr">
+                    <a href="./">首页</a><span class="sep"></span>
+                    <a href="javascript:;">我的订单</a><span class="sep"></span>
+                    <a href="javascript:;">消息通知</a><span class="sep"></span>
+                    <a href="javascript:;">客服服务</a><span class="sep"></span>
+                    <a href="javascript:;">关于我们</a><span class="sep"></span>
+                    <a href="javascript:;">加盟</a>
+                </div>
+            </div>
+        </div>
+        <div class="site-header">
+            <div class="container clearFix">
+                <div class="header-logo fl">
+                    <a href="#" class="logo" title="食间杂货店"></a>
+                </div>
+                <div class="header-search fl">
+                    <form action="" class="search-form clearFix">
+                        <input type="text" class="search-text" />
+                        <input type="submit" class="search-btn iconfont" value="&#xe60c"/>
+                        <div class="keyword-list hide">
+                            <ul class="result-list">
+                                <li data-key=""><a href="#"> 小米9</a></li>
+                                <li data-key=""><a href="#"> Redmi K20 pro</a></li>
+                                <li data-key=""><a href="#"> Redmi K20</a></li>
+                                <li data-key=""><a href="#"> Redmi Note 7 Pro</a></li>
+                                <li data-key=""><a href="#"> Redmi note 7</a></li>
+                                <li data-key=""><a href="#"> 小米电视4c</a></li>
+                                <li data-key=""><a href="#"> 电视32英寸</a></li>
+                                <li data-key=""><a href="#"> 笔记本pro</a></li>
+                                <li data-key=""><a href="#"> 小爱音箱</a></li>
+                                <li data-key=""><a href="#"> 净水器</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div class="header-cart">
+                    <i class="iconfont iconshoppingcart"></i>
+                    <a href="./pages/cart.html">我的购物车</a>
+                    <span id="shopping-amount" class="cart-count">(0)</span>                        
+                </div>
+                <div class="dropdown-layer">
+                    <div class="cart-empty">
+                        <i class="iconfont"></i>
+                        购物车中还没有商品，赶紧选购吧！
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-nav">
+            <div class="container">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="javascript:;" class="link">
+                            <i class="iconfont iconshezhi"></i>食补功效
+                        </a>                            
+                        <section class="children-menu clearFix">
+                            <a href="" class="menu-item">以黑养黑</a>
+                            <a href="" class="menu-item">祛湿除热</a>
+                            <a href="" class="menu-item">脾胃健康</a>
+                            <a href="" class="menu-item">滋补气血</a>
+                            <a href="" class="menu-item">纤身瘦体</a>                                
+                        </section>
+                    </li>
+                    <li class="nav-item"><a href="javascript:;" class="link"><i class="iconfont iconicon21"></i>食用方式</a></li>
+                    <li class="nav-item"><a href="javascript:;" class="link"><i class="iconfont iconai-connection"></i>食补人群</a></li>
+                </ul>
+            </div>
+        </div>
     </header>
     <!-- 内容 -->
-    <main>
-        
+    <main id="content">
+        <!-- 轮播图 -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="./images/banner1.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/banner2.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/banner3.jpg" alt="">
+                </div>
+                <div class="swiper-slide">
+                    <img src="./images/banner4.jpg" alt="">
+                </div>
+            </div>
+            <!-- 如果需要分页器 -->
+            <div class="swiper-pagination"></div>
+            <!-- 如果需要导航按钮 -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>         
+        </div>
     </main>
     <!-- 尾部 -->
-    <footer></footer>
+    <footer id="foot">
+
+    </footer>
 </body>
 </html>

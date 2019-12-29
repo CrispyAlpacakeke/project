@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url('http://at.alicdn.com/t/font_1582201_lprp7x0nqlg.css');
 /*去除标签的默认间距*/
 *{ 
     margin: 0px; 
@@ -28,6 +29,7 @@ a{
 /*解决body直接子元素设置百分比高度无法获取的问题*/
 html,body{
     height: 100%;
+    font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
 }
 
 /*列表和表单*/
@@ -46,4 +48,10 @@ input,button,textarea{
 /*  */
 .hide{
     display: none;
+}
+/* 弹性布局 */ 
+.fixed{
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
 }
