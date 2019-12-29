@@ -1,10 +1,97 @@
-/*轮播图*/ 
 @active:#F1BC18;
+@title:#333;
+@desc:#999;
+@themeColor:#84B130;
+
+/*轮播图*/ 
 .swiper-container{
     img{
         width: 100%;
     }
+    .swiper-pagination-bullet{
+        margin: 0 6px;
+        border: 3px solid white;
+    }
     .swiper-pagination-bullet-active{
         background-color: @active !important;
     }
+    .swiper-button-prev,.swiper-button-next{
+        width: 60px;
+        height: 96px;
+        color:@active;
+        opacity: 0.5;
+        &:hover{
+            opacity: .6;
+            background-color:@active;
+            color:white;
+        }
+        &:after{
+            font-weight: 600;
+        }
+    }
+    .swiper-button-prev,
+    .swiper-container-rtl .swiper-button-next {
+        transform: translateY(-30%);
+        left: 0;
+        right: auto;
+    }
+    .swiper-button-next,
+    .swiper-container-rtl .swiper-button-prev {
+        transform: translateY(-30%);
+        right: 0;
+        left: auto;
+    }
 }
+
+/**page-main**/
+.page-main{
+    padding-top: 4px;
+    padding-bottom: 12px;
+    background-color: #F5F5F5;
+    .health-artical{
+        margin-bottom: 22px;
+        .box-hd{
+            width: 150px;
+            height: 65px;
+            margin: 24px auto;
+            text-align: center;
+            position: relative;
+            &::before,&::after{
+                content: '';
+                position: absolute;
+                top: 50%;
+                margin-top: -8px;
+                background-image: url('../images/sprite.png');
+                width: 49px;
+                height: 16px;
+            }   
+            &::before{
+                background-position: 0 0;
+                left: -32px;
+            }   
+            &::after{
+                background-position: 49px 0;
+                right: -32px;
+            }        
+            .hd_title{
+                font-size: 28px;
+                color: @title;      
+            }
+            .hd_desc{
+                margin-top: 4px;
+                font-size: 14px;
+                color: @desc;
+            }
+        }
+        .box-bd{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            .artical-sec{
+                width: 590px;
+                background: white;
+            }
+        }
+    } 
+}  

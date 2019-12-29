@@ -12,7 +12,10 @@
         height: 30px;
         font-size: 12px;
         line-height: 30px;
-        background-color: #F5F5F5;        
+        background-color: #F5F5F5;  
+        .topbar-info{
+            margin-left: -8px;
+        }      
         a{
             margin: 0 8px;
             color:@color;
@@ -93,7 +96,7 @@
             position: absolute;
             right: 0;
             top: 38px;
-            z-index: 6;
+            z-index: 10;
             transition: .2s;
             .iconshoppingcart{
                 font-size: 20px;
@@ -115,10 +118,10 @@
             position: absolute;
             right: 0;
             top: 83px;
-            z-index: 1;
+            z-index: 9;
             display: none;
             .cart-empty{
-                height: 88px;
+                height: 87px;
                 line-height: 88px;
                 text-align: center;
                 font-size: 14px;
@@ -164,7 +167,9 @@
                 .children-menu{
                     width: 100%;
                     padding: 12px 0;
-                    background-color: rgb(248, 248, 248);
+                    background-color: rgba(248, 248, 248, 0.6);
+                    position: relative;
+                    z-index: 10;
                     display: none;
                     .menu-item{
                         width: 117px;
@@ -195,4 +200,114 @@
     }  
 }
 /**footer**/ 
-
+#foot{
+    .mod-service{
+        padding: 30px 0;
+        background-color: @themeColor;
+        .service-list{
+            height: 42px;
+            .service-item{
+                float: left;
+                width: 297px;
+                color: white;
+                .service-unit{
+                    width: 180px;
+                    margin: 0 auto;
+                    position: relative;
+                    .hexagon{
+                        @hexagonBorder:5px;
+                        @hexagonWidth:40px;
+                        @hexagonHeight:46px;
+                        width: @hexagonWidth;
+                        height: @hexagonHeight;
+                        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                        background: white;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        .service-tit{
+                            width: @hexagonWidth - @hexagonBorder;
+                            height: @hexagonHeight - @hexagonBorder;
+                            line-height: @hexagonHeight - @hexagonBorder;
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            transform: translate(-50%,-50%);
+                            font-size: 21px;
+                            text-align: center;
+                            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+                            background-color:@themeColor;
+                        }                    
+                    }
+                    .service-txt{
+                        width: 100%;
+                        height: 42px;
+                        line-height: 44px;
+                        margin-left: 48px;
+                        font-weight: 700;
+                        font-size: 18px;
+                        color: rgb(255, 255, 255);
+                    }                    
+                }
+            }
+        }
+    }
+    .copyright{
+        padding: 10px 0;
+        font-size: 12px;
+        background-color: #EAEFE1;
+        color: #6c6c6c;
+        position: relative;
+        p{
+            margin: 8px 0;
+            b{
+                margin: 0 3px;
+                color: rgb(192, 192, 192);
+            }
+            .link{
+                color: #6c6c6c;
+                &:hover{
+                    color: @themeColor;
+                }
+            }     
+            .copyright-auth-ico{
+                display: inline-block;
+                width: 103px;
+                height: 32px;
+                line-height: 500px;
+                margin: 0 3px;
+                background: url('../images/copyright.png') no-repeat;
+                &:first-child{
+                    margin-left: 0;
+                    background-position: -205px -111px;
+                }
+                &:nth-child(2){
+                    background-position: -205px -74px;
+                }
+                &:nth-child(3){
+                    background-position: -205px -37px;
+                }
+                &:nth-child(4){
+                    background-position: -205px 0px;
+                }
+                &:nth-child(5){
+                    background-position: 0px -155px;
+                }
+            }
+        }
+        .learn-more{
+            position: absolute;
+            right: 0;
+            top: 0;
+            img{
+                width: 88px;
+            }
+            span{
+                width: 88px;
+                display: block;
+                margin-top: 8px;
+                text-align: center;
+            }
+        }
+    }
+}
