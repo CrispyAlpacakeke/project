@@ -98,7 +98,7 @@
     <!-- 内容 -->
     <main id="content">
         <!-- 轮播图 -->
-        <div class="swiper-container">
+        <div class="swiper-container" id="header-swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <img src="./images/banner1.jpg" alt="">
@@ -122,36 +122,93 @@
         <div class="page-main">
             <div class="container">
                 <!-- 养生堂 -->
-                <div class="health-artical">
+                <div class="health-artical" id="health">
                     <div class="box-hd">
                         <h3 class="hd_title">养生堂</h3>
                         <p class="hd_desc">传播养生之道</p>
                     </div>
                     <div class="box-bd">
                         <div class="artical-sec">
-                            <a class="sec-wrap" href="./static/pages/wuguTipsDetails.html" target="_blank">
-                                <span class="title">五谷小知识</span>
-                                <img src="" alt="小米">
-                                <div class="artic_title">你不知道的小米功效</div>
-                                <div class="artic_desc">小米可以说是五谷之王，尤其是对于一些脾胃不好的朋友多吃小米是可以养胃的。对于很多刚添加辅食的宝宝来说，小米也是一个不错</div>                                
-                            </a>
+                            <span class="sec-hd">五谷小知识</span>
+                            <!-- 轮播图 -->
+                            <div class="swiper-container" id="health-swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <a class="sec-wrap" href="./static/pages/wuguTipsDetails.html" target="_blank">
+                                            <img src="./images/health_thumb_1.jpg" alt="小米">
+                                            <div class="artic_title">你不知道的小米功效</div>
+                                            <div class="artic_desc">
+                                                清朝医家王士雄曾赞语：小米油可代参汤。对于脾胃不适的人群，喝点小米粥再合适不过。一碗暖暖的小米粥，清润温软，身心舒畅。有《本草纲目》为证：小米治反胃热痢，煮粥食，益丹田，补虚损，开肠胃。
+                人经常吃小米饭，身体特别棒，对五脏六腑都特别有好处。男人吃了小米饭，干活特别有劲。女人吃了小米饭，美容养颜。人生病时，得了胃病，要喝小米粥，喝小米粥，胃里就舒坦。
+                                            </div>
+                                        </a>                            
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <a class="sec-wrap" href="./static/pages/wuguTipsDetails.html" target="_blank">
+                                            <img src="./images/health_thumb_1.jpg" alt="小米">
+                                            <div class="artic_title">你不知道的小米功效</div>
+                                            <div class="artic_desc">
+                                                清朝医家王士雄曾赞语：小米油可代参汤。对于脾胃不适的人群，喝点小米粥再合适不过。一碗暖暖的小米粥，清润温软，身心舒畅。有《本草纲目》为证：小米治反胃热痢，煮粥食，益丹田，补虚损，开肠胃。
+                人经常吃小米饭，身体特别棒，对五脏六腑都特别有好处。男人吃了小米饭，干活特别有劲。女人吃了小米饭，美容养颜。人生病时，得了胃病，要喝小米粥，喝小米粥，胃里就舒坦。
+                                            </div>
+                                        </a>                            
+                                    </div>
+                                </div>
+                                <!-- 如果需要分页器 -->
+                                <div class="swiper-pagination"></div>
+                                <!-- 如果需要导航按钮 -->
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>                                    
                         </div>
                         <div class="artical-sec">
-                            <a class="sec-wrap" href="./static/pages/zaliangMatchDetails.html" target="_blank">
-                                <span class="title">杂粮优搭配</span>
-                                <img src="" alt="小米">
-                                <div class="artic_title">养发乌发最佳搭配</div>
-                                <div class="artic_desc">首乌、黑豆、核桃、黑芝麻、枸杞、大麦、芡实随意搭配。 温馨提示：养发经典配方--首乌、黑豆、核桃、黑芝麻各1斤磨粉</div>                                
-                            </a>
+                            <span class="sec-hd">杂粮优搭配</span>
                         </div>
                     </div>
                 </div>
                 <!-- 热卖 -->
+                <div class="hot-sale" id="hotSale">
+                    <div class="box-hd">
+                        <h3 class="hd_title">热卖</h3>
+                        <p class="hd_desc">爆款等你抢购</p>
+                    </div>
+                    <div class="box-bd">
+
+                    </div>
+                </div>
                 <!-- 推荐 -->                
             </div>
         </div>
-
         <!-- tool-bar -->
+        <div class="tool-bar">
+            <a href="#health" class="item">
+                <span class="item-bg"></span>
+                <span class="text">养生堂</span>
+            </a>
+            <a href="javascript:;" class="item">
+                <span class="item-bg"></span>
+                <span class="text">热卖</span>
+            </a> 
+            <a href="javascript:;" class="item">
+                <span class="item-bg"></span>
+                <span class="text">推荐</span>
+            </a> 
+            <a href="javascript:;" class="item">
+                <span class="item-bg"></span>
+                <div class="icon"><i class="iconfont iconkefu"></i></div>
+                <span class="text">客服</span>
+            </a> 
+            <a href="./pages/cart.html" class="item">
+                <span class="item-bg"></span>
+                <div class="icon"><i class="iconfont iconyijianfankui"></i></div>
+                <span class="text">反馈</span>
+            </a>
+            <a href="javascript:;" class="item backtop">   
+                <span class="item-bg"></span>
+                <div class="icon"><i class="iconfont iconfanhuidingbu"></i></div>
+                <span class="text">顶部</span>
+            </a>
+        </div>
     </main>
     <!-- 尾部 -->
     <footer id="foot">
