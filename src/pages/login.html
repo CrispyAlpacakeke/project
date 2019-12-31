@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>登录</title>
 </head>
+
 <body>
     <!-- 头部 -->
     <header id="head">
@@ -22,11 +24,46 @@
     </header>
     <!-- 内容 -->
     <main id="content">
-
+        <form class="loginContent" action="">
+            <div class="loginContent_nav">
+                <a class="now" href="">账号登录</a>
+                <span></span>
+                <a href="">扫码登录</a>
+            </div>
+            <div class="loginContent_one">
+                <input type="text" placeholder="用户名">
+                <input type="password" placeholder="密码">
+                <p>1</p>
+                <button type="button">登录</button>
+                <span><a href="">立即注册</a>|<a href="">忘记密码？</a></span>
+                <div class="other-login-type">
+                    <fieldset class="oth_type_tit">
+                        <legend align="center" class="oth_type_txt">其他方式登录</legend>
+                    </fieldset>
+                    <div class="oth-type-links">
+                        <a href="">1</a>
+                        <a href="">2</a>
+                        <a href="">3</a>
+                        <a href="">4</a>
+                    </div>
+                </div>
+            </div>
+            <div class="loginContent_two">
+                <div class="ercode-area ">
+                    <div class="ercode-box">
+                        <img src="../images/ercode.png" alt="食间杂货店二维码">
+                        <div class="custom-sub-txt">
+                            <p>打开手机APP 扫一扫登录</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
     </main>
     <!-- 尾部 -->
     <footer id="foot">
 
     </footer>
 </body>
+
 </html>
