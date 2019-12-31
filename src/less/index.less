@@ -2,11 +2,13 @@
 @title:#333;
 @desc:#999;
 @themeColor:#84B130;
+@panelColor:#fff;
 
 /*轮播图*/ 
 #header-swiper{
     img{
         width: 100%;
+        cursor: pointer;
     }
     .swiper-pagination-bullet{
         margin: 0 3px;
@@ -49,6 +51,12 @@
     padding-top: 4px;
     padding-bottom: 12px;
     background-color: #F5F5F5;
+    .lazy-img{
+        img{
+            opacity: 1;
+            transform:opacity .2s ease;
+        }        
+    }
     .box-hd{
         width: 150px;
         height: 65px;
@@ -90,7 +98,7 @@
             justify-content: space-between;
             align-content: space-between;
             .artical-sec{
-                width: 595px;
+                width: 596px;
                 background: white;
                 .sec-hd{
                     display: block;
@@ -110,6 +118,11 @@
                         height: 430px;
                         img{
                             width: 100%;
+                        }
+                        &:hover{
+                            .artic_title{
+                                color: @themeColor;
+                            }
                         }
                         .artic_title,.artic_desc{
                             text-overflow: ellipsis;
@@ -190,8 +203,90 @@
         .box-bd{
             .brick-list{
                 width: 100%;
-                height: 100pxs;
-                background-color: #fff;
+                height: 1000px;
+                // background-color: @panelColor;
+                display: flex;
+                justify-content: space-between;
+                align-content: space-between;   
+                flex-wrap: wrap;
+                .brick-item{
+                    width: 234px;
+                    // height: 360px;
+                    box-sizing: border-box;
+                    padding: 18px;
+                    background-color: @panelColor;
+                    .brick-link{
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        .brick-img{
+                            display: block;
+                            width: 200px;
+                            height: 200px;
+                            margin-bottom: 18px;
+                            cursor: pointer;
+                        }
+                        .line-1{ 
+                            width: 100%;
+                            height: 40px;
+                            margin: 8px 0;
+                            color: #666;
+                            font-size: 14px;
+                            line-height: 20px;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            .postfree{
+                                display: inline-block;
+                                width: 28px;
+                                height: 16px;
+                                line-height: 16px;
+                                margin-right: 5px;
+                                border-radius: 4px;
+                                color: white;
+                                span{
+                                    display: block;
+                                    font-size: 12px;
+                                    transform: scale(0.8); 
+                                }
+                                background-color: @themeColor;
+                            }
+                        }
+                        .line-2{
+                            font-size: 12px;
+                            color: #999;
+                            margin-bottom: 12px;
+                            .comment,.collect{
+                                display: inline-block;
+                                margin-right: 10px;
+                            }
+                            span{
+                                margin-left: 2px;
+                            }
+                        }
+                        .line-3{
+                            height: 22px;
+                            line-height: 22px;
+                            color: #999;
+                            .price{
+                                float: left;
+                                color: @active;
+                                font-size: 22px;
+                                span{
+                                    font-size: 12px;
+                                    margin-right: 2px;
+                                }
+                            }                                
+                            .discount{
+                                margin-left: 2px;
+                                font-size: 12px;
+                            }
+                            .sell{
+                                font-size: 12px;
+                                float: right;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

@@ -6,6 +6,13 @@ import '../less/index.less'
 import Swiper from 'swiper';
 import 'swiper/css/swiper.css'
 
+/******图片hover效果******/ 
+$('.lazy-img img').hover(function(){
+    $(this).css('opacity','.9')
+},function(){
+    $(this).css('opacity','1')
+})
+
 /****导航栏二级菜单下滑效果****/
 $('.nav-item').hover(function(){
     $(this).find('.children-menu').slideToggle(200);
