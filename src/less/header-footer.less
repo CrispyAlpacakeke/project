@@ -3,6 +3,7 @@
 /**版心**/ 
 .container{
     width: 1200px;
+    height: 100%;
     margin: 0 auto;
     position: relative;
 }
@@ -40,33 +41,119 @@
         height: 120px;
         .header-logo{
             width: 217px;
+            height: 69px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
             .logo{
                 display: block;
                 width: 217px;
                 height: 69px;
-                margin: 0 auto;
-                margin-top: 23px;
                 background: url(../images/mall_logo.png) no-repeat center;
                 background-size: cover;
             }
         }
+        .header-nav{
+            height: 100%;
+            .nav-list{
+                width: 360px;
+                position: absolute;
+                top: 50%;
+                left: 326px;
+                transform: translateY(-50%);
+                display: flex;
+                justify-content: space-between;
+                align-content: space-between;
+                .nav-item{
+                    width: 120px;
+                    height: 52px;
+                    line-height: 52px;
+                    font-size: 16px;
+                    text-align: center;
+                    position: relative;
+                    transition: all .2s;
+                    .link{
+                        padding: 20px 0;
+                        color: #333;
+                        &:hover{
+                            color: @themeColor;
+                        }
+    
+                    }
+ 
+                }                
+            }
+            .nav-menu{
+                width: 100%;
+                padding: 56px 38px 38px 56px;
+                box-sizing: border-box;
+                background-color: #fff;
+                border: 1px solid @themeColor;
+                position: absolute;
+                top: 120px;
+                z-index: 11;
+                float: left;
+                display: none;
+                .menu-item{
+                    width: 348px;
+                    height: 120px;
+                    box-sizing: border-box;
+                    margin:0 20px 20px 0;
+                    text-align: center;
+                    float: left;
+                    border: 1px solid #f3f3f3;
+                    background-color: #fefefe;
+                    transition: .2s;
+                    h3{
+                        font-size: 16px;
+                        color: #333;
+                        margin: 32px 0 8px;
+                    }
+                    h5{
+                        font-weight: normal;
+                        font-size: 14px;
+                        color: @color;
+                    }
+                    &:hover:not(.coming){
+                        h3,h5{
+                           color: white; 
+                        }
+                        background-color: @themeColor;
+                        box-shadow: 0 8px 12px 0 rgba(171, 231, 59, 0.2);
+                    }                            
+                }    
+                .coming{
+                    padding: 36px;
+                    cursor: default;
+                    p{
+                        font-size: 16px;
+                        color:#b3b3b3;
+                        line-height: 24px;
+                    }
+                }                    
+            }
+        }
         .header-search{
-            width: 596px;
-            position: relative;
-            margin: 36px 0 0 55px;
+            width: 306px;
+            height: 48px;
+            position: absolute;
+            top: 50%;
+            right:160px;
+            transform: translateY(-50%);
             .search-form{
                 position: relative;
                 input{
-                    height: 44px;
+                    height: 48px;
                     box-sizing: border-box;
                     position: absolute;
                     top:0;
                 }
                 .search-btn{
-                    width: 69px;
+                    width: 52px;
                     right: 0;
                     color: white;
-                    font-size: 24px;
+                    font-size: 20px;
                     line-height: 46px;
                     background-color: @themeColor;
                     cursor: pointer;
@@ -76,49 +163,49 @@
                     }
                 }
                 .search-text{
-                    width: 527px;
-                    right: 68px;
+                    width: 247px;
+                    right: 51px;
                     padding: 1px 17px;
                     background: white;
-                    border:2px solid  @themeColor;
+                    border:1px solid  @themeColor;
                 }
             }
         }
         .header-cart{
-            width: 132px;
-            height: 44px;
+            width: 110px;
+            height: 46px;
             padding: 0 15px;
             line-height: 44px;
             text-align: center;
             font-size: 14px;
             border: 1px solid #eee;
-            color: #F1BC18;
+            color: @themeColor;
             position: absolute;
             right: 0;
-            top: 38px;
-            z-index: 10;
+            top: 36px;
+            z-index: 13;
             transition: .2s;
             .iconshoppingcart{
                 font-size: 20px;
             }
             a{
                 padding-left: 4px;
-                color: #F1BC18;
+                color: @themeColor;
             }                
             &:hover{
-                border-color: #F1BC18;
+                border-color: @themeColor;
                 border-bottom-color: white !important;
             }
 
         }
         .dropdown-layer{
             width: 400px;
-            border: 1px solid #F1BC18;
+            border: 1px solid @themeColor;
             background-color: white;
             position: absolute;
             right: 0;
             top: 83px;
-            z-index: 9;
+            z-index:12;
             display: none;
             .cart-empty{
                 height: 87px;
@@ -138,66 +225,7 @@
             margin-left: 24px;
         }
     }  
-    .header-nav{
-        background-color: @themeColor;
-        .nav-list{
-            display: flex;
-            justify-content: space-between;
-            align-content: space-between;
-            .nav-item{
-                width: 400px;
-                height: 52px;
-                line-height: 52px;
-                font-size: 20px;
-                text-align: center;
-                cursor: pointer;
-                transition: all .2s;
-                .link{
-                    color: white;
-                    .iconfont{
-                        margin-right: 6px;
-                        font-size: 24px;
-                        vertical-align: -1px;
-                        &:first-child{
-                            font-size: 22px;
-                        }
-                    }
-
-                }
-                .children-menu{
-                    width: 100%;
-                    padding: 12px 0;
-                    background-color: rgba(248, 248, 248, 0.6);
-                    position: relative;
-                    z-index: 10;
-                    display: none;
-                    .menu-item{
-                        width: 117px;
-                        height: 40px;
-                        margin: 8px;
-                        line-height: 40px;
-                        float: left;
-                        color: rgb(100, 100, 100);
-                        font-size: 18px;
-                        transition: .2s;
-                        &:hover{
-                            color: white;
-                            background-color: @themeColor;
-                        }                            
-                    }                        
-                }
-            }                
-            .nav-item-active{
-                background-color: #F5F5F5;
-                .link{
-                    color: @themeColor; 
-                }
-                .children-menu{
-                    display: block;
-                }
-            }
-        }
-    }  
+  
 }
 /**footer**/ 
 #foot{
