@@ -69,7 +69,7 @@
             background: rgba(0, 0, 0, 0);
         }
         img{
-            transition: background .2s ease;
+            transition: all .2s ease;
         }        
     }
     .box-hd{
@@ -119,9 +119,10 @@
                     display: block;
                     position: relative;
                     padding-left: 18px;
-                    margin-top: 5px;
-                    line-height: 48px;
+                    margin: 4px 0;
+                    line-height: 50px;
                     font-size: 20px;
+                    font-weight: bold;
                     color: @themeColor;
                 }
                 #health-swiper{
@@ -155,6 +156,8 @@
                             margin: 14px 0 10px 0;
                             line-height: 20px;
                             color: @title;
+                            font-weight: bold;
+                            transition: color .2s ease;
                             &:hover{
                                 color: @themeColor;
                             }
@@ -212,11 +215,109 @@
                         left: auto;
                     }
                     .swiper-pagination{
-                        bottom: 16px;
+                        bottom: 12px;
                     }
                     .swiper-pagination-bullet{
                         width: 6px;
                         height: 6px;
+                    }
+                }
+                .match-list{
+                    width: 561px;
+                    height: 412px;
+                    margin: 0 auto;
+                    .match-item{
+                        width: 100%;
+                        height: 122px;
+                        box-sizing: border-box;
+                        margin-bottom: 20px;
+                        .item-link{
+                            width: 100%;
+                            height: 100%;
+                            display: block;
+                            position: relative;
+                            &::after{
+                                content: '';
+                                width: 1px;
+                                height: 0;
+                                background: @themeColor;
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                transition: height .3s ease;
+                            }
+                            .lazy-img{
+                                display: block;
+                                width: 200px;
+                                height: 100%;
+                                float: left;
+                                background-color: lightgrey;
+                                overflow: hidden;
+                            }
+                            .info{
+                                width: 361px;
+                                height: 100%;
+                                box-sizing: border-box;
+                                padding: 0 18px 10px;
+                                float: left;
+                                position: relative;
+                                .match-title{
+                                    font-size: 16px;
+                                    font-weight: bold;
+                                    line-height: 24px;
+                                    margin: 2px 0 10px;
+                                    color: @title;
+                                    overflow: hidden;
+                                    display: -webkit-box;  
+                                    -webkit-line-clamp: 2;  
+                                    -webkit-box-orient: vertical;
+                                    transition: color .2s ease;
+                                }            
+                                h3{
+                                    height: 40px;
+                                    line-height: 20px;
+                                    color: @desc;
+                                    font-size: 12px;
+                                    font-weight: normal;
+                                }     
+                                .btn{
+                                    display: block;
+                                    width: 100px;
+                                    height: 32px;
+                                    position: absolute;
+                                    bottom: 0;
+                                    left: 18px;
+                                    border: 1px solid @themeColor;
+                                    color: @themeColor;
+                                    text-align: center;
+                                    line-height: 32px;
+                                    font-size: 14px;
+                                    transition: all .2s ease;
+                                }               
+                            }
+                            &:hover{
+                                &:after{
+                                    height: 100%;
+                                }
+                                .lazy-img{
+                                    img{
+                                        transform: scale(1.1);
+                                    }
+                                    &::after{
+                                       background: rgba(0, 0, 0, 0.1); 
+                                    }
+                                }
+                                .info{
+                                    .match-title{
+                                        color: @themeColor;
+                                    }
+                                    .btn{
+                                        color: white;
+                                        background: @themeColor;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

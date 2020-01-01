@@ -7,8 +7,32 @@ import Swiper from 'swiper';
 import 'swiper/css/swiper.css'
 
 /****导航栏二级菜单下滑效果****/
-$('.nav-item').hover(function(){
-    $('.nav-menu').slideToggle(200);
+let time={}
+$('.nav-item .link').mouseover(function(){
+    let menuId = $(this).data('target');
+    clearTimeout(time[menuId]);
+    time[menuId] = setTimeout(() => {
+        $(`#${menuId}`).find('.nav-menu').slideDown();
+    }, 150);
+}).mouseout(function(){
+    let menuId = $(this).data('target');
+    clearTimeout(time[menuId]);
+    time[menuId] = setTimeout(() => {
+        $(`#${menuId}`).find('.nav-menu').slideUp();
+    }, 150);
+})
+$('.nav-menu').mouseover(function(){
+    let menuId = $(this).parent().attr('id');
+    clearTimeout(time[menuId]);
+    time[menuId] = setTimeout(() => {
+        $(this).slideDown();
+    }, 150);
+}).mouseout(function(){
+    let menuId = $(this).parent().attr('id');
+    clearTimeout(time[menuId]);
+    time[menuId] = setTimeout(() => {
+        $(this).slideUp();
+    }, 150);
 })
 
 /*****购物车*****/ 
