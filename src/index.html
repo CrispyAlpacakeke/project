@@ -11,20 +11,10 @@
     <header id="head">
         <div class="site-topbar">
             <div class="container clearFix">
-                <div class="topbar-info fl">
-                    <a href="./static/pages/login.html" target="_blank">你好，请登录</a>
+                <div class="topbar-info">
+                    <a href="./static/pages/login.html" target="_blank" data-login="true">你好，请登录</a>
                     <span class="sep"></span>
-                    <a href="./static/pages/register.html" target="_blank">注册</a>
-                </div>
-                <div class="user-info fl hide">
-                    <a href="javascript:;" class="user-name">
-                        <span class="name">用户名</span>
-                        <i class="iconfont"></i>
-                    </a>
-                    <ul class="user-menu">
-                        <li><a href="./static/pages/customerCenter.html">个人中心</a></li>
-                        <li><a href="javascript:;">退出登录</a></li>
-                    </ul>
+                    <a href="./static/pages/register.html" target="_blank" data-register="true">注册</a>
                 </div>
                 <div class="topbar-nav fr">
                     <a href="./">首页</a><span class="sep"></span>
@@ -77,14 +67,59 @@
                     </form>
                 </div>
                 <div class="header-cart">
-                    <i class="iconfont iconshoppingcart"></i>
+                    <i class="iconfont iconcart"></i>
                     <a href="./pages/cart.html">购物车</a>
-                    <span id="shopping-amount" class="cart-count">(0)</span>                        
+                    <span id="shopping-amount" class="cart-count">0</span>                        
                 </div>
                 <div class="dropdown-layer">
-                    <div class="cart-empty">
-                        <i class="iconfont"></i>
-                        购物车中还没有商品，赶紧选购吧！
+                    <div class="cart-menu" id="miniCartMenu">
+                        <div class="menu-content">
+                            <ul class="cart-list">
+                                <li class="cart-item clearFix">
+                                    <a href="javascript:;" class="thumb">
+                                        <img src="./images/product_01.png" alt="">
+                                    </a>
+                                    <a href="" class="name">你看这颗米它又大又圆，就像这个面它又长又宽</a>
+                                    <span class="price">29.99元 x 2</span>
+                                    <a href="javascript:;" class="btn-del">
+                                        <i class="iconfont iconclose"></i>
+                                    </a>
+                                </li>
+                                <li class="cart-item clearFix">
+                                    <a href="javascript:;" class="thumb">
+                                        <img src="./images/product_01.png" alt="">
+                                    </a>
+                                    <a href="" class="name">你看这颗米它又大又圆，就像这个面它又长又宽</a>
+                                    <span class="price">29.99元 x 2</span>
+                                    <a href="javascript:;" class="btn-del">
+                                        <i class="iconfont iconclose"></i>
+                                    </a>
+                                </li>
+                                <li class="cart-item clearFix">
+                                    <a href="javascript:;" class="thumb">
+                                        <img src="./images/product_01.png" alt="">
+                                    </a>
+                                    <a href="" class="name">你看这颗米它又大又圆，就像这个面它又长又宽</a>
+                                    <span class="price">29.99元 x 2</span>
+                                    <a href="javascript:;" class="btn-del">
+                                        <i class="iconfont iconclose"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="cart-total clearFix">    
+                                <span class="total">
+                                    共 <em>11</em> 件商品
+                                    <span class="price">
+                                        <em>9999</em>元
+                                    </span>
+                                </span>
+                                <a href="./static/pages/cart.html" class="cart-btn">去购物车</a>
+                            </div>
+                            <!-- <div class="cart-empty">
+                                <i class="iconfont"></i>
+                                购物车中还没有商品，赶紧选购吧！
+                            </div> -->
+                        </div>
                     </div>
                 </div>
                 <div class="menu-dropdown" id="effect_dropdown">
@@ -164,29 +199,31 @@
     </header>
     <!-- 内容 -->
     <main id="content">
-        <div class="container">
-            <!-- 轮播图 -->
-            <div class="swiper-container" id="header-swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <img src="./images/banner1.jpg" alt="">
+        <div class="home-first">
+            <div class="container">
+                <!-- 轮播图 -->
+                <div class="swiper-container" id="header-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="./images/banner1.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/banner2.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/banner3.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="./images/banner4.jpg" alt="">
+                        </div>
                     </div>
-                    <div class="swiper-slide">
-                        <img src="./images/banner2.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/banner3.jpg" alt="">
-                    </div>
-                    <div class="swiper-slide">
-                        <img src="./images/banner4.jpg" alt="">
-                    </div>
-                </div>
-                <!-- 如果需要分页器 -->
-                <div class="swiper-pagination"></div>
-                <!-- 如果需要导航按钮 -->
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>         
-            </div>   
+                    <!-- 如果需要分页器 -->
+                    <div class="swiper-pagination"></div>
+                    <!-- 如果需要导航按钮 -->
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>         
+                </div>   
+            </div>            
         </div>
         <div class="page-main">
             <div class="container">
@@ -236,7 +273,7 @@
                         </div>
                         <div class="artical-sec">
                             <span class="sec-hd">杂粮优搭配</span>
-                            <ul class="match-list">
+                            <ul class="match-list clearFix">
                                 <li class="match-item">
                                     <a href="./static/pages/zaliangMatchDetails.html" class="item-link">
                                         <div class="lazy-img">
@@ -806,7 +843,7 @@
             </a> 
             <a href="./pages/cart.html" class="item">
                 <span class="item-bg"></span>
-                <div class="icon"><i class="iconfont iconyijianfankui"></i></div>
+                <div class="icon"><i class="iconfont iconfankui"></i></div>
                 <span class="text">反馈</span>
             </a>
             <a href="javascript:;" class="item backtop">   
@@ -877,7 +914,7 @@
                         <a class="copyright-auth-ico" href="javascript:;"></a>
                         <a class="copyright-auth-ico" href="javascript:;"></a>
                     </p>
-                    <p class="learn-more">
+                    <div class="learn-more">
                         <img src="./images/ercode.png" alt="了解更多" class="ercode">
                         <span>了解更多</span>
                     </p>

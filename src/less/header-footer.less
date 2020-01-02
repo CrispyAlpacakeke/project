@@ -1,9 +1,5 @@
 @themeColor:#84B130;
 @color:#999;
-/**公共样式**/ 
-.show{
-    display: block;
-}
 /**版心**/ 
 .container{
     width: 1200px;
@@ -19,7 +15,66 @@
         line-height: 30px;
         background-color: #F5F5F5;  
         .topbar-info{
-            margin-left: -8px;
+            float: left;
+            .user{
+                .user-name{
+                    width: 98px;
+                    height: 30px;
+                    display: block;
+                    padding-left:8px;
+                    margin: 0;
+                    box-sizing: border-box;
+                    color: #999;
+                    position: relative;
+                    .name{  
+                        display: inline-block;
+                        width: 60px;
+                        padding-right: 6px;
+                        text-align: right;
+                        white-space: nowrap;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                    }
+                    .iconarrow-down{
+                        display: inline-block;
+                        vertical-align: 10px;
+                        font-size: 12px;
+                    }
+                    &.active{
+                        color: @themeColor;
+                        background-color: #fff;
+                        border: 1px solid @themeColor;
+                        border-bottom: none; 
+                    }
+                }
+                .user-menu{
+                    width: 98px;
+                    box-sizing: border-box;
+                    padding: 7px 0;
+                    position: absolute;
+                    top: 30px;
+                    left: 0;
+                    display: none;    
+                    background-color: #fff;  
+                    text-align: center;
+                    border: 1px solid @themeColor;
+                    border-top: none;
+                    z-index: 12;  
+                    .user-item{
+                        height: 28px;
+                        margin: 8px 0;
+                        a{
+                           color: #999; 
+                        }
+                        &:hover{
+                            background-color: @themeColor;
+                            a{
+                               color: white; 
+                            }
+                        }
+                    }
+                }
+            }
         }      
         a{
             margin: 0 8px;
@@ -140,34 +195,128 @@
             top: 36px;
             z-index: 13;
             transition: .2s;
-            .iconshoppingcart{
-                font-size: 20px;
+            .iconfont{
+                font-size: 18px;
             }
             a{
-                padding-left: 4px;
+                padding-left: 14px;
                 color: @themeColor;
-            }                
-            &:hover{
+            }          
+            .cart-count{
+                position: absolute;
+                top: 5px;
+                left: 42px;
+                font-size: 12px;
+                line-height: 12px;
+                text-align: center;
+                padding: 1px 6px;
+                border-radius: 8px;
+                color: white;
+                background-color: @themeColor;
+            }      
+            &.active{
                 border-color: @themeColor;
                 border-bottom-color: white !important;
             }
 
         }
         .dropdown-layer{
-            width: 400px;
+            width: 334px;
             border: 1px solid @themeColor;
             background-color: white;
             position: absolute;
             right: 0;
             top: 83px;
             z-index:12;
-            display: none;
+            // display: none;
             .cart-empty{
                 height: 87px;
                 line-height: 88px;
                 text-align: center;
                 font-size: 14px;
                 color: @color;
+            }
+            .cart-list{
+                padding: 18px 18px 0;
+                line-height: 20px;
+                .cart-item{
+                    height: 60px;
+                    position: relative;
+                    margin-bottom: 18px;
+                    &:hover{
+                        .btn-del{
+                            opacity: 1;
+                        }
+                    }
+                    a{
+                        font-size: 12px;
+                        color: #424242;
+                    }
+                    .thumb{
+                        float: left;
+                        img{
+                            width: 60px;
+                            height: 60px;
+                        }                        
+                    }
+                    .name{
+                        float: left;
+                        width: 98px;
+                        height: 40px;
+                        line-height: 20px;
+                        margin:10px 0 0 12px ;
+                        overflow: hidden;
+                        transition: color .2s ease;
+                        &:hover{
+                            color: @themeColor;
+                        }
+                    }
+                    .price{
+                        float: right;
+                        margin:20px 22px 0 5px;
+                        font-size: 12px;
+                    }
+                    .btn-del{
+                        position: absolute;
+                        top:20px;
+                        right:0;
+                        color: #b0b0b0;
+                        opacity: 0;
+                        transition: opacity .2s ease;
+                        .iconfont{
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+            }
+            .cart-total{
+                padding: 15px 18px;
+                background-color: #fafafa;
+                font-size: 12px;
+                .total{
+                    float: left;
+                    width: 135px;
+                    color: #757575;
+                    .price{
+                        display: block;
+                        color: @themeColor;                        
+                        em{
+                            font-size: 24px;                            
+                        }
+                    }
+                }
+                .cart-btn{
+                    float: right;
+                    width: 96px;
+                    height: 38px;
+                    margin-top: 4px;
+                    line-height: 38px;
+                    font-size: 14px;
+                    text-align: center;
+                    color: white;
+                    background: @themeColor;
+                }
             }
         } 
         .header-title{
@@ -308,7 +457,7 @@
                 width: 103px;
                 height: 32px;
                 line-height: 500px;
-                margin: 0 3px;
+                margin: 0 3px 12px;
                 background: url('../images/copyright.png') no-repeat;
                 &:first-child{
                     margin-left: 0;

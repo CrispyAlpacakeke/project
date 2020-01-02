@@ -35,10 +35,6 @@ $('.nav-menu').mouseover(function(){
     }, 150);
 })
 
-/*****购物车*****/ 
-$('.header-cart').hover(function(){
-    $('.dropdown-layer').slideToggle(200);
-})
 
 /*********轮播图*********/
 let headerSwiper = new Swiper ('#header-swiper', {
@@ -78,3 +74,5 @@ let healthSwiper = new Swiper ('#health-swiper', {
 scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
     // offset >= 700?$('.tool-bar .backtop').addClass('show'):$('.tool-bar .backtop').removeClass('show')
 }});
+
+
