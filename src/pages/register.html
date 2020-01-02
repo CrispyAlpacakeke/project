@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>注册</title>
 </head>
+
 <body>
     <!-- 头部 -->
     <header id="head">
@@ -49,11 +51,50 @@
     </header>
     <!-- 内容 -->
     <main id="content">
-        
+        <form class="regbox" action="">
+            <div class="renone">
+                <input type="tel" placeholder="手机号">
+                <p>手机号已注册,<a href="../pages/login.html">立即登录</a></p>
+                <input class="iptOne" type="password" placeholder="输入验证码">
+                <button class="btnOne" type="button">获取验证码</button>
+                <span class="spanOne">验证码错误</span>
+                <span class="spanTwo">看不清？<a href="javascript:;">换一张</a></span>
+                <input id="iptTwo" type="checkbox">
+                <label for="iptTwo">已阅读并同意<a href="">用户协议</a>和<a href="">隐私政策</a></label>
+                <button class="btnTwo" type="button">下一步</button>
+            </div>
+            <div class="rentwo equally">
+                <div>
+                    <label for="">用户名</label>
+                    <input type="text" placeholder="请输入用户名">
+                    <span>用户名已存在！</span>
+                </div>
+                <div>
+                    <label for="">邮箱</label>
+                    <input type="email" placeholder="请输入邮箱号">
+                    <span>该邮箱已绑定其他账号</span>
+                </div>
+                <div>
+                    <label for="">设置密码</label>
+                    <input type="password" placeholder="请输入密码">
+                    <span>密码至少包含数字、字母、符号中的两种</span>
+                </div>
+                <div>
+                    <label for="">确认密码</label>
+                    <input type="password" placeholder="请再次输入密码">
+                    <span>两次密码不一致</span>
+                </div>
+                <div>
+                    <button type="button">完成</button>
+                    <button class="btnThree" type="button">返回</button>
+                </div>
+            </div>
+        </form>
     </main>
     <!-- 尾部 -->
     <footer id="foot">
 
     </footer>
 </body>
+
 </html>
