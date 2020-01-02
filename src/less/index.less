@@ -338,6 +338,22 @@
                     padding: 0 16px 16px;
                     margin-bottom: 8px;
                     background-color: @panelColor;
+                    position: relative;
+                    &:after{
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 0;
+                        height: 1px;
+                        background-color: @themeColor;
+                        transition: .2s ease;
+                    }
+                    &:hover{
+                        &:after{
+                            width: 234px;                            
+                        }
+                    }
                     .brick-link{
                         display: block;
                         width: 100%;
@@ -348,7 +364,7 @@
                                     background: rgba(0, 0, 0, 0.1);
                                 }
                                 img{
-                                    transform: scale(1.25);
+                                    transform: scale(1.1);
                                 }
                             }
                         }
@@ -407,7 +423,6 @@
                         }
                         .line-3{
                             height: 22px;
-                            margin-bottom: 20px;
                             line-height: 22px;
                             color: @desc;
                             .price{

@@ -30,24 +30,44 @@ function addSubmenu(menu,submenu){
         },100)
     })
 }
+/***加载mini-cart***/ 
+addSubmenu($('.header-cart'), $('.dropdown-layer'));
 
-
-/*****判断用户是否登录*****/ 
 sessionStorage.setItem('username','脆皮羊驼怪')
-let username = sessionStorage.getItem('username');
-if(username){
-    $('.topbar-info')[0].innerHTML = `<span class="user">
-                                        <a href="javascript:;" class="user-name">
-                                            <span class="name">${username}</span>
-                                            <i class="iconfont iconarrow-down"></i>
-                                        </a>        
-                                        <ul class="user-menu">
-                                            <li class="user-item"><a href="./static/pages/customerCenter.html">个人中心</a></li>
-                                            <li class="user-item"><a href="./static/pages/customerCenter.html">账户管理</a></li>
-                                            <li class="user-item"><a href="javascript:;" id="user-logout">安全退出</a></li>
-                                        </ul>                                        
-                                    </span>`
-    addSubmenu($('.user-name'), $('.user-menu'));
-    addSubmenu($('.header-cart'), $('.dropdown-layer'));
+/*****判断用户是否登录*****/ 
+function isLogin(){
+    let username = sessionStorage.getItem('username');
+    if(username){
+        $('.topbar-info')[0].innerHTML = `<span class="user">
+                                            <a href="javascript:;" class="user-name">
+                                                <span class="name">${username}</span>
+                                                <i class="iconfont iconarrow-down"></i>
+                                            </a>        
+                                            <ul class="user-menu">
+                                                <li class="user-item"><a href="./static/pages/customerCenter.html">个人中心</a></li>
+                                                <li class="user-item"><a href="./static/pages/customerCenter.html">账户管理</a></li>
+                                                <li class="user-item"><a href="javascript:;" id="user-logout">安全退出</a></li>
+                                            </ul>                                        
+                                        </span>`
+        addSubmenu($('.user-name'), $('.user-menu'));
+        $('.cart-list').removeClass('hide');
+        $('.cart-total').removeClass('hide');
+        $('.cart-empty').addClass('hide');
+    }    
+    else{
+        $('.topbar-info')[0].innerHTML = `<a href="./static/pages/login.html" target="_blank" data-login="true">你好，请登录</a>
+                                            <span class="sep"></span>
+                                        <a href="./static/pages/register.html" target="_blank" data-register="true">注册</a>`
+        $('.cart-list').addClass('hide');
+        $('.cart-total').addClass('hide');
+        $('.cart-empty').removeClass('hide');
+    }
 }
+isLogin();
+
+/**退出登录**/ 
+$('#user-logout').click(function(){
+    sessionStorage.clear();
+    isLogin();
+})
 

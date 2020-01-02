@@ -2,11 +2,11 @@ import "../less/normalized.less"
 import "../less/header-footer.less"
 import "../less/login.less"
 
-    let tabBtns = [...$(".loginContent_nav a")]
-    let tabCons  = [...$(".loginContent .lC")]
-    console.log(tabBtns)
-    console.log(tabCons)
-    tabBtns.forEach(function (item, index) {
+let tabBtns = [...$(".loginContent_nav a")]
+let tabCons = [...$(".loginContent .lC")]
+console.log(tabBtns)
+console.log(tabCons)
+tabBtns.forEach(function (item, index) {
     item.dataset.index = index;
     item.onclick = function () {
         console.log(this);
