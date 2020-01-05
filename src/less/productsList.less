@@ -15,8 +15,9 @@
     .content_choice{
         margin-bottom: 60px;
         h3{
-            height: 30px;
-            line-height: 30px;
+            height: 48px;
+            line-height: 48px;
+            padding-left: 12px;
             background-color: #f3f3f3;
             margin-bottom: 30px;
         }
@@ -43,9 +44,9 @@
                         li{
                             margin-right: 50px;
                             a{
-                                color: rgb(3, 94, 151);
+                                color: @title;
                                 &:hover{
-                                    color: red;
+                                    color: @themeColor;
                                 }
                             }
                         }
@@ -70,7 +71,7 @@
                 cursor: pointer;
             }
             .selection{
-                background-color: red;
+                background-color: @themeColor;
                 color: white;
             }
         }
@@ -80,7 +81,7 @@
                 width: 150px;
                 line-height: 50px;
                 .number{
-                    color: red;
+                    color: @themeColor;
                 }
             }
             .btn{
@@ -121,7 +122,7 @@
                         transition: .2s ease;
                     }
                     &:hover{
-                        outline: 1px solid red;
+                        outline: 1px solid @themeColor;
                     }
                     .brick-link{
                         display: block;
