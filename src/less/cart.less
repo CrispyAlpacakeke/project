@@ -13,7 +13,7 @@
             margin-left: 220px;
         }
         .line-1{
-            margin-top: 33px;
+            margin-top: 28px;
         }
         .line-2{
             font-size: 12px;
@@ -81,7 +81,7 @@
                 left: 6px;                    
             }                  
             &:hover:after{
-                border-color:@desc;
+                border-color:#424242;
             }
             &.icon-checkbox-selected{
                 border-color: @active;
@@ -141,7 +141,7 @@
                         outline: none;
                         background-color: #fff;
                         border: solid 1px #ccc;
-                        color: #757575;
+                        color: #424242;
                         font-size: 20px;
                         cursor: pointer;                    
                     }
@@ -453,7 +453,7 @@
     position: fixed;
     right: 0;
     bottom: 12px;
-    z-index: 10;
+    z-index: 20;
     .item{
         display: block;
         width: 60px;
@@ -513,7 +513,7 @@
 	top: 0;
 	left: 0;
 	background-color: rgba(0,0,0,0.5);
-	z-index: 10010;
+	z-index: 100;
 	display: none;
 }
 /*蒙层里边的弹框*/
@@ -521,12 +521,16 @@
 	width: 480px;
 	height: 280px;
 	position: fixed;
-	top: 0;
+	top: -1000px;
 	bottom: 0;
 	left: 0;
 	right: 0;
 	margin: auto;
     background-color: #FFFFFF;
+    transition: top .4s ease-out;
+    &.slideDown{
+        top: 0;
+    }
     .title{
         padding: 10px 20px;
         height: 40px;

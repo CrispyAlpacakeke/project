@@ -71,9 +71,17 @@ let healthSwiper = new Swiper ('#health-swiper', {
 
 })      
 
+window.onscroll = ()=>{
+    if(window.scrollY > 500){
+        $('.tool-bar').removeClass('hide')
+    }
+    else{
+        $('.tool-bar').addClass('hide')
+    }
+};
 /***回到顶部***/
 scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
-    // offset >= 700?$('.tool-bar .backtop').addClass('show'):$('.tool-bar .backtop').removeClass('show')
+    offset >= 500?$('.tool-bar').removeClass('hide'):$('.tool-bar').addClass('hide')
 }});
 
 

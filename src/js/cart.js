@@ -4,7 +4,6 @@ import "../less/cart.less"
 import "./header-footer.js"
 import {scrollToTop} from './util.js'
 
-
 /***退出登录返回首页***/ 
 function isLogin(){
     let username = sessionStorage.getItem('username');
@@ -26,21 +25,27 @@ window.onscroll = ()=>{
     else{
         $('.list-bottom').addClass('list-bottom-fixed')
     }
+    if(window.scrollY > 700){
+        $('.tool-bar').removeClass('hide')
+    }
+    else{
+        $('.tool-bar').addClass('hide')
+    }
 };
 
 /**回到顶部**/ 
 scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
-    // offset >= 700?$('.tool-bar .backtop').addClass('show'):$('.tool-bar .backtop').removeClass('show')
+    offset >= 700?$('.tool-bar').removeClass('hide'):$('.tool-bar').addClass('hide')
 }});
 
 /***请求数据加载页面***/
 (function(){
-        addNums();
-        minusNums();
-        printNum();
-        getTotal();
-        maskPopup();
-        iptOnclick()
+    addNums();
+    minusNums();
+    printNum();
+    getTotal();
+    maskPopup();
+    iptOnclick()
 })();
 
 /***购买数量增加***/ 
@@ -50,14 +55,16 @@ function addNums() {
         let buyNum = $(this).prev()[0];
         let buyNumVal = Number(buyNum.value)
         if(buyNumVal < 201){
-            buyNumVal+=1
+            buyNumVal += 1
         } else {
             return
         }
-        buyNum.value = buyNumVal
+        buyNum.value = buyNumVal;
+        buyNum.dataset.num = buyNumVal;
         $(this).parent().parent()[0].dataset.num = buyNumVal;
         // 用函数循环每一个商品购买数量和单价，计算得到商品总价，并将总价相加，得到合计数量
-        getTotal()
+        getTotal();
+        printNum();
     })
 }
 /****购买数量减少****/ 
@@ -72,28 +79,30 @@ function minusNums() {
             return
         }
         buyNum.value = buyNumVal
+        buyNum.dataset.num = buyNumVal;
         $(this).parent().parent()[0].dataset.num = buyNumVal;
         // 用函数循环每一个商品购买数量和单价，计算得到商品总价，并将总价相加，得到合计数量
-        getTotal()
+        getTotal();
+        printNum();
     })
 }
 
 /****输入购买数量****/ 
 function printNum() {
-    $('.buyNum').keyup(function(){
-        if(Number($(this)[0].value)<= 0){
-            return ;
-        }
-        else{
-           $(this)[0].value = $(this)[0].value.replace(/\D/g, '');
-            //限购
-            if(Number($(this)[0].value >200)) {
-                $(this)[0].value = 200
-            }
-        }
+    $('.buyNum').keyup(function(e){
+        $(this)[0].value = $(this)[0].value.replace(/\D/g, '');
+        //限购
+        if (Number($(this)[0].value > 200)) {
+            $(this)[0].value = 200
+        };
         $(this).blur(function(){
-            getTotal()
-            // $(this).parent().parent()[0].dataset.num = $('.buyNum')[0].value;
+            if($(this)[0].value >0){
+                $(this)[0].dataset.num = $(this)[0].value;
+            }
+            else{
+                $(this)[0].value = $(this)[0].dataset.num;
+            }
+            getTotal();
         })
     })
 }
@@ -112,14 +121,14 @@ function getTotal(){
         // 得到当前商品单价
         let priceVal = Number($(this).parent().prev().children()[0].innerText)
         // 计算总价
-        let totalVal = $(this).parent().next().children()[0].innerText = priceVal * buyNumVal
+        let totalVal = $(this).parent().next().children()[0].innerText = Number((priceVal * buyNumVal).toFixed(2))
         // 判断当前商品是否被选中
         let isChoose = $(this).parent().parent().find('.icon-checkbox')[0].className.indexOf('icon-checkbox-selected') > -1 ;
         if(isChoose){
             summation+=totalVal
             selectBuyNum+=buyNumVal
         }
-        totalBuyNum+=buyNumVal
+        totalBuyNum += buyNumVal
     })
     $('#summation')[0].innerText = summation;
     if(summation === 0) {
@@ -179,47 +188,34 @@ function maskPopup(){
     let delItem = [...document.getElementsByClassName('delItem')]
     delItem.forEach((el,idx)=>{
         el.onclick = (e) =>{
-            mask(el,idx)
+            //弹框操作
+            maskAction(el,idx)
         }
     })
 }
 
 // mask各种点击事件
-function mask(el,index) {
+function maskAction(el,index) {
     let isDel = false;
-    let mask = document.querySelector('#mask')
-    mask.style.display = 'block'
-    let cancelBtn = document.querySelector("#cancelBtn")
-    let confirmDelBtn = document.querySelector("#confirmDelBtn")
-    let delImg = document.querySelector("#delImg")
-    cancelBtn.onclick=()=> {
-        mask.style.display = 'none'
-    }
-    delImg.onclick=()=> {
-        mask.style.display = 'none'
-    }
-    // 确认删除
-    // confirmDelBtn.onclick=()=> {
-    //     // let index = mask.getAttribute('index')
-    //     // let delItem = document.querySelector('.list-content .content-item').dataset.info.itemid
-    //     // document.querySelector('.list-content').removeChild(delItem)
-    //     // mask.style.display = 'none'
-    //     //点击事件成功触发
-    //     // success(e,el);
-    // }
+    $('#mask').fadeIn();
+    setTimeout(function(){
+        $('#confirmBox').addClass('slideDown');
+    },100)
+    $("#cancelBtn")[0].onclick = close;
+    $("#delImg")[0].onclick = close;
+    //删除按钮，需请求接口
 }
-function success(e,el){
-    console.log(e,el)
-    if(e){
-        $.ajax({
-            url: `${BASE_URL}/cart/delete`,
-            type: "POST",
-            data: {
-                id: el.dataset.id
-            },
-            dataType: "json"
-        }).fail(res => {
-            console.log(res)
-        })
-    }
+//关闭弹窗
+function close(){
+    $('#confirmBox').removeClass('slideDown');
+    setTimeout(function(){
+        $('#mask').fadeOut();
+    },100)
 }
+
+/**跳转确认订单页面**/
+$('#goBuy').click(function(){
+    if($(this)[0].classList.contains('allow')){
+        window.location = "./confirmOrder.html"
+    }
+})
