@@ -9,7 +9,7 @@ module.exports = {
     customerCenter:'./src/js/customerCenter.js',
     paySuccess:'./src/js/paySuccess.js',
     productsDetails:'./src/js/productsDetails.js',
-    productsLists:'./src/js/productsList.js',
+    productsList:'./src/js/productsList.js',
     wechatPay:'./src/js/wechatPay.js',
     wuguTipsDetails:'./src/js/wuguTipsDetails.js',
     zaliangMatchDetails:'./src/js/zaliangMatchDetails.js'

@@ -194,17 +194,17 @@ module.exports = [
     }),
     new HtmlWebpackPlugin({
         // 模板文件
-        template: "./src/pages/productsLsit.html",
+        template: "./src/pages/productsList.html",
         // 标题
         title: "商品列表页",
         // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
-        filename: "static/pages/productsLsit.html",
+        filename: "static/pages/productsList.html",
         // 静态资源位置
-        inject: "body",
+        inject: "body", 
         // 是否hash
         hash: false,
         // 指定输出文件所依赖的入口文件（*.js）的[name]
-        chunks: ["productsLsit"],
+        chunks: ["productsList"],
         // 控制压缩
         minify: {
             collapseWhitespace: false,

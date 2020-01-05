@@ -59,3 +59,20 @@ input,button,textarea{
     justify-content: space-between;
     align-content: space-between;
 }
+
+/*图片默认样式*/ 
+.lazy-img{
+    position: relative;
+    &:after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0);
+    }
+    img{
+        transition: all .2s ease;
+    }        
+}
