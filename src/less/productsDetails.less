@@ -1,0 +1,98 @@
+@active:#F1BC18;
+@title:#333;
+@desc:#999;
+@themeColor:#84B130;
+@panelColor:#fff;
+
+
+#content{
+    margin-top: 50px;
+    .content_top{
+        height: 120px;
+        margin-bottom: 50px;
+        position: relative;
+        .content_logo{
+            width: 217px;
+            height: 69px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            .logo{
+                display: block;
+                width: 217px;
+                height: 69px;
+                background: url(../images/mall_logo.png);
+                background-size: cover;
+            }
+        }
+        .content-search{
+            width: 306px;
+            height: 48px;
+            position: absolute;
+            top: 50%;
+            right:0px;
+            transform: translateY(-50%);
+            .search-form{
+                position: relative;
+                input{
+                    height: 48px;
+                    box-sizing: border-box;
+                    position: absolute;
+                    top:0;
+                }
+                .search-btn{
+                    width: 52px;
+                    right: 0;
+                    color: white;
+                    font-size: 20px;
+                    line-height: 46px;
+                    background-color: @themeColor;
+                    cursor: pointer;
+                    transition: .2s;
+                    &:hover{
+                        background-color: rgb(102, 138, 36);
+                    }
+                }
+                .search-text{
+                    width: 247px;
+                    right: 51px;
+                    padding: 1px 17px;
+                    background: white;
+                    border:1px solid  @themeColor;
+                }
+            }
+        }
+    }
+    .content_details{
+        .content_left{
+            .content_smallImg{
+                width: 350px;
+                height: 350px;
+                border: 1px solid #dddddd;
+                position: relative;
+                img{
+                    width: 350px;
+                    height: 350px;
+                }
+                div{
+                    width: 200px;
+                    height: 200px;
+                    background-color: @themeColor;
+                    opacity: .5;
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
+            }
+            .content_img{
+                width: 350px;
+                margin-top: 30px;
+                ul{
+                    display: flex;
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}
