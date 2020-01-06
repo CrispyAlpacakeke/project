@@ -50,12 +50,114 @@
     <!-- 内容 -->
     <main id="content">
         <div class="container">
-            <div class="section action-actress">
-                <div class="section-header">
+            <!-- 收货人信息 -->
+            <div class="section section-actress">
+                <div class="section-header clearFix">
                     <h3 class="title">收货人信息</h3>
+                    <div class="action"><a href="javascript:;">新增收货地址</a></div>
                 </div>
-                <div class="section-body"></div>
+                <div class="section-body">
+                    <div class="consignee-content" id="consignee-address">
+                        <ul id="consignee-list">
+                            <li class="switchable-panel">
+                                <div class="consignee-item item-selected">
+                                    <span class="title">羊驼</span>
+                                    <b></b>
+                                </div>
+                                <div class="address-detail">
+                                    <span class="addr-name">羊驼</span>
+                                    <span class="addr-info">四川 成都市 武侯区 新世纪环球购物中心 睿峰科技</span>
+                                    <span class="addr-tel">13795595156</span>
+                                    <span class="addr-default">默认地址</span>
+                                </div>
+                                <div class="op-btn">
+                                    <a href="javascript:;" class="setdefault-consignee">设为默认地址</a>
+                                    <a href="javascript:;" class="edit-consignee">编辑</a>
+                                    <a href="javascript:;" class="del-consignee">删除</a>
+                                </div>
+                            </li>
+                            <li class="switchable-panel">
+                                <div class="consignee-item">
+                                    <span class="title">羊驼</span>
+                                    <b></b>
+                                </div>
+                                <div class="address-detail">
+                                    <span class="addr-name">羊驼</span>
+                                    <span class="addr-info">四川 成都市 武侯区 新世纪环球购物中心 睿峰科技</span>
+                                    <span class="addr-tel">13795595156</span>
+                                </div>
+                                <div class="op-btn">
+                                    <a href="javascript:;" class="setdefault-consignee">设为默认地址</a>
+                                    <a href="javascript:;" class="edit-consignee">编辑</a>
+                                    <a href="javascript:;" class="del-consignee">删除</a>
+                                </div>
+                            </li>
+                            <li class="switchable-panel">
+                                <div class="consignee-item">
+                                    <span class="title">羊驼</span>
+                                    <b></b>
+                                </div>
+                                <div class="address-detail">
+                                    <span class="addr-name">羊驼</span>
+                                    <span class="addr-info">四川 成都市 武侯区 新世纪环球购物中心S2区1602 睿峰科技有限公司</span>
+                                    <span class="addr-tel">13795595156</span>
+                                </div>
+                                <div class="op-btn">
+                                    <a href="javascript:;" class="setdefault-consignee">设为默认地址</a>
+                                    <a href="javascript:;" class="edit-consignee">编辑</a>
+                                    <a href="javascript:;" class="del-consignee">删除</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="addr-switch switch-on" id="consigneeItemAllBtn">
+                        <span>更多地址</span>
+                        <b></b>
+                    </div>
+                    <div class="addr-switch switch-off hide" id="consigneeItemHideBtn">
+                        <span>收起地址</span>
+                        <b></b>
+                    </div>
+                </div>
+                <div class="hr"></div>
             </div>
+            <!-- 配送方式 -->
+            <div class="section section-shipment">
+                <div class="section-header clearFix">
+                    <h3 class="title">配送方式</h3>
+                </div>
+                <div class="section-body">
+                    <div class="shipment-content clearFix">
+                        <ul id="shipment-list" class="clearFix">
+                            <li class="shipment-item item-selected" id="shipment_normal">
+                                <span class="title">普通配送</span>
+                                <b></b>
+                            </li>
+                            <li class="shipment-item" id="shipment_fast">
+                                <span class="title">顺丰专送</span>
+                                <b></b>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="shipment-date">
+                        <span class="mode-label">配送时间</span>
+                        <div class="mode-info">现在提交订单 预计<span class="days"> 3-4 </span>天内送达 由成华区仓库出货</div>
+                    </div>
+                </div>
+                <div class="hr"></div>
+            </div>
+            <!-- 确认订单 -->
+            <div class="section section-shipment">
+                <div class="section-header clearFix">
+                    <h3 class="title">确认订单</h3>
+                    <div class="action"><a href="./cart.html">返回修改购物车</a></div>
+                </div>
+                <div class="section-body">
+                  
+                </div>
+                <div class="hr"></div>
+            </div>
+            <!-- 结算 -->
         </div>
     </main>
     <!-- 尾部 -->

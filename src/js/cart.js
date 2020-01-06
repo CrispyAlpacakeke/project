@@ -119,7 +119,8 @@ function getTotal(){
         // 得到购买数量
         let buyNumVal = Number($(this)[0].value)
         // 得到当前商品单价
-        let priceVal = Number($(this).parent().prev().children()[0].innerText)
+        console.log(parseFloat($(this).parent().prev().find('.price-now')[0].innerText))
+        let priceVal = Number($(this).parent().prev().find('.price-now')[0].innerText)
         // 计算总价
         let totalVal = $(this).parent().next().children()[0].innerText = Number((priceVal * buyNumVal).toFixed(2))
         // 判断当前商品是否被选中

@@ -1,0 +1,242 @@
+.hide {
+  display: none;
+}
+#head {
+  border-bottom: 2px solid #84B130;
+}
+#head .header-title p {
+  margin-left: 220px;
+}
+#content {
+  padding: 32px 0;
+  background-color: #f5f5f5;
+}
+#content .container {
+  box-sizing: border-box;
+  padding: 32px 48px;
+  background-color: #fff;
+}
+#content .section {
+  margin-bottom: 10px;
+}
+#content .section .section-header {
+  height: 48px;
+  line-height: 48px;
+  margin-bottom: 10px;
+}
+#content .section .section-header .title {
+  float: left;
+  color: #333;
+  font-size: 16px;
+}
+#content .section .section-header .action {
+  float: right;
+}
+#content .section .section-header .action a {
+  color: #005ea7;
+  font-size: 14px;
+}
+#content .section .section-header .action a:hover {
+  color: #F1BC18;
+}
+#content .section .section-body {
+  margin-bottom: 10px;
+  font-size: 12px;
+}
+#content .section .hr {
+  border-bottom: 1px solid #e6e6e6;
+  height: 0;
+  margin-bottom: 10px;
+}
+#content .section-actress .consignee-content {
+  overflow: hidden;
+  max-height: 168px;
+  margin: 0 10px 0 20px;
+}
+#content .section-actress .consignee-content .switchable-panel {
+  height: 30px;
+  margin: 6px 0;
+  float: left;
+  width: 100%;
+}
+#content .section-actress .consignee-content .switchable-panel:not(:first-child) {
+  display: none;
+}
+#content .section-actress .consignee-content .switchable-panel.li-hover {
+  background-color: #fffbf3;
+}
+#content .section-actress .consignee-content .switchable-panel.li-hover span {
+  overflow: hidden;
+}
+#content .section-actress .consignee-content .switchable-panel.li-hover .addr-info {
+  max-width: 322px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#content .section-actress .consignee-content .switchable-panel.li-hover .op-btn {
+  visibility: visible;
+}
+#content .section-actress .consignee-content .switchable-panel .consignee-item {
+  width: 120px;
+  height: 18px;
+  line-height: 18px;
+  position: relative;
+  float: left;
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+#content .section-actress .consignee-content .switchable-panel .consignee-item b {
+  display: block;
+  position: absolute;
+  right: -1px;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+#content .section-actress .consignee-content .switchable-panel .consignee-item b::after {
+  content: '';
+  width: 2px;
+  height: 5px;
+  transform: rotate(45deg);
+  border-bottom: 2px solid transparent;
+  border-right: 2px solid transparent;
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+}
+#content .section-actress .consignee-content .switchable-panel .consignee-item:hover {
+  border: 2px solid #F1BC18;
+  padding: 4px 10px;
+}
+#content .section-actress .consignee-content .switchable-panel .consignee-item.item-selected {
+  border: 2px solid #F1BC18;
+  padding: 4px 10px;
+}
+#content .section-actress .consignee-content .switchable-panel .consignee-item.item-selected b {
+  background-color: #F1BC18;
+}
+#content .section-actress .consignee-content .switchable-panel .consignee-item.item-selected b:after {
+  border-color: #fff;
+}
+#content .section-actress .consignee-content .switchable-panel .address-detail {
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  color: #666;
+}
+#content .section-actress .consignee-content .switchable-panel .address-detail span {
+  display: inline-block;
+  margin-left: 10px;
+}
+#content .section-actress .consignee-content .switchable-panel .address-detail .addr-default {
+  margin: 5px 10px;
+  background-color: #999;
+  color: #fff;
+  padding: 0 3px;
+  line-height: 20px;
+}
+#content .section-actress .consignee-content .switchable-panel .op-btn {
+  float: right;
+  text-align: right;
+  height: 30px;
+  line-height: 30px;
+  visibility: hidden;
+}
+#content .section-actress .consignee-content .switchable-panel .op-btn a {
+  margin-right: 10px;
+  color: #005ea7;
+}
+#content .section-actress .consignee-content .switchable-panel .op-btn a:hover {
+  color: #F1BC18;
+}
+#content .section-actress .addr-switch {
+  height: 18px;
+  line-height: 18px;
+  padding: 5px 20px;
+  cursor: pointer;
+}
+#content .section-actress .addr-switch b {
+  display: inline-block;
+  vertical-align: middle;
+  height: 10px;
+  line-height: 10px;
+  width: 9px;
+  margin-left: 5px;
+}
+#content .section-actress .addr-switch.switch-on b {
+  background: url(//misc.360buyimg.com/user/purchase/2.0.0/widget/consignee-scroll/i/addr-i.png) no-repeat 0 0;
+}
+#content .section-actress .addr-switch.switch-off b {
+  background: url(//misc.360buyimg.com/user/purchase/2.0.0/widget/consignee-scroll/i/addr-i.png) no-repeat 0 -10px;
+}
+#content .section-shipment .shipment-content {
+  padding: 0 20px 10px;
+}
+#content .section-shipment .shipment-content .shipment-item {
+  height: 18px;
+  line-height: 18px;
+  position: relative;
+  float: left;
+  padding: 5px 18px;
+  margin-right: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+#content .section-shipment .shipment-content .shipment-item b {
+  display: block;
+  position: absolute;
+  right: -1px;
+  bottom: 0;
+  width: 12px;
+  height: 12px;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+#content .section-shipment .shipment-content .shipment-item b::after {
+  content: '';
+  width: 2px;
+  height: 5px;
+  transform: rotate(45deg);
+  border-bottom: 2px solid transparent;
+  border-right: 2px solid transparent;
+  position: absolute;
+  right: 1px;
+  bottom: 1px;
+}
+#content .section-shipment .shipment-content .shipment-item:hover {
+  border: 2px solid #F1BC18;
+  padding: 4px 18px;
+}
+#content .section-shipment .shipment-content .shipment-item.item-selected {
+  border: 2px solid #F1BC18;
+  padding: 4px 18px;
+}
+#content .section-shipment .shipment-content .shipment-item.item-selected b {
+  background-color: #F1BC18;
+}
+#content .section-shipment .shipment-content .shipment-item.item-selected b:after {
+  border-color: #fff;
+}
+#content .section-shipment .shipment-date {
+  padding: 5px 0;
+  height: 22px;
+  line-height: 22px;
+  margin: 0 10px 0 20px;
+}
+#content .section-shipment .shipment-date .mode-label {
+  display: inline-block;
+  min-width: 60px;
+  color: #999;
+}
+#content .section-shipment .shipment-date .mode-info {
+  display: inline-block;
+  max-width: 400px;
+  color: #666;
+}
