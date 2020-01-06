@@ -5,6 +5,11 @@
 @panelColor:#fff;
 @bgColor:#f5f5f5;
 
+body{
+    font-size: 12px;
+    color: #666;
+}
+
 .hide{
     display: none;
 }
@@ -256,5 +261,155 @@
                 color: #666;
             }
         }        
+    }
+    .section-goods{
+        .good-list{
+            .list-head{
+                .col{
+                    display: inline-block;
+                    height: 36px;
+                    line-height: 36px;
+                    text-align: center;
+                    border-bottom:2px solid @active;
+                    font-size: 12px;
+                    color: #6c6c6c;
+                }
+            }
+            .col-name{
+                width: 432px;
+                margin-left: 0;
+            }
+            .col-price,.col-num{
+                width: 160px;
+            }
+            .col-discount{
+                width: 180px;
+            }
+            .col-total{
+                width: 160px;
+            }
+            .list-content{
+                margin: 24px 0;
+                .content-item {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    box-sizing: border-box;
+                    padding: 20px 0;
+                    margin: 10px 0;
+                    color: #424242;
+                    text-align: center;
+                    font-size: 14px;
+                    background-color: #f7fafc;
+                    .col-name{
+                        width: 412px;
+                        padding-left: 20px;
+                        text-align: left;
+                        .info-img{
+                            width: 50px;
+                            height: 50px;
+                            display: inline-block;
+                            margin-right: 10px;
+                            border:1px solid #ddd;
+                            img{
+                                width: 50px;
+                                height: 50px;
+                            }
+                        }
+                        .info-title{
+                            width: 300px;
+                            display: inline-block;
+                            vertical-align: middle;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            white-space: nowrap;
+                        }
+                    }
+                    .col-total{
+                        color: @active;
+                    }
+                    .col{
+                        margin-right: 3px;
+                    }
+                }  
+            }
+        }
+    }
+    .order-summary{
+        .statistic{
+            width: 300px;
+            margin: 20px 20px 10px 0;
+            .list{
+                height: 24px;
+                line-height: 24px;
+                overflow: hidden;
+                margin-bottom: 5px;
+                span{
+                    width: 180px;
+                    margin-right: 20px;
+                    float: left;
+                    text-align: right;
+                }
+            }
+            em{
+                color: @active;
+            }
+            .price{
+                color: #333;
+                float: left;
+                width: 100px;
+                text-align: right;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+            }
+        }
+    }
+    .trade-foot-detail{
+        padding: 15px 10px 15px 0;
+        line-height: 20px;
+        text-align: right;
+        border-top:1px solid #e6e6e6;
+        width: 1094px;
+        color: #999;
+        background-color: #f4f4f4;
+        .price-info{
+            margin-right: 10px;
+            line-height: 25px;  
+            .price-tit{
+                color: #666;
+            }
+            .price-num{
+                color: @active;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-weight: 700;
+                font-size: 18px;
+                min-width: 122px;
+                float: right;
+                text-align: right;
+            }
+        }
+        .consignee-info{
+            margin-right: 10px;
+            line-height: 25px;
+            span:first-child{
+                margin-right: 20px;
+            }
+        }
+    }
+    .checkout-btn{
+        width: 1104px;
+        height: 50px;
+        margin-top: 20px;
+        .checkout-submit{
+            float: right;
+            position: relative;
+            width: 135px;
+            height: 36px;
+            line-height: 36px;
+            background-color: @active;
+            color: white;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+        }
     }
 }

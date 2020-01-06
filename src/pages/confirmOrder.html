@@ -147,17 +147,134 @@
                 <div class="hr"></div>
             </div>
             <!-- 确认订单 -->
-            <div class="section section-shipment">
+            <div class="section section-goods">
                 <div class="section-header clearFix">
                     <h3 class="title">确认订单</h3>
                     <div class="action"><a href="./cart.html">返回修改购物车</a></div>
                 </div>
                 <div class="section-body">
-                  
+                    <div class="good-list">
+                        <div class="list-head">
+                            <div class="col col-name">商品名称</div>
+                            <div class="col col-price">单价</div>
+                            <div class="col col-num">数量</div>
+                            <div class="col col-discount">优惠金额</div>
+                            <div class="col col-total">小计</div>
+                        </div>
+                        <div class="list-content">
+                            <div class="content-item" data-id="0" data-num="0">
+                                    <div class="col col-name">
+                                        <div class="info-img">
+                                            <img alt="" src="../images/product_02.png">
+                                        </div>
+                                        <div class="info-title">
+                                            【年货价】五谷杂粮组合30日粗粮粥小包装八宝粥米月子孕妇营养早餐原材料包
+                                        </div>
+                                    </div>
+                                    <div class="col col-price">
+                                        <div class="price-line">
+                                            <em class="price-original">60</em>
+                                        </div>
+                                    </div>
+                                    <div class="col col-num">
+                                        <div class="num-inner">
+                                            <p>1</p>
+                                        </div>
+                                    </div>
+                                    <div class="col col-discount">
+                                        <p>0</p>
+                                    </div>
+                                    <div class="col col-total"><span>0</span></div>
+                            </div>
+                            <div class="content-item" data-id="0" data-num="0">
+                                <div class="col col-name">
+                                    <div class="info-img">
+                                        <img alt="" src="../images/product_02.png">
+                                    </div>
+                                    <div class="info-title">
+                                        【年货价】五谷杂粮组合30日粗粮粥小包装八宝粥米月子孕妇营养早餐原材料包
+                                    </div>
+                                </div>
+                                <div class="col col-price">
+                                    <div class="price-line">
+                                        <em class="price-original">60</em>
+                                    </div>
+                                </div>
+                                <div class="col col-num">
+                                    <div class="num-inner">
+                                        <p>1</p>
+                                    </div>
+                                </div>
+                                <div class="col col-discount">
+                                    <p>0</p>
+                                </div>
+                                <div class="col col-total"><span>0</span></div>
+                            </div>
+                            <div class="content-item" data-id="0" data-num="0">
+                                <div class="col col-name">
+                                    <div class="info-img">
+                                        <img alt="" src="../images/product_02.png">
+                                    </div>
+                                    <div class="info-title">
+                                        【年货价】五谷杂粮组合30日粗粮粥小包装八宝粥米月子孕妇营养早餐原材料包
+                                    </div>
+                                </div>
+                                <div class="col col-price">
+                                    <div class="price-line">
+                                        <em class="price-original">60</em>
+                                    </div>
+                                </div>
+                                <div class="col col-num">
+                                    <div class="num-inner">
+                                        <p>1</p>
+                                    </div>
+                                </div>
+                                <div class="col col-discount">
+                                    <p>0</p>
+                                </div>
+                                <div class="col col-total"><span>0</span></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="hr"></div>
             </div>
             <!-- 结算 -->
+            <div class="order-summary clearFix">
+                <div class="statistic fr">
+                    <div class="list">
+                        <span>
+                            <em>0 </em>件商品，总商品金额：
+                        </span>
+                        <em class="price" id="warePriceId">¥0</em>
+                    </div>
+                    <div class="list">
+                        <span>运费：</span>
+                        <em class="price" id="freightPriceId">¥0</em>
+                    </div>
+                    <div class="list">
+                        <span>商品优惠：</span>
+                        <em class="price" id="couponPriceId">¥0</em>
+                    </div>
+                </div>
+            </div>
+            <div class="trade-foot-detail clearFix">
+                <div class="price-info">
+                    <span class="price-tit">应付总额</span>
+                    <span class="price-num" id="sumPayPriceId">¥0</span>
+                </div>
+                <div class="consignee-info">
+                    <span id="sendAddr">寄送至：四川 成都市 武侯区 新世纪环球购物中心 睿峰科技</span>
+                    <span id="senMobile">收货人：羊驼 13677568356</span>
+                </div>
+            </div>
+            <!-- 提交 -->
+            <div class="checkout-btn">
+                <button id="order-submit" class="checkout-submit">
+                    提交订单
+                    <b></b>
+                </button>
+            </div>
         </div>
     </main>
     <!-- 尾部 -->
