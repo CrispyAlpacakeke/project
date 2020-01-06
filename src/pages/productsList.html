@@ -11,7 +11,21 @@
     <header id="head">
         <div class="site-topbar">
             <div class="container clearFix">
-                <div class="topbar-info"></div>
+                <div class="topbar-info fl">
+                    <a href="./login.html" target="_blank">你好，请登录</a>
+                    <span class="sep"></span>
+                    <a href="./register.html" target="_blank">注册</a>
+                </div>
+                <div class="user-info fl hide">
+                    <a href="javascript:;" class="user-name">
+                        <span class="name">用户名</span>
+                        <i class="iconfont"></i>
+                    </a>
+                    <ul class="user-menu">
+                        <li><a href="./customerCenter.html">个人中心</a></li>
+                        <li><a href="javascript:;">退出登录</a></li>
+                    </ul>
+                </div>
                 <div class="topbar-nav fr">
                     <a href="./">首页</a><span class="sep"></span>
                     <a href="javascript:;">我的订单</a><span class="sep"></span>
@@ -403,13 +417,7 @@
                 </div>
             </div>
             <div class="content_paging">
-                <p>共<span>111</span>页</p>
-                <button>下一页</button>
-                <input type="text" placeholder="4">
-                <input type="text" placeholder="3">
-                <input type="text" placeholder="2">
-                <input type="text" placeholder="1">
-                <button>上一页</button>
+                <div id="page" class="page_div"></div>
             </div>
         </div>
     </main>
