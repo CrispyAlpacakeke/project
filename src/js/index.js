@@ -20,35 +20,6 @@ import 'swiper/css/swiper.css'
 //     exports('index', {}); //注意，这里是模块输出的核心，模块名必须和use时的模块名一致
 //   });  
 
-/****导航栏二级菜单下滑效果****/
-let time={}
-$('.nav-item .link').mouseover(function(){
-    let menuId = $(this).data('target');
-    clearTimeout(time[menuId]);
-    time[menuId] = setTimeout(() => {
-        $(`#${menuId}`).find('.nav-menu').slideDown();
-    }, 150);
-}).mouseout(function(){
-    let menuId = $(this).data('target');
-    clearTimeout(time[menuId]);
-    time[menuId] = setTimeout(() => {
-        $(`#${menuId}`).find('.nav-menu').slideUp();
-    }, 150);
-})
-$('.nav-menu').mouseover(function(){
-    let menuId = $(this).parent().attr('id');
-    clearTimeout(time[menuId]);
-    time[menuId] = setTimeout(() => {
-        $(this).slideDown();
-    }, 150);
-}).mouseout(function(){
-    let menuId = $(this).parent().attr('id');
-    clearTimeout(time[menuId]);
-    time[menuId] = setTimeout(() => {
-        $(this).slideUp();
-    }, 150);
-})
-
 
 /*********轮播图*********/
 let headerSwiper = new Swiper ('#header-swiper', {

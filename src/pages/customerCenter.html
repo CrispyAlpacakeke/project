@@ -13,7 +13,7 @@
             <div class="container clearFix">
                 <div class="topbar-info"></div>
                 <div class="topbar-nav fr">
-                    <a href="./">首页</a><span class="sep"></span>
+                    <a href="../../index.html">首页</a><span class="sep"></span>
                     <a href="javascript:;">我的订单</a><span class="sep"></span>
                     <a href="javascript:;">消息通知</a><span class="sep"></span>
                     <a href="javascript:;">客服服务</a><span class="sep"></span>
@@ -25,22 +25,10 @@
         <div class="site-header">
             <div class="container">
                 <div class="header-logo">
-                    <a href="#" class="logo" title="食间杂货店"></a>
+                    <a href="../../index.html" class="logo" title="食间杂货店"></a>
                 </div>
-                <div class="header-nav">
-                    <div class="container">
-                        <ul class="nav-list">
-                            <li class="nav-item">
-                                <a href="javascript:;" class="link" data-target="effect_dropdown">食补功效</a>                            
-                            </li>
-                            <li class="nav-item">
-                                <a href="javascript:;" class="link" data-target="ways_dropdown">食用方式</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="javascript:;" class="link" data-target="groups_dropdown">食补人群</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="header-title">
+                    <p class="line-1">个人中心</p>
                 </div>
                 <div class="header-search">
                     <form action="" class="search-form clearFix">
@@ -64,7 +52,7 @@
                 </div>
                 <div class="header-cart">
                     <i class="iconfont iconcart"></i>
-                    <a href="./static/pages/cart.html">购物车</a>
+                    <a href="./cart.html">购物车</a>
                     <span id="shopping-amount" class="cart-count">0</span>                        
                 </div>
                 <div class="dropdown-layer">
@@ -73,7 +61,7 @@
                             <ul class="cart-list hide">
                                 <li class="cart-item clearFix">
                                     <a href="javascript:;" class="thumb">
-                                        <img src="./images/product_01.png" alt="">
+                                        <img src="../images/product_01.png" alt="">
                                     </a>
                                     <a href="" class="name">你看这颗米它又大又圆，就像这个面它又长又宽</a>
                                     <span class="price">29.99元 x 2</span>
@@ -83,7 +71,7 @@
                                 </li>
                                 <li class="cart-item clearFix">
                                     <a href="javascript:;" class="thumb">
-                                        <img src="./images/product_01.png" alt="">
+                                        <img src="../images/product_01.png" alt="">
                                     </a>
                                     <a href="" class="name">你看这颗米它又大又圆，就像这个面它又长又宽</a>
                                     <span class="price">29.99元 x 2</span>
@@ -93,7 +81,7 @@
                                 </li>
                                 <li class="cart-item clearFix">
                                     <a href="javascript:;" class="thumb">
-                                        <img src="./images/product_01.png" alt="">
+                                        <img src="../images/product_01.png" alt="">
                                     </a>
                                     <a href="" class="name">你看这颗米它又大又圆，就像这个面它又长又宽</a>
                                     <span class="price">29.99元 x 2</span>
@@ -109,7 +97,7 @@
                                         <em>9999</em>元
                                     </span>
                                 </span>
-                                <a href="./static/pages/cart.html" class="cart-btn">去购物车</a>
+                                <a href="./cart.html" class="cart-btn">去购物车</a>
                             </div>
                             <div class="cart-empty">
                                 <i class="iconfont"></i>
@@ -120,11 +108,11 @@
                 </div>
                 <div class="menu-dropdown" id="effect_dropdown">
                     <section class="nav-menu clearFix">
-                        <a href="./static/pages/productsList.html" class="menu-item">
+                        <a href="./productsList.html" class="menu-item">
                             <h3>以黑养黑</h3> 
                             <h5>黑色营养乌发亮发</h5>
                         </a>
-                        <a href="./static/pages/productsDetails.html" class="menu-item">
+                        <a href="./productsDetails.html" class="menu-item">
                             <h3>祛湿除热</h3> 
                             <h5>美味粥汤祛除湿热</h5>
                         </a>
@@ -194,7 +182,29 @@
         </div>
     </header>
     <!-- 内容 -->
-
+    <main id="content">
+        <div class="container">
+            <div class="side-menu">
+                <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                    <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">订单中心</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="javascript:;">我的订单</a></dd>
+                        </dl>
+                    </li>
+                    <li class="layui-nav-item layui-nav-itemed">
+                        <a href="javascript:;">账户设置</a>
+                        <dl class="layui-nav-child">
+                            <dd><a href="">个人信息</a></dd>
+                            <dd><a href="">收货地址</a></dd>
+                        </dl>
+                    </li>
+                </ul>                  
+            </div>
+            <div class="main-box"></div>
+        </div>
+    </main>
     <!-- 尾部 -->
     <footer id="foot">
             <div class="mod-service">
@@ -257,7 +267,7 @@
                         <a class="copyright-auth-ico" href="javascript:;"></a>
                     </p>
                     <div class="learn-more">
-                        <img src="./images/ercode.png" alt="了解更多" class="ercode">
+                        <img src="../images/ercode.png" alt="了解更多" class="ercode">
                         <span>了解更多</span>
                     </div>
                 </div>

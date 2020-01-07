@@ -48,7 +48,7 @@ module.exports = {
           },
         // 处理字体
         {
-            test: /\.(woff|woff2|eot|ttf|otf)$/,
+            test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
             use: [{
                 loader: 'url-loader',
                 options: {

@@ -1,6 +1,7 @@
 import "../less/normalized.less"
 import "../less/header-footer.less"
 import "../less/productsList.less"
+import './header-footer.js'
 
 // 筛选 排序
 $().ready(function(){
