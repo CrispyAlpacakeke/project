@@ -1,3 +1,7 @@
+body {
+  font-size: 12px;
+  color: #666;
+}
 .hide {
   display: none;
 }
@@ -239,4 +243,147 @@
   display: inline-block;
   max-width: 400px;
   color: #666;
+}
+#content .section-goods .good-list .list-head .col {
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-bottom: 2px solid #F1BC18;
+  font-size: 12px;
+  color: #6c6c6c;
+}
+#content .section-goods .good-list .col-name {
+  width: 430px;
+  margin-left: 0;
+}
+#content .section-goods .good-list .col-price,
+#content .section-goods .good-list .col-num {
+  width: 160px;
+}
+#content .section-goods .good-list .col-discount {
+  width: 180px;
+}
+#content .section-goods .good-list .col-total {
+  width: 160px;
+}
+#content .section-goods .good-list .list-content {
+  margin: 24px 0;
+}
+#content .section-goods .good-list .list-content .content-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px 0;
+  margin: 10px 0;
+  color: #424242;
+  text-align: center;
+  font-size: 14px;
+  background-color: #f7fafc;
+}
+#content .section-goods .good-list .list-content .content-item .col-name {
+  width: 412px;
+  padding-left: 20px;
+  text-align: left;
+}
+#content .section-goods .good-list .list-content .content-item .col-name .info-img {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  margin-right: 10px;
+  border: 1px solid #ddd;
+}
+#content .section-goods .good-list .list-content .content-item .col-name .info-img img {
+  width: 50px;
+  height: 50px;
+}
+#content .section-goods .good-list .list-content .content-item .col-name .info-title {
+  width: 300px;
+  display: inline-block;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+#content .section-goods .good-list .list-content .content-item .col-total {
+  color: #F1BC18;
+}
+#content .section-goods .good-list .list-content .content-item .col {
+  margin-right: 3px;
+}
+#content .order-summary .statistic {
+  width: 300px;
+  margin: 20px 20px 10px 0;
+}
+#content .order-summary .statistic .list {
+  height: 24px;
+  line-height: 24px;
+  overflow: hidden;
+  margin-bottom: 5px;
+}
+#content .order-summary .statistic .list span {
+  width: 180px;
+  margin-right: 20px;
+  float: left;
+  text-align: right;
+}
+#content .order-summary .statistic em {
+  color: #F1BC18;
+}
+#content .order-summary .statistic .price {
+  color: #333;
+  float: left;
+  width: 100px;
+  text-align: right;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#content .trade-foot-detail {
+  padding: 15px 10px 15px 0;
+  line-height: 20px;
+  text-align: right;
+  border-top: 1px solid #e6e6e6;
+  width: 1094px;
+  color: #999;
+  background-color: #f4f4f4;
+}
+#content .trade-foot-detail .price-info {
+  margin-right: 10px;
+  line-height: 25px;
+}
+#content .trade-foot-detail .price-info .price-tit {
+  color: #666;
+}
+#content .trade-foot-detail .price-info .price-num {
+  color: #F1BC18;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  min-width: 122px;
+  float: right;
+  text-align: right;
+}
+#content .trade-foot-detail .consignee-info {
+  margin-right: 10px;
+  line-height: 25px;
+}
+#content .trade-foot-detail .consignee-info span:first-child {
+  margin-right: 20px;
+}
+#content .checkout-btn {
+  width: 1104px;
+  height: 50px;
+  margin-top: 20px;
+}
+#content .checkout-btn .checkout-submit {
+  float: right;
+  position: relative;
+  width: 135px;
+  height: 36px;
+  line-height: 36px;
+  background-color: #F1BC18;
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
 }

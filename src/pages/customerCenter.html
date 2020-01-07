@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +7,261 @@
     <title>个人中心</title>
 </head>
 <body>
-    
+    <!-- 头部 -->
+    <header id="head">
+        <div class="site-topbar">
+            <div class="container clearFix">
+                <div class="topbar-info"></div>
+                <div class="topbar-nav fr">
+                    <a href="./">首页</a><span class="sep"></span>
+                    <a href="javascript:;">我的订单</a><span class="sep"></span>
+                    <a href="javascript:;">消息通知</a><span class="sep"></span>
+                    <a href="javascript:;">客服服务</a><span class="sep"></span>
+                    <a href="javascript:;">关于我们</a><span class="sep"></span>
+                    <a href="javascript:;">加盟</a>
+                </div>
+            </div>
+        </div>
+        <div class="site-header">
+            <div class="container">
+                <div class="header-logo">
+                    <a href="#" class="logo" title="食间杂货店"></a>
+                </div>
+                <div class="header-nav">
+                    <div class="container">
+                        <ul class="nav-list">
+                            <li class="nav-item">
+                                <a href="javascript:;" class="link" data-target="effect_dropdown">食补功效</a>                            
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:;" class="link" data-target="ways_dropdown">食用方式</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="javascript:;" class="link" data-target="groups_dropdown">食补人群</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="header-search">
+                    <form action="" class="search-form clearFix">
+                        <input type="text" class="search-text" />
+                        <input type="submit" class="search-btn iconfont" value="&#xe60c"/>
+                        <div class="keyword-list hide">
+                            <ul class="result-list">
+                                <li data-key=""><a href="#"> 小米9</a></li>
+                                <li data-key=""><a href="#"> Redmi K20 pro</a></li>
+                                <li data-key=""><a href="#"> Redmi K20</a></li>
+                                <li data-key=""><a href="#"> Redmi Note 7 Pro</a></li>
+                                <li data-key=""><a href="#"> Redmi note 7</a></li>
+                                <li data-key=""><a href="#"> 小米电视4c</a></li>
+                                <li data-key=""><a href="#"> 电视32英寸</a></li>
+                                <li data-key=""><a href="#"> 笔记本pro</a></li>
+                                <li data-key=""><a href="#"> 小爱音箱</a></li>
+                                <li data-key=""><a href="#"> 净水器</a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <div class="header-cart">
+                    <i class="iconfont iconcart"></i>
+                    <a href="./static/pages/cart.html">购物车</a>
+                    <span id="shopping-amount" class="cart-count">0</span>                        
+                </div>
+                <div class="dropdown-layer">
+                    <div class="cart-menu" id="miniCartMenu">
+                        <div class="menu-content">
+                            <ul class="cart-list hide">
+                                <li class="cart-item clearFix">
+                                    <a href="javascript:;" class="thumb">
+                                        <img src="./images/product_01.png" alt="">
+                                    </a>
+                                    <a href="" class="name">你看这颗米它又大又圆，就像这个面它又长又宽</a>
+                                    <span class="price">29.99元 x 2</span>
+                                    <a href="javascript:;" class="btn-del">
+                                        <i class="iconfont iconclose"></i>
+                                    </a>
+                                </li>
+                                <li class="cart-item clearFix">
+                                    <a href="javascript:;" class="thumb">
+                                        <img src="./images/product_01.png" alt="">
+                                    </a>
+                                    <a href="" class="name">你看这颗米它又大又圆，就像这个面它又长又宽</a>
+                                    <span class="price">29.99元 x 2</span>
+                                    <a href="javascript:;" class="btn-del">
+                                        <i class="iconfont iconclose"></i>
+                                    </a>
+                                </li>
+                                <li class="cart-item clearFix">
+                                    <a href="javascript:;" class="thumb">
+                                        <img src="./images/product_01.png" alt="">
+                                    </a>
+                                    <a href="" class="name">你看这颗米它又大又圆，就像这个面它又长又宽</a>
+                                    <span class="price">29.99元 x 2</span>
+                                    <a href="javascript:;" class="btn-del">
+                                        <i class="iconfont iconclose"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="cart-total clearFix hide">    
+                                <span class="total">
+                                    共 <em>11</em> 件商品
+                                    <span class="price">
+                                        <em>9999</em>元
+                                    </span>
+                                </span>
+                                <a href="./static/pages/cart.html" class="cart-btn">去购物车</a>
+                            </div>
+                            <div class="cart-empty">
+                                <i class="iconfont"></i>
+                                购物车中还没有商品，赶紧选购吧！
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-dropdown" id="effect_dropdown">
+                    <section class="nav-menu clearFix">
+                        <a href="./static/pages/productsList.html" class="menu-item">
+                            <h3>以黑养黑</h3> 
+                            <h5>黑色营养乌发亮发</h5>
+                        </a>
+                        <a href="./static/pages/productsDetails.html" class="menu-item">
+                            <h3>祛湿除热</h3> 
+                            <h5>美味粥汤祛除湿热</h5>
+                        </a>
+                        <a href="" class="menu-item">
+                            <h3>脾胃健康</h3> 
+                            <h5>调理脾胃吃出健康</h5>
+                        </a>
+                        <a href="" class="menu-item">
+                            <h3>滋补气血</h3> 
+                            <h5>五谷为养气色红润</h5>
+                        </a>
+                        <a href="" class="menu-item">
+                            <h3>纤身瘦体</h3> 
+                            <h5>优质蛋白低糖低热</h5>
+                        </a>
+                        <a href="" class="menu-item coming">
+                            <p>更多食补功效</p>
+                            <p>敬请期待</p>
+                        </a>
+                    </section>                            
+                </div>
+                <div class="menu-dropdown" id="ways_dropdown">
+                    <section class="nav-menu clearFix">
+                        <a href="" class="menu-item">
+                            <h3>杂粮粥料</h3> 
+                            <h5>营养粥品帮助吸收</h5>
+                        </a>
+                        <a href="" class="menu-item">
+                            <h3>五谷豆浆</h3> 
+                            <h5>香浓豆浆温暖加倍</h5>
+                        </a>
+                        <a href="" class="menu-item">
+                            <h3>五谷伴侣</h3> 
+                            <h5>增香提味美味可见</h5>
+                        </a>
+                    </section>                            
+                </div>
+                <div class="menu-dropdown" id="groups_dropdown">
+                    <section class="nav-menu clearFix">
+                        <a href="" class="menu-item">
+                            <h3>全家共享</h3> 
+                            <h5>一家人的经典营养配方</h5>
+                        </a>
+                        <a href="" class="menu-item">
+                            <h3>孕妈专享</h3> 
+                            <h5>科学营养搭配，助您健康备孕</h5>
+                        </a>
+                        <a href="" class="menu-item">
+                            <h3>茁壮孩童</h3> 
+                            <h5>专注无添加剂营养，护航成长</h5>
+                        </a>
+                        <a href="" class="menu-item">
+                            <h3>气质女神</h3> 
+                            <h5>由内到外，吃出女神气质</h5>
+                        </a>
+                        <a href="" class="menu-item">
+                            <h3>活力男士</h3> 
+                            <h5>唤醒男性能量，每日添活力</h5>
+                        </a>
+                        <a href="" class="menu-item">
+                            <h3>长辈颐养</h3> 
+                            <h5>健康平和，长辈之宝</h5>
+                        </a>
+                    </section>                            
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 内容 -->
+
+    <!-- 尾部 -->
+    <footer id="foot">
+            <div class="mod-service">
+                <div class="container">
+                    <ul class="service-list">
+                        <li class="service-item">
+                            <div class="service-unit">
+                                <div class="hexagon">
+                                    <h5 class="service-tit">多</h5>
+                                </div>
+                                <p class="service-txt">品类齐全 轻松购物</p>                            
+                            </div>
+                        </li>
+                        <li class="service-item">
+                            <div class="service-unit">
+                                <div class="hexagon">
+                                    <h5 class="service-tit">快</h5>
+                                </div>
+                                <p class="service-txt">多仓直发 急速配送</p>                            
+                            </div>
+                        </li>
+                        <li class="service-item">
+                            <div class="service-unit">
+                                <div class="hexagon">
+                                    <h5 class="service-tit">好</h5>
+                                </div>
+                                <p class="service-txt">正品行货 精致服务</p>                            
+                            </div>
+                        </li>
+                        <li class="service-item">
+                            <div class="service-unit">
+                                <div class="hexagon">
+                                    <h5 class="service-tit">省</h5>
+                                </div>
+                                <p class="service-txt">天天低价 畅选无忧</p>                            
+                            </div>
+                        </li>
+                    </ul>                    
+                </div>
+            </div>   
+            <div class="copyright">
+                <div class="container">
+                    <p>
+                        <span><a href="javascript:;" class="link">© 2003-2016 shijianGrocery.com</a><b>|</b></span>
+                        <span><a href="javascript:;" class="link">网络文化经营许可证：食网文[2013]0268-027号</a><b>|</b></span>
+                        <span><a href="javascript:;" class="link">信息网络传播视听节目许可证：1109364号</a><b>|</b></span>
+                        <span><a href="javascript:;" class="link">增值电信业务经营许可证：川B2-20080224-1</a></span>                        
+                    </p>
+                    <p>
+                        <span> 互联网违法和不良信息举报电话:0571-81683755 <a href="javascript:;" class="link"><b>|</b>官方邮箱：blxx@list.shijian-inc.com</a></span>                        
+                    </p>
+                    <p>
+                        <a href="javascript:;" class="link">食公网安备 33010002000078号</a> <b>|</b> <a href="javascript:;" class="link">经营证照</a> <b>|</b> <a href="javascript:;" class="link">营业执照</a>                       
+                    </p>
+                    <p class="copyright-auth">
+                        <a class="copyright-auth-ico" href="javascript:;"></a>
+                        <a class="copyright-auth-ico" href="javascript:;"></a>
+                        <a class="copyright-auth-ico" href="javascript:;"></a>
+                        <a class="copyright-auth-ico" href="javascript:;"></a>
+                        <a class="copyright-auth-ico" href="javascript:;"></a>
+                    </p>
+                    <div class="learn-more">
+                        <img src="./images/ercode.png" alt="了解更多" class="ercode">
+                        <span>了解更多</span>
+                    </div>
+                </div>
+            </div>         
+    </footer>
 </body>
 </html>
