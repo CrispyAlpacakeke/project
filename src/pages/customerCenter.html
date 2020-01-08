@@ -14,7 +14,7 @@
                 <div class="topbar-info"></div>
                 <div class="topbar-nav fr">
                     <a href="../../index.html">首页</a><span class="sep"></span>
-                    <a href="javascript:;">我的订单</a><span class="sep"></span>
+                    <a href="//127.0.0.1:8080/static/pages/customerCenter.html#myOrders">我的订单</a><span class="sep"></span>
                     <a href="javascript:;">消息通知</a><span class="sep"></span>
                     <a href="javascript:;">客服服务</a><span class="sep"></span>
                     <a href="javascript:;">关于我们</a><span class="sep"></span>
@@ -183,32 +183,29 @@
     </header>
     <!-- 内容 -->
     <main id="content">
-        <div class="container">
+        <div class="container clearFix">
             <div class="side-menu">
-                <ul class="layui-nav layui-nav-tree" lay-filter="test">
-                    <!-- 侧边导航: <ul class="layui-nav layui-nav-tree layui-nav-side"> -->
-                    <li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;">个人中心</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="javascript:;" class="show">我的个人中心</a></dd>
-                        </dl>
-                    </li>
-                    <li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;">订单中心</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="javascript:;">我的订单</a></dd>
-                        </dl>
-                    </li>
-                    <li class="layui-nav-item layui-nav-itemed">
-                        <a href="javascript:;">账户设置</a>
-                        <dl class="layui-nav-child">
-                            <dd><a href="">个人信息</a></dd>
-                            <dd><a href="">收货地址</a></dd>
-                        </dl>
-                    </li>
-                </ul>                  
+                <div class="menu-box">
+                    <h3 class="title">个人中心</h3>
+                    <ul class="list">
+                        <li class="item item-this" data-id="customerCenter"><a href="javascript:;">我的个人中心</a></li>
+                    </ul>
+                </div>
+                <div class="menu-box">
+                    <h3 class="title">订单中心</h3>
+                    <ul class="list">
+                        <li class="item " data-id="myOrders"><a href="javascript:;">我的订单</a></li>
+                    </ul>
+                </div>
+                <div class="menu-box">
+                    <h3 class="title">账户设置</h3>
+                    <ul class="list">
+                        <li class="item" data-id="userInfo"><a href="javascript:;">个人信息</a></li>
+                        <li class="item" data-id="address"><a href="javascript:;">收货地址</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="main-box">
+            <div class="main-box " id="customerCenter">
                 <div class="potral-main">
                     <div class="user-card">
                         <div class="avatar">
@@ -216,10 +213,14 @@
                         </div>
                         <h2 class="username">脆皮羊驼怪</h2>
                         <p class="tip">早上好</p>
-                        <a href="" class="link">我的收货地址</a>                         
+                        <a href="javascript:;" class="link">我的收货地址</a>                         
                     </div>
                     <div class="user-actions">
                         <div class="action-list">
+                            <li>
+                                账户安全：
+                                <span class="level">普通</span>
+                            </li>
                             <li>
                                 绑定手机：
                                 <span>13795595234</span>
@@ -232,46 +233,50 @@
                     </div>
                 </div>
                 <div class="potral-sub">
-                    <div class="sub-head">
-                        <h3>我的订单</h3>
-                    </div>
-                    <div class="sub-body">
-                        <div class="nav">
-                            <a href="" class="item item0">
-                                <div class="lrc-badge icon-sprite"></div>
-                                <h3 class="name">待付款的订单：<span class="num">0</span></h3>
-                                <a href="javascript:;">
-                                    查看待付款订单
-                                    <i class="iconfont"></i>
-                                </a>
+                    <ul class="info-list">
+                        <li class="item item0">
+                            <div class="icon"><i class="iconfont iconpay"></i></div>
+                            <h3 class="name">待付款的订单：<span class="num">0</span></h3>
+                            <a href="javascript:;">
+                                查看待付款订单
+                                <i class="iconfont iconarrow-right"></i>
                             </a>
-                            <a href="" class="item item1">
-                                <div class="lrc-badge icon-sprite"></div>
-                                <h3 class="name">待发货的订单：<span class="num">0</span></h3>
-                                <a href="javascript:;">
-                                    查看待发货订单  
-                                    <i class="iconfont"></i>
-                                </a>
+                        </li>
+                        <li class="item item1">
+                            <div class="icon"><i class="iconfont iconfahuo"></i></div>
+                            <h3 class="name">待发货的订单：<span class="num">0</span></h3>
+                            <a href="javascript:;">
+                                查看待发货订单 
+                                <i class="iconfont iconarrow-right"></i>
                             </a>
-                            <a href="" class="item item2">
-                                <div class="lrc-badge icon-sprite"></div>
-                                <h3 class="name">待收货的订单：<span class="num">0</span></h3>
-                                <a href="javascript:;">
-                                    查看待收货订单
-                                    <i class="iconfont"></i>
-                                </a>
+                        </li>
+                        <li class="item item2">
+                            <div class="icon"><i class="iconfont iconshouhuo"></i></div>
+                            <h3 class="name">待收货的订单：<span class="num">0</span></h3>
+                            <a href="javascript:;">
+                                查看待收货订单
+                                <i class="iconfont iconarrow-right"></i>
                             </a>
-                            <a href="" class="item item3">
-                                <div class="lrc-badge icon-sprite"></div>
-                                <h3 class="name">待评价的订单：<span class="num">0</span></h3>
-                                <a href="javascript:;">
-                                    查看待评价订单
-                                    <i class="iconfont"></i>
-                                </a>
+                        </li>
+                        <li class="item item3">
+                            <div class="icon"><i class="iconfont iconpingjia"></i></div>
+                            <h3 class="name">待评价的订单：<span class="num">0</span></h3>
+                            <a href="javascript:;">
+                                查看待评价订单
+                                <i class="iconfont iconarrow-right"></i>
                             </a>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
+            </div>
+            <div class="main-box hide" id="myOrders">
+                我的订单
+            </div>
+            <div class="main-box hide" id="userInfo">
+                个人信息
+            </div>
+            <div class="main-box hide" id="address">
+                收货地址
             </div>
         </div>
     </main>

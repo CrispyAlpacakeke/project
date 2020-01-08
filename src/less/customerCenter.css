@@ -1,67 +1,55 @@
+.hide {
+  display: none;
+}
 body {
   background-color: #f5f5f5;
 }
 #content .container {
   padding: 24px 0;
-  display: flex;
-  justify-content: space-between;
-  align-content: space-between;
 }
-#content .side-menu .layui-nav {
+#content .side-menu {
   width: 208px;
-  padding: 24px 0 16px;
+  padding: 32px 0;
+  float: left;
   background-color: white;
 }
-#content .side-menu .layui-nav .layui-nav-bar {
-  display: none;
+#content .side-menu .menu-box {
+  margin: 0 42px 12px;
 }
-#content .side-menu .layui-nav .layui-nav-item {
-  margin-bottom: 8px;
-}
-#content .side-menu .layui-nav .layui-nav-item a {
-  padding: 0 28px;
-}
-#content .side-menu .layui-nav .layui-nav-item > a {
+#content .side-menu .menu-box .title {
   font-size: 16px;
   font-weight: 700;
-  color: #333 !important;
-  cursor: text;
+  color: #333;
+  line-height: 52px;
 }
-#content .side-menu .layui-nav .layui-nav-item > a:hover {
-  background-color: transparent;
+#content .side-menu .menu-box .list .item {
+  padding: 6px 0;
 }
-#content .side-menu .layui-nav .layui-nav-item .layui-nav-more {
-  display: none;
-}
-#content .side-menu .layui-nav .layui-nav-item .layui-nav-child {
-  background-color: white!important;
-}
-#content .side-menu .layui-nav .layui-nav-item .layui-nav-child .layui-this {
+#content .side-menu .menu-box .list .item.item-this a {
   color: #84B130;
-  background-color: transparent;
 }
-#content .side-menu .layui-nav .layui-nav-item .layui-nav-child a {
+#content .side-menu .menu-box .list .item a {
   font-size: 14px;
   font-weight: 500;
-  color: #757575 !important;
+  color: #757575;
 }
-#content .side-menu .layui-nav .layui-nav-item .layui-nav-child a:hover {
-  color: #84B130 !important;
-}
-#content .side-menu .layui-nav .layui-nav-item .layui-nav-child a.show {
+#content .side-menu .menu-box .list .item a:hover {
   color: #84B130 !important;
 }
 #content .main-box {
   width: 972px;
+  padding: 36px 48px;
+  background-color: white;
+  box-sizing: border-box;
+  float: right;
 }
 #content .main-box .potral-main {
   width: 100%;
-  padding: 32px;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-content: space-between;
-  background-color: white;
+  border-bottom: 1px solid #e0e0e0;
 }
 #content .main-box .potral-main .user-card {
   position: relative;
@@ -113,9 +101,62 @@ body {
 }
 #content .main-box .potral-main .user-actions {
   width: 340px;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 #content .main-box .potral-main .user-actions .action-list li {
-  padding: 4px 0;
+  padding: 6px 0;
   color: #757575;
+}
+#content .main-box .potral-main .user-actions .action-list li .level {
+  color: #F1BC18;
+}
+#content .main-box .potral-sub .info-list {
+  width: 876px;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 60px;
+}
+#content .main-box .potral-sub .info-list .item {
+  width: 436px;
+  margin-bottom: 80px;
+  padding-left: 120px;
+  box-sizing: border-box;
+  position: relative;
+}
+#content .main-box .potral-sub .info-list .item .icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  float: left;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: #84B130;
+  line-height: 100px;
+  text-align: center;
+}
+#content .main-box .potral-sub .info-list .item .icon .iconfont {
+  font-size: 36px;
+  color: white;
+}
+#content .main-box .potral-sub .info-list .item .name {
+  font-size: 18px;
+  color: #757575;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+#content .main-box .potral-sub .info-list .item .name .num {
+  color: #F1BC18;
+}
+#content .main-box .potral-sub .info-list .item a {
+  color: #757575;
+  font-size: 14px;
+}
+#content .main-box .potral-sub .info-list .item a .iconfont {
+  font-size: 12px;
+}
+#content .main-box .potral-sub .info-list .item a:hover {
+  color: #F1BC18;
 }

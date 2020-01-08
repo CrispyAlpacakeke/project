@@ -39,7 +39,6 @@
   "dependencies": {
     "echarts": "^4.5.0",
     "jquery": "^3.4.1",
-    "layui-src": "^2.5.5",
     "swiper": "^5.2.1"
   }
 }
