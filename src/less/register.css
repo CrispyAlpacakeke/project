@@ -1,0 +1,148 @@
+#foot .copyright {
+  background-color: #fff;
+  text-align: center;
+}
+#content {
+  background: url(../images/微信图片_20200102090245.jpg);
+  height: 600px;
+  position: relative;
+}
+#content .regbox {
+  width: 410px;
+  height: 525px;
+  font-size: 14px;
+  background: #ffffff;
+  margin: 75px auto;
+  position: absolute;
+  right: 200px;
+  top: 0;
+}
+#content .regbox .renone {
+  width: 348px;
+  margin: 100px auto;
+}
+#content .regbox .renone input {
+  width: 316px;
+  height: 22px;
+  line-height: 22px;
+  padding: 13px 16px 13px 14px;
+  display: inline-block;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  border: 1px solid #e0e0e0;
+}
+#content .regbox .renone p {
+  width: 177px;
+  font-size: 15px;
+  color: #ff0000;
+  display: none;
+}
+#content .regbox .renone p a {
+  color: #f1bc18;
+}
+#content .regbox .renone .iptOne {
+  width: 210px;
+}
+#content .regbox .renone .btnOne {
+  width: 106px;
+  height: 50px;
+  border: 1px solid #e0e0e0;
+  padding-bottom: 2px;
+  margin-left: -4px;
+}
+#content .regbox .renone span {
+  display: inline-block;
+  width: 172px;
+  height: 15px;
+  font-size: 15px;
+}
+#content .regbox .renone .spanOne {
+  text-align: left;
+  color: #ff0000;
+  opacity: 0;
+}
+#content .regbox .renone .spanOne.show {
+  opacity: 1;
+}
+#content .regbox .renone .spanTwo {
+  text-align: right;
+}
+#content .regbox .renone .spanTwo a {
+  color: #f1bc18;
+}
+#content .regbox .renone #iptTwo {
+  display: inline-block;
+  width: 20px;
+  height: 12px;
+  margin-top: 90px;
+}
+#content .regbox .renone label {
+  display: inline-block;
+  font-size: 15px;
+  height: 20px;
+}
+#content .regbox .renone label a {
+  color: #f1bc18;
+}
+#content .regbox .renone .btnTwo {
+  display: block;
+  width: 100%;
+  height: 50px;
+  margin-top: 10px;
+  background: #84B130;
+  color: #fff;
+  font-size: 18px;
+}
+#content .regbox .rentwo {
+  width: 410px;
+  height: 560px;
+  font-size: 14px;
+  background: #ffffff;
+  margin: 30px auto;
+  position: absolute;
+  right: 0;
+  top: -75px;
+}
+#content .regbox .rentwo div {
+  width: 348px;
+  margin: 20px auto;
+}
+#content .regbox .rentwo div::after {
+  content: attr(data-tips);
+  font-size: 12px;
+  color: red;
+  margin-top: 10px;
+  display: none;
+}
+#content .regbox .rentwo div.err::after {
+  display: block;
+}
+#content .regbox .rentwo div label {
+  display: block;
+  font-size: 14px;
+}
+#content .regbox .rentwo div input {
+  width: 316px;
+  height: 22px;
+  line-height: 22px;
+  padding: 8px 16px 8px 14px;
+  display: inline-block;
+  margin-top: 10px;
+  border: 1px solid #e0e0e0;
+}
+#content .regbox .rentwo div button {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 10px;
+  background: #84B130;
+  color: #fff;
+  font-size: 18px;
+}
+#content .regbox .rentwo div .btnThree {
+  background-color: #fff;
+  color: #84B130;
+  border: 1px solid #84B130;
+}
+#content .regbox .equally {
+  display: none;
+}

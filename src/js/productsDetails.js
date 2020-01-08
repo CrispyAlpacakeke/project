@@ -1,10 +1,7 @@
 import "../less/header-footer.less"
 import "../less/normalized.less"
 import "../less/productsDetails.less"
-<<<<<<< Updated upstream
 import './header-footer.js'
-=======
-import "./header-footer"
 
 // 选中显示图
 $().ready(function () {
@@ -122,4 +119,3 @@ $().ready(function () {
         $(this).addClass("clicks").siblings().removeClass("clicks")
     })
 })
->>>>>>> Stashed changes

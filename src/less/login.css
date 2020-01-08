@@ -1,0 +1,131 @@
+#foot .copyright {
+  background-color: #fff;
+  text-align: center;
+}
+#content {
+  background: url(../images/微信图片_20200102090245.jpg) content-box center center;
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+#content .loginContent {
+  width: 410px;
+  height: 556px;
+  font-size: 14px;
+  background: #ffffff;
+  margin: 75px auto;
+  position: absolute;
+  right: 100px;
+  top: 0;
+}
+#content .loginContent .loginContent_nav {
+  padding: 27px 0 24px;
+  text-align: center;
+  font-size: 24px;
+  color: #666;
+}
+#content .loginContent .loginContent_nav a {
+  color: #666;
+}
+#content .loginContent .loginContent_nav .now {
+  color: #84B130;
+}
+#content .loginContent .loginContent_nav span {
+  width: 1px;
+  height: 24px;
+  margin: 0 42px 0 36px;
+  border: 1px solid #e0e0e0;
+  vertical-align: middle;
+}
+#content .loginContent .loginContent_one {
+  width: 348px;
+  padding-bottom: 0;
+  padding-top: 10px;
+  margin: 0 auto;
+}
+#content .loginContent .loginContent_one input {
+  width: 316px;
+  height: 22px;
+  line-height: 22px;
+  padding: 13px 16px 13px 14px;
+  display: block;
+  margin-bottom: 14px;
+  border: 1px solid #e0e0e0;
+}
+#content .loginContent .loginContent_one p {
+  margin: auto;
+  margin-bottom: 5px;
+  line-height: 20px;
+  color: red;
+  display: none;
+}
+#content .loginContent .loginContent_one button {
+  background-color: #84B130;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  margin-top: 20px;
+  margin-bottom: 14px;
+  text-align: center;
+  font-size: 14px;
+  color: #fff;
+  cursor: pointer;
+}
+#content .loginContent .loginContent_one span {
+  display: block;
+  text-align: right;
+  color: #999;
+}
+#content .loginContent .loginContent_one span a {
+  padding: 0 5px;
+  color: #999;
+}
+#content .loginContent .loginContent_one span a:hover {
+  color: #84B130;
+}
+#content .loginContent .loginContent_one .other-login-type {
+  margin-top: 100px;
+}
+#content .loginContent .loginContent_one .other-login-type fieldset {
+  border: 0;
+}
+#content .loginContent .loginContent_one .other-login-type .oth_type_tit {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 10px;
+}
+#content .loginContent .loginContent_one .other-login-type .oth_type_tit .oth_type_txt {
+  color: #e0e0e0;
+}
+#content .loginContent .loginContent_one .other-login-type .oth-type-links {
+  padding-top: 3px;
+  text-align: center;
+}
+#content .loginContent .loginContent_one .other-login-type .oth-type-links a {
+  width: 30px;
+  height: 30px;
+  margin: 0 12px;
+  display: inline-block;
+}
+#content .loginContent .loginContent_two {
+  width: 348px;
+  padding-bottom: 0;
+  padding-top: 10px;
+  margin: 0 auto;
+}
+#content .loginContent .loginContent_two .ercode-box {
+  text-align: center;
+}
+#content .loginContent .loginContent_two .ercode-box .custom-sub-txt {
+  padding: 14px 0 0 0;
+}
+#content .loginContent .loginContent_two .ercode-box .custom-sub-txt p {
+  margin: auto;
+  width: 115px;
+  height: 39px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666666;
+}
+#content .loginContent .hide {
+  opacity: 0;
+}
