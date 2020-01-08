@@ -2,7 +2,6 @@ import "../less/normalized.less"
 import "../less/header-footer.less"
 import "../less/register.less"
 
-
 // 手机验证
 let phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/ //手机号正则 
 
@@ -44,16 +43,7 @@ function SetRemainTime1(){
 }
 
 
-// 下一步
-$(".btnTwo").click(function(){
-    $(".renone").addClass("equally")
-    $(".rentwo").removeClass("equally")
-})
 
-$(".btnThree").click(function(){
-    $(".rentwo").addClass("equally")
-    $(".renone").removeClass("equally")
-})
 
 // 表单验证
 $(".rentwo input").on("change",function(){
@@ -75,3 +65,133 @@ function password(){
     }
 }
 
+// 返回
+$(".btnThree").click(function(){
+    $(".rentwo").addClass("equally")
+    $(".renone").removeClass("equally")
+})
+
+// 验证手机号接口
+$(".btnOne").click(function(){
+    let telVal = $(".telreg").val()
+    console.log(telVal)
+    $.ajax({
+        url: `http://192.168.110.33:8000/phone_code/`,
+        type: "POST",
+        dataType: "json",
+        // contentType: "application/json",
+        data: {
+            phone: `${telVal}` ,
+        }
+    }).done(res => {
+        
+    }).fail(err => {
+        $('.pReg')[0].innerText = err.responseJSON.phone[0]
+        $('.pReg').toggle();
+    });
+})
+
+
+$(".btnTwo").click(function(){
+    let iptOneVal = $(".iptOne").val()
+    let telVal = $(".telreg").val()
+    console.log(iptOneVal)
+    $.ajax({
+        url: `http://192.168.110.33:8000/check/`,
+        type: "POST",
+        dataType: "json",
+        // contentType: "application/json",
+        data: {
+            phone: `${telVal}`,
+            phone_code: `${iptOneVal}` ,
+        }
+    }).done(res => {
+
+        // console.log(res)
+        // console.log(getAllResponseHeaders())
+        // 下一步
+        // $(".btnTwo").click(function(){
+            $(".renone").addClass("equally")
+            $(".rentwo").removeClass("equally")
+        // })
+
+
+    }).fail(err => {
+        $('.spanOne')[0].innerText = err.responseJSON[0]
+        $('.spanOne').toggleClass('show');
+    });
+})
+
+
+$(".iptOne").on("change",function(){
+    let iptOneVal = $(".iptOne").val()
+    let telVal = $(".telreg").val()
+    $.ajax({
+        url: `http://192.168.110.33:8000/check/`,
+        type: "POST",
+        dataType: "json",
+        // contentType: "application/json",
+        data: {
+            phone: `${telVal}`,
+            phone_code: `${iptOneVal}` ,
+        }
+    }).done(res => {
+
+        // console.log(res)
+        // console.log(getAllResponseHeaders())
+        // 下一步
+        // $(".btnTwo").click(function(){
+            // $(".renone").addClass("equally")
+            // $(".rentwo").removeClass("equally")
+        // })
+
+        console.log(res)
+        $('.spanOne').removeClass('show');
+
+    }).fail(err => {
+        $('.spanOne')[0].innerText = err.responseJSON[0]
+        $('.spanOne').addClass('show');
+    });
+
+})
+
+
+
+$('#submit_btn').click(function(){
+    let username = $("#userName").val()
+    let email = $("#email").val()
+    let pwd = $("#pwd").val()
+    let iptOneVal = $(".iptOne").val()
+    let telVal = $(".telreg").val()
+    $.ajax({
+        url: `http://192.168.110.33:8000/register/`,
+        type: "POST",
+        dataType: "json",
+        // contentType: "application/json",
+        data: {
+            username: `${username}`,
+            email: `${email}` ,
+            password: `${pwd}` ,
+            phone: `${telVal}`,
+            phone_code: `${iptOneVal}`
+        }
+    }).done(res=>{
+        alert("注册成功")
+        console.log(res)
+        localStorage.setItem('refresh',res.refresh)
+        localStorage.setItem('access',res.access)
+        window.location.href = "../../index.html"
+    }).fail(err=>{
+        console.log(err)
+        if(err.status === 400){
+            if(err.responseJSON.username){
+                $('#userName').parent()[0].dataset.tips = err.responseJSON.username[0];
+                $('#userName').parent().addClass('err')
+            }
+            if(err.responseJSON.email){
+                $('#email').parent()[0].dataset.tips = err.responseJSON.email[0];
+                $('#email').parent().addClass('err')
+            }
+        }
+    })
+})

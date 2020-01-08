@@ -83,13 +83,14 @@ module.exports = {
                 loader: "url-loader",
                 options: {
                     // <= kb  ，则转换成base64
-                    limit: 2000,
-                    name: "[name]-[hash:6].[ext]",
+                    limit: 0,
+                    name: "[name].[ext]",
                     outputPath: "static/images/",
                     // 启用commonJS规范  
                     esModule: false
                 }
             }
         }
+        
     ]
 }

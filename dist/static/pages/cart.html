@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang=zh-CN>
+<head>
+    <meta charset=UTF-8>
+    <meta name=viewport content="width=device-width,initial-scale=1">
+    <meta http-equiv=X-UA-Compatible content="ie=edge">
+    <title>我的购物车</title>
+</head>
+<body>
+    
+    <header id=head>
+        <div class=site-topbar>
+            <div class="container clearFix">
+                <div class="topbar-info fl">
+                    <a href=./login.html target=_blank>你好，请登录</a>
+                    <span class=sep></span>
+                    <a href=#>注册</a>
+                </div>
+                <div class="user-info fl hide">
+                    <a href=javascript:; class=user-name>
+                        <span class=name>用户名</span>
+                        <i class=iconfont></i>
+                    </a>
+                    <ul class=user-menu>
+                        <li><a href=./customerCenter.html>个人中心</a></li>
+                        <li><a href=javascript:;>退出登录</a></li>
+                    </ul>
+                </div>
+                <div class="topbar-nav fr">
+                    <a href=../../index.html>首页</a><span class=sep></span>
+                    <a href=javascript:;>我的订单</a><span class=sep></span>
+                    <a href=javascript:;>消息通知</a><span class=sep></span>
+                    <a href=javascript:;>客服服务</a><span class=sep></span>
+                    <a href=javascript:;>关于我们</a><span class=sep></span>
+                    <a href=javascript:;>加盟</a>
+                </div>
+            </div>
+        </div>
+        <div class=site-header>
+            <div class="container clearFix">
+                <div class="header-logo fl">
+                    <a href=../../index.html class=logo title=食间杂货店></a>
+                </div>
+                <div class=header-title>
+                    <p class=line-1>我的购物车</p>
+                    <p class=line-2>温馨提示：产品是否购买成功，以最终下单为准哦，请尽快结算</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <main id=content>
+        <div class=container>
+            <div class=cart-good-list>
+                <div class=list-head>
+                    <div class="col col-check">
+                        <i class="iconfont icon-checkbox" id=selectAll></i>全选
+                    </div>
+                    <div class="col col-img"></div>
+                    <div class="col col-name">商品名称</div>
+                    <div class="col col-price">单价</div>
+                    <div class="col col-num">数量</div>
+                    <div class="col col-total">小计</div>
+                    <div class="col col-action">操作</div>
+                </div>
+                <div class=list-content>
+                    <div class=content-item data-id=0 data-num=0>
+                            <div class="col col-check">
+                                <i class="iconfont icon-checkbox"></i>
+                            </div>
+                            <div class="col col-img">
+                                    <img alt="" src=http://127.0.0.1:8080/static/images/product_02.png>
+                            </div>
+                            <div class="col col-name">
+                                吃了我的杂粮米 忘了那个负心汉 350g
+                            </div>
+                            <div class="col col-price">
+                                <div class=price-line>
+                                    <em class=price-original>60 元</em>
+                                </div>
+                                <div class=price-line>
+                                    <em class=price-now>58.99 元</em>
+                                </div>
+                            </div>
+                            <div class="col col-num">
+                                <input class=btnReduce type=button value=->
+                                <input class=buyNum type=text value=1 data-num=1>
+                                <input class=btnAdd type=button value=+>
+                            </div>
+                            <div class="col col-total"><span>0</span>元</div>
+                            <div class="col col-action"><span class=delItem>×</span></div>
+                    </div>
+                    <div class=content-item data-id=1 data-num=0>
+                            <div class="col col-check">
+                                <i class="iconfont icon-checkbox"></i>
+                            </div>
+                            <div class="col col-img">
+                                    <img alt="" src=http://127.0.0.1:8080/static/images/product_02.png>
+                            </div>
+                            <div class="col col-name">
+                                吃了我的杂粮米 忘了那个负心汉 350g
+                            </div>
+                            <div class="col col-price">
+                                <div class=price-line>
+                                    <em class=price-now>69 元</em>
+                                </div>
+                            </div>
+                            <div class="col col-num">
+                                <input class=btnReduce type=button value=->
+                                <input class=buyNum type=text value=1 data-num=1>
+                                <input class=btnAdd type=button value=+>
+                            </div>
+                            <div class="col col-total"><span>0</span>元</div>
+                            <div class="col col-action"><span class=delItem>×</span></div>
+                    </div>
+                    <div class=content-item data-id=2 data-num=0>
+                            <div class="col col-check">
+                                <i class="iconfont icon-checkbox"></i>
+                            </div>
+                            <div class="col col-img">
+                                <img alt="" src=http://127.0.0.1:8080/static/images/product_02.png>
+                            </div>
+                            <div class="col col-name">
+                                吃了我的杂粮米 忘了那个负心汉 350g
+                            </div>
+                            <div class="col col-price">
+                                <div class=price-line>
+                                    <em class=price-now>99 元</em>
+                                </div>
+                            </div>
+                            <div class="col col-num">
+                                <input class=btnReduce type=button value=->
+                                <input class=buyNum type=text value=1 data-num=1>
+                                <input class=btnAdd type=button value=+>
+                            </div>
+                            <div class="col col-total"><span>0</span>元</div>
+                            <div class="col col-action"><span class=delItem><i>×</i></span></div>
+                    </div>
+                    <div class=content-item data-id=3 data-num=0>
+                        <div class="col col-check">
+                            <i class="iconfont icon-checkbox"></i>
+                        </div>
+                        <div class="col col-img">
+                            <img alt="" src=http://127.0.0.1:8080/static/images/product_02.png>
+                        </div>
+                        <div class="col col-name">
+                            吃了我的杂粮米 忘了那个负心汉 变身气质女神 350g 
+                        </div>
+                        <div class="col col-price">
+                            <div class=price-line>
+                                <em class=price-now>79 元</em>
+                            </div>
+                        </div>
+                        <div class="col col-num">
+                            <input class=btnReduce type=button value=->
+                            <input class=buyNum type=text value=1 data-num=1>
+                            <input class=btnAdd type=button value=+>
+                        </div>
+                        <div class="col col-total"><span>0</span>元</div>
+                        <div class="col col-action"><span class=delItem><i>×</i></span></div>
+                </div>
+                </div>
+                <div class=list-bottom>
+                    <div class=left>
+                        <a href=../../index.html>继续购物</a>
+                        <a href=javascript:; class=delAll>清空购物车</a>
+                        <div class=total>
+                            共<span id=totalBuyNum>0</span>件商品，已选择<span id=selectBuyNum>0</span>件
+                        </div>
+                    </div>
+                    <div class=center><label>合计（不含运费）：<span id=summation>0</span>元</label></div>
+                    <button class="right noAllow" id=goBuy>去结算</button>
+                </div>                  
+            </div>
+            
+            <div class=recommend-plain id=recommend>
+                <div class=box-hd>
+                    <h3 class=hd_title>猜你喜欢</h3>
+                </div>
+                <div class=box-bd>
+                    <ul class=brick-list>
+                        <li class=brick-item>
+                            <a href=javascript:; class=brick-link>
+                                <div class="lazy-img brick-img">
+                                    <img src=http://127.0.0.1:8080/static/images/product_02.png alt="">
+                                </div>
+                                <div class=line-1>
+                                    燕麦三色糙米新米10斤5kg粗粮五谷杂粮胚芽糙米饭健身脂减孕妇餐
+                                </div>
+                                <div class="line-3 info">
+                                    <div href=javascript:; class=price>
+                                        <span>¥</span>15.90
+                                    </div>
+                                    <div href=javascript:; class=sell>
+                                        销量<span>999</span>
+                                    </div>
+                                </div>
+                                <div class=addcart>
+                                    <div class=addcart-btn>
+                                        <span>加入购物车</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class=brick-item>
+                            <a href=javascript:; class=brick-link>
+                                <div class="lazy-img brick-img">
+                                    <img src=http://127.0.0.1:8080/static/images/product_02.png alt="">
+                                </div>
+                                <div class=line-1>
+                                    燕麦三色糙米新米10斤5kg粗粮五谷杂粮胚芽糙米饭健身脂减孕妇餐
+                                </div>
+                                <div class="line-3 info">
+                                    <div href=javascript:; class=price>
+                                        <span>¥</span>15.90
+                                    </div>
+                                    <div href=javascript:; class=sell>
+                                        销量<span>999</span>
+                                    </div>
+                                </div>
+                                <div class=addcart>
+                                    <div class=addcart-btn>
+                                        <span>加入购物车</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class=brick-item>
+                            <a href=javascript:; class=brick-link>
+                                <div class="lazy-img brick-img">
+                                    <img src=http://127.0.0.1:8080/static/images/product_02.png alt="">
+                                </div>
+                                <div class=line-1>
+                                    燕麦三色糙米新米10斤5kg粗粮五谷杂粮胚芽糙米饭健身脂减孕妇餐
+                                </div>
+                                <div class="line-3 info">
+                                    <div href=javascript:; class=price>
+                                        <span>¥</span>15.90
+                                    </div>
+                                    <div href=javascript:; class=sell>
+                                        销量<span>999</span>
+                                    </div>
+                                </div>
+                                <div class=addcart>
+                                    <div class=addcart-btn>
+                                        <span>加入购物车</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class=brick-item>
+                            <a href=javascript:; class=brick-link>
+                                <div class="lazy-img brick-img">
+                                    <img src=http://127.0.0.1:8080/static/images/product_02.png alt="">
+                                </div>
+                                <div class=line-1>
+                                    燕麦三色糙米新米10斤5kg粗粮五谷杂粮胚芽糙米饭健身脂减孕妇餐
+                                </div>
+                                <div class="line-3 info">
+                                    <div href=javascript:; class=price>
+                                        <span>¥</span>15.90
+                                    </div>
+                                    <div href=javascript:; class=sell>
+                                        销量<span>999</span>
+                                    </div>
+                                </div>
+                                <div class=addcart>
+                                    <div class=addcart-btn>
+                                        <span>加入购物车</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class=brick-item>
+                            <a href=javascript:; class=brick-link>
+                                <div class="lazy-img brick-img">
+                                    <img src=http://127.0.0.1:8080/static/images/product_02.png alt="">
+                                </div>
+                                <div class=line-1>
+                                    燕麦三色糙米新米10斤5kg粗粮五谷杂粮胚芽糙米饭健身脂减孕妇餐
+                                </div>
+                                <div class="line-3 info">
+                                    <div href=javascript:; class=price>
+                                        <span>¥</span>15.90
+                                    </div>
+                                    <div href=javascript:; class=sell>
+                                        销量<span>999</span>
+                                    </div>
+                                </div>
+                                <div class=addcart>
+                                    <div class=addcart-btn>
+                                        <span>加入购物车</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class=brick-item>
+                            <a href=javascript:; class=brick-link>
+                                <div class="lazy-img brick-img">
+                                    <img src=http://127.0.0.1:8080/static/images/product_02.png alt="">
+                                </div>
+                                <div class=line-1>
+                                    燕麦三色糙米新米10斤5kg粗粮五谷杂粮胚芽糙米饭健身脂减孕妇餐
+                                </div>
+                                <div class="line-3 info">
+                                    <div href=javascript:; class=price>
+                                        <span>¥</span>15.90
+                                    </div>
+                                    <div href=javascript:; class=sell>
+                                        销量<span>999</span>
+                                    </div>
+                                </div>
+                                <div class=addcart>
+                                    <div class=addcart-btn>
+                                        <span>加入购物车</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class=brick-item>
+                            <a href=javascript:; class=brick-link>
+                                <div class="lazy-img brick-img">
+                                    <img src=http://127.0.0.1:8080/static/images/product_02.png alt="">
+                                </div>
+                                <div class=line-1>
+                                    燕麦三色糙米新米10斤5kg粗粮五谷杂粮胚芽糙米饭健身脂减孕妇餐
+                                </div>
+                                <div class="line-3 info">
+                                    <div href=javascript:; class=price>
+                                        <span>¥</span>15.90
+                                    </div>
+                                    <div href=javascript:; class=sell>
+                                        销量<span>999</span>
+                                    </div>
+                                </div>
+                                <div class=addcart>
+                                    <div class=addcart-btn>
+                                        <span>加入购物车</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class=brick-item>
+                            <a href=javascript:; class=brick-link>
+                                <div class="lazy-img brick-img">
+                                    <img src=http://127.0.0.1:8080/static/images/product_02.png alt="">
+                                </div>
+                                <div class=line-1>
+                                    燕麦三色糙米新米10斤5kg粗粮五谷杂粮胚芽糙米饭健身脂减孕妇餐
+                                </div>
+                                <div class="line-3 info">
+                                    <div href=javascript:; class=price>
+                                        <span>¥</span>15.90
+                                    </div>
+                                    <div href=javascript:; class=sell>
+                                        销量<span>999</span>
+                                    </div>
+                                </div>
+                                <div class=addcart>
+                                    <div class=addcart-btn>
+                                        <span>加入购物车</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class=brick-item>
+                            <a href=javascript:; class=brick-link>
+                                <div class="lazy-img brick-img">
+                                    <img src=http://127.0.0.1:8080/static/images/product_02.png alt="">
+                                </div>
+                                <div class=line-1>
+                                    燕麦三色糙米新米10斤5kg粗粮五谷杂粮胚芽糙米饭健身脂减孕妇餐
+                                </div>
+                                <div class="line-3 info">
+                                    <div href=javascript:; class=price>
+                                        <span>¥</span>15.90
+                                    </div>
+                                    <div href=javascript:; class=sell>
+                                        销量<span>999</span>
+                                    </div>
+                                </div>
+                                <div class=addcart>
+                                    <div class=addcart-btn>
+                                        <span>加入购物车</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li class=brick-item>
+                            <a href=javascript:; class=brick-link>
+                                <div class="lazy-img brick-img">
+                                    <img src=http://127.0.0.1:8080/static/images/product_02.png alt="">
+                                </div>
+                                <div class=line-1>
+                                    燕麦三色糙米新米10斤5kg粗粮五谷杂粮胚芽糙米饭健身脂减孕妇餐
+                                </div>
+                                <div class="line-3 info">
+                                    <div href=javascript:; class=price>
+                                        <span>¥</span>15.90
+                                    </div>
+                                    <div href=javascript:; class=sell>
+                                        销量<span>999</span>
+                                    </div>
+                                </div>
+                                <div class=addcart>
+                                    <div class=addcart-btn>
+                                        <span>加入购物车</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </div>       
+        </div>
+        
+        <div class="tool-bar hide">
+            <a href=javascript:; class="item backtop">   
+                <span class=item-bg></span>
+                <div class=icon><i class="iconfont iconfanhuidingbu"></i></div>
+                <span class=text>顶部</span>
+            </a>
+        </div>
+    </main>
+    
+    <footer id=foot>
+        <div class=mod-service>
+            <div class=container>
+                <ul class=service-list>
+                    <li class=service-item>
+                        <div class=service-unit>
+                            <div class=hexagon>
+                                <h5 class=service-tit>多</h5>
+                            </div>
+                            <p class=service-txt>品类齐全 轻松购物</p>                            
+                        </div>
+                    </li>
+                    <li class=service-item>
+                        <div class=service-unit>
+                            <div class=hexagon>
+                                <h5 class=service-tit>快</h5>
+                            </div>
+                            <p class=service-txt>多仓直发 急速配送</p>                            
+                        </div>
+                    </li>
+                    <li class=service-item>
+                        <div class=service-unit>
+                            <div class=hexagon>
+                                <h5 class=service-tit>好</h5>
+                            </div>
+                            <p class=service-txt>正品行货 精致服务</p>                            
+                        </div>
+                    </li>
+                    <li class=service-item>
+                        <div class=service-unit>
+                            <div class=hexagon>
+                                <h5 class=service-tit>省</h5>
+                            </div>
+                            <p class=service-txt>天天低价 畅选无忧</p>                            
+                        </div>
+                    </li>
+                </ul>                    
+            </div>
+        </div>   
+        <div class=copyright>
+            <div class=container>
+                <p>
+                    <span><a href=javascript:; class=link>© 2003-2016 shijianGrocery.com</a><b>|</b></span>
+                    <span><a href=javascript:; class=link>网络文化经营许可证：食网文[2013]0268-027号</a><b>|</b></span>
+                    <span><a href=javascript:; class=link>信息网络传播视听节目许可证：1109364号</a><b>|</b></span>
+                    <span><a href=javascript:; class=link>增值电信业务经营许可证：川B2-20080224-1</a></span>                        
+                </p>
+                <p>
+                    <span> 互联网违法和不良信息举报电话:0571-81683755 <a href=javascript:; class=link><b>|</b>官方邮箱：blxx@list.shijian-inc.com</a></span>                        
+                </p>
+                <p>
+                    <a href=javascript:; class=link>食公网安备 33010002000078号</a> <b>|</b> <a href=javascript:; class=link>经营证照</a> <b>|</b> <a href=javascript:; class=link>营业执照</a>                       
+                </p>
+                <p class=copyright-auth>
+                    <a class=copyright-auth-ico href=javascript:;></a>
+                    <a class=copyright-auth-ico href=javascript:;></a>
+                    <a class=copyright-auth-ico href=javascript:;></a>
+                    <a class=copyright-auth-ico href=javascript:;></a>
+                    <a class=copyright-auth-ico href=javascript:;></a>
+                </p>
+                <div class=learn-more>
+                    <img src=http://127.0.0.1:8080/static/images/ercode.png alt=了解更多 class=ercode>
+                    <span>了解更多</span>
+                </div>
+            </div>
+        </div>         
+    </footer>
+    
+    <div id=mask>
+        <div id=confirmBox>
+            <p class="clear title"><span class="fr delImg" id=delImg>×</span></p>
+            <p class=confirmText>确定要删除吗？</p>
+            <p class=action-btn>
+                <input type=button id=cancelBtn value=取消>
+                <input type=button id=confirmDelBtn value=确认>
+            </p>
+        </div>
+    </div>
+<script type=text/javascript src=http://127.0.0.1:8080/static/js/cart-bundle.js></script></body>
+</html>

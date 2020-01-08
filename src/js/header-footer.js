@@ -75,7 +75,11 @@ function isLogin(){
                                             </a>        
                                             <ul class="user-menu">
                                                 <li class="user-item"><a href="//127.0.0.1:8080/static/pages/customerCenter.html">个人中心</a></li>
+<<<<<<< Updated upstream
                                                 <li class="user-item"><a href="./static/pages/customerCenter.html">账户管理</a></li>
+=======
+                                                <li class="user-item"><a href="//127.0.0.1/static/pages/customerCenter.html">账户管理</a></li>
+>>>>>>> Stashed changes
                                                 <li class="user-item"><a href="javascript:;" id="user-logout">安全退出</a></li>
                                             </ul>                                        
                                         </span>`

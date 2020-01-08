@@ -1,7 +1,11 @@
 import "../less/normalized.less"
 import "../less/header-footer.less"
 import "../less/productsList.less"
+<<<<<<< Updated upstream
 import './header-footer.js'
+=======
+import "./header-footer"
+>>>>>>> Stashed changes
 
 // 筛选 排序
 $().ready(function(){
