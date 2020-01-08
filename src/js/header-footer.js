@@ -74,7 +74,7 @@ function isLogin(){
                                                 <i class="iconfont iconarrow-down"></i>
                                             </a>        
                                             <ul class="user-menu">
-                                                <li class="user-item"><a href="//127.0.0.1:8080/static/pages/customerCenter.html">个人中心</a></li>
+                                                <li class="user-item"><a href="//127.0.0.1:8080/static/pages/customerCenter.html#customerCenter">个人中心</a></li>
                                                 <li class="user-item"><a href="//127.0.0.1:8080/static/pages/customerCenter.html#userInfo">账户管理</a></li>
                                                 <li class="user-item"><a href="javascript:;" id="user-logout">安全退出</a></li>
                                             </ul>                                        

@@ -31,3 +31,6 @@ showCurDiv();
 window.onhashchange=()=>{
     showCurDiv();
 }
+$('.txt').click(function(){
+    $(this).toggleClass('txt-this').parent().siblings().find('a').removeClass('txt-this')
+})
