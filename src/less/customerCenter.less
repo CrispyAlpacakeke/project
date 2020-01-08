@@ -54,15 +54,83 @@ body{
                         &:hover{
                             color: @themeColor !important;
                         }
+                        &.show{
+                            color: @themeColor !important;
+                        }
                    }
                } 
             }
         }
     }
     .main-box{
-        width: 966px;
-        height: 700px;
-        background-color: white;
+        width: 972px;
+        .potral-main{
+            width: 100%;
+            padding: 32px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-content: space-between;
+            background-color: white;
+            .user-card{
+                position: relative;
+                width: 298px;
+                height: 160px;
+                padding-left: 192px;
+                padding-top: 40px;
+                .avatar{
+                    cursor: pointer;
+                    .avatar-img{
+                        width: 160px;
+                        height: 160px;
+                        padding: 4px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        border:1px solid #e0e0e0;
+                        border-radius: 50%;
+                        overflow: hidden;
+                    } 
+                    &:hover::after{
+                        content: '编辑资料';
+                        width: 160px;
+                        height: 160px;
+                        border-radius: 50%;
+                        line-height: 160px;
+                        position: absolute;
+                        top: 5px;
+                        left: 5px;
+                        background-color: rgba(26, 26, 26, 0.212);
+                        color: white;
+                        text-align: center;
+                        z-index: 10;
+                    }
+                }
+                .username{
+                    font-size: 24px;
+                    color: #616161;
+                    margin-bottom: 8px;
+                }
+                .tip{
+                    margin-bottom: 10px;
+                    color: #b0b0b0;
+                }
+                .link{
+                    font-size:12px;
+                    color: @active;
+                }   
+            }
+            .user-actions{
+                width: 340px;
+                margin-top: 50px;
+                .action-list{
+                    li{
+                        padding: 4px 0;
+                        color: #757575;
+                    }
+                }
+            }
+        }
     }
 }
 
