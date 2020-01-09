@@ -65,11 +65,13 @@ function password(){
     }
 }
 
+
 // 返回
 $(".btnThree").click(function(){
     $(".rentwo").addClass("equally")
     $(".renone").removeClass("equally")
 })
+
 
 // 验证手机号接口
 $(".btnOne").click(function(){
@@ -92,11 +94,13 @@ $(".btnOne").click(function(){
 })
 
 
+
 $(".btnTwo").click(function(){
     let iptOneVal = $(".iptOne").val()
     let telVal = $(".telreg").val()
-    console.log(iptOneVal)
-    $.ajax({
+    let iptTwoval=$("#iptTwo").prop("checked");
+    if(iptTwoval){
+        $.ajax({
         url: `http://192.168.110.33:8000/check/`,
         type: "POST",
         dataType: "json",
@@ -119,13 +123,22 @@ $(".btnTwo").click(function(){
     }).fail(err => {
         $('.spanOne')[0].innerText = err.responseJSON[0]
         $('.spanOne').toggleClass('show');
-    });
+    })
+    }else{
+        alert("请请阅读用户协议和隐私政策")
+    }
+    console.log(iptTwoval);
+    console.log(iptOneVal)
 })
+
+
 
 
 $(".iptOne").on("change",function(){
     let iptOneVal = $(".iptOne").val()
     let telVal = $(".telreg").val()
+
+    
     $.ajax({
         url: `http://192.168.110.33:8000/check/`,
         type: "POST",
@@ -163,6 +176,7 @@ $('#submit_btn').click(function(){
     let pwd = $("#pwd").val()
     let iptOneVal = $(".iptOne").val()
     let telVal = $(".telreg").val()
+    
     $.ajax({
         url: `http://192.168.110.33:8000/register/`,
         type: "POST",
