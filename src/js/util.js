@@ -61,6 +61,81 @@ function scrollToTop(options) {
     }
 }
 
+//密钥
+module.exports.b = $.extend({  //全局封装，把函数直接封装到jquery的属性上
+    myAjaxGet: function (url,data,callback) {
+        console.log('myAjaxGet被调用')
+        if (callback==undefined){
+            callback=data;
+            data={}
+        }
+        $.ajax({
+            url: api_host + url,
+            type: 'get',
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('access')
+            },
+            data:data,
+            cache : false,
+            success: function (rsp_data) {
+                callback(rsp_data);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status==400){
+                    formError(jqXHR)
+                }else if (jqXHR.status==401){
+                    $.ajax({
+                        url:api_host +'/system_user/refresh/',
+                        type: 'post',
+                        data:{'refresh':localStorage.getItem('refresh')},
+                        success:function (rsp_data) {
+                            localStorage.setItem('access',rsp_data['access']);
+                            $.myAjaxGet(url,data,callback)
+                        },
+                        error:function (jqXHR, textStatus, errorThrown) {
+                            window.location.href=projectName+'/polls/login.html'
+                        }
+                    })
+                }
+            }
+        })
+    },
+    myAjaxPost:function (url,data,callback) {
+        $.ajax({
+            url: api_host + url,
+            type: 'post',
+            headers: {
+                Authorization: 'Bearer ' + localStorage.getItem('access')
+            },
+            data:data,
+            cache : false,
+            success: function (rsp_data) {
+                callback(rsp_data);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status==400){
+                    formError(jqXHR)
+                }else if (jqXHR.status==401){
+                    $.ajax({
+                        url:api_host +'/system_user/refresh/',
+                        type: 'post',
+                        data:{'refresh':localStorage.getItem('refresh')},
+                        success:function (rsp_data) {
+                            localStorage.setItem('access',rsp_data['access']);
+                            $.myAjaxGet(url,callback)
+                        },
+                        error:function (jqXHR, textStatus, errorThrown) {
+                            window.location.href=projectName+'/polls/login.html'
+                        }
+                    })
+                }
+            }
+        })
+    }
+})     
+
+   
+
 
 
 

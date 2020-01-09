@@ -65,11 +65,11 @@ body{
         }
         .box-bd{
             .more{
+                width: 100%;
                 .filter-list{
                     padding: 10px 0;
-                    float: left;
                     li{
-                        float: left;
+                        display: inline-block;
                         padding-right: 20px;
                         .txt{
                             display: inline-block;
@@ -275,5 +275,43 @@ body{
             }
         }
     }
+    /*个人信息*/
+    .main-box-2{
+        .user-set{
+            width: 500px;
+            padding: 20px 5px 0 15px;
+            .form{
+                .item{
+                    margin-bottom: 20px;
+                    font-size: 12px;
+                    line-height: 30px;
+                    em{
+                        color: #e4393c;
+                        text-align: right;
+                        line-height: 18px;
+                    }
+                    .label{
+                        float: left;
+                        height: 18px;
+                        line-height: 18px;
+                        padding: 6px 0;
+                        width: 100px;
+                        text-align: right;
+                    }
+                    input[type=text]{
+                        height: 18px;
+                        line-height: 18px;
+                        width: 127px;
+                        padding: 5px 23px 5px 5px;
+                        border: 1px solid #ccc;
+                    }
+                    .tip{
+                        color: @desc;
+                    }
+                }
+            }            
+        }
+
+    } 
 }
 
