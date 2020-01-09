@@ -417,6 +417,50 @@ body{
             }
         }
     }
+    .form{
+        .item{
+            margin-bottom: 20px;
+            font-size: 12px;
+            line-height: 30px;
+            .label{
+                float: left;
+                height: 24px;
+                line-height: 24px;
+                padding: 6px 0;
+                width: 100px;
+                text-align: right;
+                em{
+                    color: #e4393c;
+                    text-align: right;
+                    line-height: 18px;
+                }                        
+            }
+            input[type=text]{
+                height: 18px;
+                line-height: 18px;
+                width: 148px;
+                padding: 8px 24px 8px 8px;
+                border: 1px solid #ccc;
+            }
+            .tip{
+                color: @desc;
+                margin-left: 8px;
+            }
+        }
+    }    
+    .btn{
+        display: inline-block;
+        width: 68px;
+        height: 24px;
+        line-height: 24px;
+        background:linear-gradient(to bottom,#f5fbef 0,#eaf6e2 100%);
+        border-radius: 2px;
+        border: 1px solid #bfd6af;
+        color: @title;
+        text-align: center;
+        font-size: 12px;
+        cursor: pointer;
+    }
     /*个人信息*/
     .main-box-2{
         .btn{
@@ -435,7 +479,7 @@ body{
         .user-set{
             width: 500px;
             padding: 30px 5px 0 0;
-            .form{
+            .userinfo-form{
                 .txt-err{
                     border-color:@errColor!important;
                     color: @errColor;
@@ -445,29 +489,6 @@ body{
                     background: url(../images/succ-ico.png) no-repeat right center;
                 }
                 .item{
-                    margin-bottom: 20px;
-                    font-size: 12px;
-                    line-height: 30px;
-                    .label{
-                        float: left;
-                        height: 18px;
-                        line-height: 18px;
-                        padding: 6px 0;
-                        width: 100px;
-                        text-align: right;
-                        em{
-                            color: #e4393c;
-                            text-align: right;
-                            line-height: 18px;
-                        }                        
-                    }
-                    input[type=text]{
-                        height: 18px;
-                        line-height: 18px;
-                        width: 148px;
-                        padding: 8px 24px 8px 8px;
-                        border: 1px solid #ccc;
-                    }
                     .tip{
                         color: @desc;
                         margin-left: 8px;
@@ -480,7 +501,7 @@ body{
                         margin-right: 3px;
                     }
                     .interest{
-                        line-height: 30px;
+                        line-height: 36px;
                         width: 400px;
                         .interest-list{
                             .interest-item{
@@ -582,5 +603,84 @@ body{
             }
         }
     }  
+    /*收货地址*/
+    .main-box-3{
+        .head-tip{
+            width: 100%;
+            height: 36px;
+            line-height: 36px;
+            box-sizing: border-box;
+            padding-left: 12px;
+            background-color: #fffbf3;
+            font-size: 12px;
+            color: @active;
+        }
+        .addr-form{
+            margin-top: 30px;
+            .item1{
+                margin-bottom: 0px;
+            }
+            .item{
+                .txt1{
+                    width: 429px;
+                }
+                .tip{
+                    margin-left: 0;
+                }
+                .checkbox-inner{
+                    display: inline-block;
+                    width: 14px;
+                    height: 14px;
+                    background-color: white;
+                    border-radius: 3px;
+                    border: 1px solid #ccc;
+                    position: relative;
+                    transition: .2s ease;
+                    input{
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        opacity: 0;
+                        width: 16px;
+                        height: 16px;
+                        cursor: pointer;
+                        z-index: 10;
+                    }
+                }
+                .checkbox-label{
+                    vertical-align: 3px;
+                    margin-left: 4px;
+                }
+                .checked{
+                    .checkbox-inner{
+                        background-color:@themeColor;
+                        border-color: transparent;
+                        position: relative;
+                        &::after{
+                            content: '';
+                            width: 3px;
+                            height: 7px;
+                            transform: rotate(45deg);
+                            border-bottom: 2px solid white;
+                            border-right: 2px solid white;
+                            position: absolute;
+                            top: 2px;
+                            left: 4px;
+                        }
+                    }
+                }
+            }
+        }
+        select{
+            height: 35px;
+            margin-right: 6px;
+            line-height: 18px;
+            width: 148px;
+            padding-left: 8px;
+            font-size: 12px;
+            color: #666;
+            border: 1px solid #ccc;
+        }
+    } 
 }
 

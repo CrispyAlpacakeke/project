@@ -2,6 +2,7 @@ import './header-footer.js'
 import '../less/header-footer.less'
 import '../less/normalized.less'
 import '../less/customerCenter.less'
+import 'distpicker/dist/distpicker'
 
 $('.menu-box .item').click(function(){
     $('.menu-box .item').each(function(){
@@ -100,3 +101,7 @@ function uploadImage() {
         console.log(res);
     }
 }
+
+$('.checkbox-inner').click(function(){
+    $(this).parent().toggleClass('checked')
+})

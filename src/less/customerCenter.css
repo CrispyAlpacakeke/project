@@ -7,6 +7,7 @@ body {
 #content {
   /*******我的订单样式写这里********/
   /*个人信息*/
+  /*收货地址*/
 }
 #content .container {
   padding: 24px 0;
@@ -391,6 +392,48 @@ body {
 #content .main-box-1 .order-list:hover .order-five > .one {
   opacity: 1;
 }
+#content .form .item {
+  margin-bottom: 20px;
+  font-size: 12px;
+  line-height: 30px;
+}
+#content .form .item .label {
+  float: left;
+  height: 24px;
+  line-height: 24px;
+  padding: 6px 0;
+  width: 100px;
+  text-align: right;
+}
+#content .form .item .label em {
+  color: #e4393c;
+  text-align: right;
+  line-height: 18px;
+}
+#content .form .item input[type=text] {
+  height: 18px;
+  line-height: 18px;
+  width: 148px;
+  padding: 8px 24px 8px 8px;
+  border: 1px solid #ccc;
+}
+#content .form .item .tip {
+  color: #757575;
+  margin-left: 8px;
+}
+#content .btn {
+  display: inline-block;
+  width: 68px;
+  height: 24px;
+  line-height: 24px;
+  background: linear-gradient(to bottom, #f5fbef 0, #eaf6e2 100%);
+  border-radius: 2px;
+  border: 1px solid #bfd6af;
+  color: #333;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+}
 #content .main-box-2 .btn {
   display: inline-block;
   width: 68px;
@@ -408,55 +451,30 @@ body {
   width: 500px;
   padding: 30px 5px 0 0;
 }
-#content .main-box-2 .user-set .form .txt-err {
+#content .main-box-2 .user-set .userinfo-form .txt-err {
   border-color: #e4393c !important;
   color: #e4393c;
   background: url(../images/error-ico.png) no-repeat right center;
 }
-#content .main-box-2 .user-set .form .txt-succ {
+#content .main-box-2 .user-set .userinfo-form .txt-succ {
   background: url(../images/succ-ico.png) no-repeat right center;
 }
-#content .main-box-2 .user-set .form .item {
-  margin-bottom: 20px;
-  font-size: 12px;
-  line-height: 30px;
-}
-#content .main-box-2 .user-set .form .item .label {
-  float: left;
-  height: 18px;
-  line-height: 18px;
-  padding: 6px 0;
-  width: 100px;
-  text-align: right;
-}
-#content .main-box-2 .user-set .form .item .label em {
-  color: #e4393c;
-  text-align: right;
-  line-height: 18px;
-}
-#content .main-box-2 .user-set .form .item input[type=text] {
-  height: 18px;
-  line-height: 18px;
-  width: 148px;
-  padding: 8px 24px 8px 8px;
-  border: 1px solid #ccc;
-}
-#content .main-box-2 .user-set .form .item .tip {
+#content .main-box-2 .user-set .userinfo-form .item .tip {
   color: #757575;
   margin-left: 8px;
 }
-#content .main-box-2 .user-set .form .item .err {
+#content .main-box-2 .user-set .userinfo-form .item .err {
   color: #e4393c;
 }
-#content .main-box-2 .user-set .form .item .radio {
+#content .main-box-2 .user-set .userinfo-form .item .radio {
   vertical-align: -2px;
   margin-right: 3px;
 }
-#content .main-box-2 .user-set .form .item .interest {
-  line-height: 30px;
+#content .main-box-2 .user-set .userinfo-form .item .interest {
+  line-height: 36px;
   width: 400px;
 }
-#content .main-box-2 .user-set .form .item .interest .interest-list .interest-item {
+#content .main-box-2 .user-set .userinfo-form .item .interest .interest-list .interest-item {
   float: left;
   height: 18px;
   line-height: 18px;
@@ -465,16 +483,16 @@ body {
   border: 1px solid #cfcfcf;
   cursor: pointer;
 }
-#content .main-box-2 .user-set .form .item .interest .interest-list .interest-item:hover {
+#content .main-box-2 .user-set .userinfo-form .item .interest .interest-list .interest-item:hover {
   color: #84B130;
   border-color: #84B130;
 }
-#content .main-box-2 .user-set .form .item .interest .interest-list .interest-item.item-this {
+#content .main-box-2 .user-set .userinfo-form .item .interest .interest-list .interest-item.item-this {
   border: 2px solid #84B130;
   padding: 7px 15px;
   position: relative;
 }
-#content .main-box-2 .user-set .form .item .interest .interest-list .interest-item.item-this b {
+#content .main-box-2 .user-set .userinfo-form .item .interest .interest-list .interest-item.item-this b {
   display: block;
   position: absolute;
   right: -1px;
@@ -484,7 +502,7 @@ body {
   background-color: #84B130;
   clip-path: polygon(100% 0, 0 100%, 100% 100%);
 }
-#content .main-box-2 .user-set .form .item .interest .interest-list .interest-item.item-this b::after {
+#content .main-box-2 .user-set .userinfo-form .item .interest .interest-list .interest-item.item-this b::after {
   content: '';
   width: 2px;
   height: 5px;
@@ -548,4 +566,76 @@ body {
 }
 #content .main-box-2 .update-img .save-btn {
   margin-top: 10px;
+}
+#content .main-box-3 .head-tip {
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  box-sizing: border-box;
+  padding-left: 12px;
+  background-color: #fffbf3;
+  font-size: 12px;
+  color: #F1BC18;
+}
+#content .main-box-3 .addr-form {
+  margin-top: 30px;
+}
+#content .main-box-3 .addr-form .item1 {
+  margin-bottom: 0px;
+}
+#content .main-box-3 .addr-form .item .txt1 {
+  width: 429px;
+}
+#content .main-box-3 .addr-form .item .tip {
+  margin-left: 0;
+}
+#content .main-box-3 .addr-form .item .checkbox-inner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  position: relative;
+  transition: 0.2s ease;
+}
+#content .main-box-3 .addr-form .item .checkbox-inner input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  z-index: 10;
+}
+#content .main-box-3 .addr-form .item .checkbox-label {
+  vertical-align: 3px;
+  margin-left: 4px;
+}
+#content .main-box-3 .addr-form .item .checked .checkbox-inner {
+  background-color: #84B130;
+  border-color: transparent;
+  position: relative;
+}
+#content .main-box-3 .addr-form .item .checked .checkbox-inner::after {
+  content: '';
+  width: 3px;
+  height: 7px;
+  transform: rotate(45deg);
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  position: absolute;
+  top: 2px;
+  left: 4px;
+}
+#content .main-box-3 select {
+  height: 35px;
+  margin-right: 6px;
+  line-height: 18px;
+  width: 148px;
+  padding-left: 8px;
+  font-size: 12px;
+  color: #666;
+  border: 1px solid #ccc;
 }
