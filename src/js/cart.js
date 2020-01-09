@@ -3,7 +3,7 @@ import "../less/header-footer.less"
 import "../less/cart.less"
 import "./header-footer.js"
 import {scrollToTop} from './util.js'
-
+console.log(1)
 /***退出登录返回首页***/ 
 function isLogin(){
     let username = sessionStorage.getItem('username');
