@@ -3,6 +3,8 @@ import '../less/header-footer.less'
 import '../less/normalized.less'
 import '../less/customerCenter.less'
 import 'distpicker/dist/distpicker'
+import "x0popup/dist/x0popup.min.css"
+import x0p from "x0popup/dist/x0popup.min.js"
 
 $('.menu-box .item').click(function(){
     $('.menu-box .item').each(function(){
@@ -32,6 +34,9 @@ showCurDiv();
 window.onhashchange=()=>{
     showCurDiv();
 }
+$('.avatar').click(function(){
+    location.hash = '#userInfo'
+})
 
 /**个人信息**/
 //tab切换
@@ -52,7 +57,8 @@ $('.interest-item').click(function(){
 })
 
 //头像照片
-function imgPreview(fileDom) {
+//->图片回显
+window.imgPreview = function(fileDom){
     // 判断是否支持FileReader 
     let reader = null;
     if(window.FileReader) {
@@ -84,11 +90,24 @@ function imgPreview(fileDom) {
     //图片、视频以二进制流形式上传（文本以json或者xml形式）
     reader.readAsDataURL(file);
 }
-
-function uploadImage() {
+//->图片上传
+window.uploadImage = function() {
+    console.log('uploadImage被调用')
     let file = document.querySelector(".select input").files[0];
     if(!file) {
-        alert("点击上方方框选择图片！");
+        x0p({
+            title:'请选择图片上传！',
+            animationType:'slideDown',
+            icon:'warning',
+            maxWidth:'370px',
+            maxHeight:'168px',
+            buttons: [
+                {
+                    type: 'ok',
+                    text: '关闭'
+                }
+            ]
+        });
         return;
     }
     let formData = new FormData();
@@ -101,7 +120,60 @@ function uploadImage() {
         console.log(res);
     }
 }
+//上传成功
+function uploadSuccess(){
+    x0p({
+        title:'头像上传成功',
+        animationType:'slideDown',
+        icon:'ok',
+        maxWidth:'370px',
+        maxHeight:'168px',
+        buttons: [
+            {
+                type: 'ok',
+                text: '关闭'
+            }
+        ]
+    });
+}
 
 $('.checkbox-inner').click(function(){
     $(this).parent().toggleClass('checked')
 })
+
+/*保存个人信息*/ 
+$('.user-set .btn').click(function(){
+    x0p({
+        title:'提交资料成功',
+        animationType:'slideDown',
+        icon:'ok',
+        maxWidth:'370px',
+        maxHeight:'168px',
+        buttons: [
+            {
+                type: 'ok',
+                text: '关闭'
+            }
+        ]
+    });
+})
+
+/*删除订单*/
+$('.order-list .del').click(function(){
+    x0p({
+        title:'确认删除该订单？',
+        animationType:'slideDown',
+        icon:'warning',
+        buttons: [
+            {
+                type: 'warning',
+                text: '取消'
+            },
+            {
+                type: 'ok',
+                text: '确认'
+            }
+        ]
+    });
+})
+
