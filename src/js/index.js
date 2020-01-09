@@ -1,6 +1,6 @@
 import './header-footer.js'
 import '../less/header-footer.less'
-import {scrollToTop,b} from './util.js'
+import {scrollToTop} from './util.js'
 import '../less/normalized.less'
 import '../less/index.less'
 
@@ -55,6 +55,6 @@ scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
 }});
 
 /****ajax请求****/ 
-$.myAjaxGet();
+// $.myAjaxGet();
 
 

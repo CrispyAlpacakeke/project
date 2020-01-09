@@ -336,25 +336,27 @@
                         <ul class="filter-list clearFix">
                             <li>
                                 <a class="txt txt-this" href="javascript:;">基本信息</a>
-
                             </li>
                             <li><a class="txt" href="javascript:;">头像照片</a></li>
                         </ul>
                     </div>
-                    <div class="user-set clearFix">
+                    <div class="user-set user-panel clearFix">
                         <div class="form">
                             <div class="item clearFix">
-                                <em>*</em>
-                                <span class="label">用户名：</span>
+                                <span class="label">
+                                    <em>*</em>
+                                    用户名：
+                                </span>
                                 <div class="fl">
-                                    <input type="text" value="脆皮羊驼怪">
+                                    <input type="text" value="脆皮羊驼怪" class="txt txt-err">
                                     <span class="tip">可用于登录，请牢记哦~</span>
+                                    <div class="err">错误提示</div>
                                 </div>
                             </div>
                             <div class="item clearFix">
-                                <span class="label">性别</span>
+                                <span class="label">性别：</span>
                                 <div class="fl">
-                                    <input type="radio" name="gender" class="radio" value="0">
+                                    <input type="radio" name="sex" class="radio" value="0">
                                     <label class="gender">男</label>
                                     <input type="radio" name="sex" class="radio" value="0">
                                     <label class="gender">女</label>
@@ -363,52 +365,79 @@
                                 </div>
                             </div>
                             <div class="item clearFix">
-                                <span class="label">兴趣爱好</span>
+                                <span class="label">兴趣爱好：</span>
                                 <div class="fl interest">
                                     <p>请选择您感兴趣的分类，给您最精准的推荐</p>
-                                    <ul class="interest-list">
+                                    <ul class="interest-list clearFix">
                                         <li class="interest-item">
-                                            纤体瘦身
+                                            纤体瘦身<b></b>
                                         </li>
                                         <li class="interest-item">
-                                            纤体瘦身
+                                            纤体瘦身<b></b>
                                         </li>
                                         <li class="interest-item">
-                                            纤体瘦身
+                                            纤体瘦身<b></b>
                                         </li>
                                         <li class="interest-item">
-                                            纤体瘦身
+                                            纤体瘦身<b></b>
                                         </li>
                                         <li class="interest-item">
-                                            纤体瘦身
+                                            纤体瘦身<b></b>
                                         </li>
                                         <li class="interest-item">
-                                            纤体瘦身
+                                            纤体瘦身<b></b>
                                         </li>
                                         <li class="interest-item">
-                                            纤体瘦身
+                                            纤体瘦身<b></b>
                                         </li>
                                         <li class="interest-item">
-                                            纤体瘦身
+                                            纤体瘦身<b></b>
+                                        </li>
+                                        <li class="interest-item">
+                                            纤体瘦身<b></b>
+                                        </li>
+                                        <li class="interest-item">
+                                            纤体瘦身<b></b>
+                                        </li>
+                                        <li class="interest-item">
+                                            纤体瘦身<b></b>
+                                        </li>
+                                        <li class="interest-item">
+                                            纤体瘦身<b></b>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="item clearFix">
-                                <em>*</em>
-                                <span class="label">邮箱：</span>
+                                <span class="label">
+                                    <em>*</em>
+                                    邮箱：
+                                </span>
                                 <div class="fl">
-                                    <input type="text" value="15*****36@qq.com">
+                                    <input type="text" value="15*****36@qq.com" class="txt txt-succ">
                                     <span class="tip">已验证</span>
+                                    <div class="err"></div>
                                 </div>
                             </div>
                             <div class="item clearFix">
-                                <em>*</em>
                                 <span class="label"></span>
                                 <div class="fl">
-                                    <a href="javascript:;" class="submit-btn">提交</a>
+                                    <a href="javascript:;" class="btn">提交</a>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="update-img user-panel hide">
+                        <div class="select">
+                            选择要上传的头像
+                            <input type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" onchange="imgPreview(this)">  
+                        </div>
+                        <div class="tip">仅支持JPG、GIF、PNG、JPEG、BMP格式，文件小于4M</div>
+                        <div class="update-box">
+                            <div class="img-cont"></div>
+                        </div>
+                        <div class="save-btn">
+                            <button type="button" onclick="uploadImage()" class="btn">保存</button>
                         </div>
                     </div>
                 </div>
