@@ -95,22 +95,36 @@ plusBtn.onclick = function(){
     numberIpt.value = Number(numberIpt.value) + 1
 }
 
-// 配送方式
+// 规格
 $().ready(function () {
     $(".content_delivery > dl dd").click(function () {
         $(this).addClass("frame").siblings().removeClass("frame")
     })
 })
 
+$("#specificationsOne").click(function(){
+    $(".price_left .two").text("￥158.00")
+    $(".price_left .three").text("￥188.00")
+})
+
+$("#specificationsTwo").click(function(){
+    $(".price_left .two").text("￥188.00")
+    $(".price_left .three").text("￥200.00")
+})
+
 
 
 // tab 切换
-$().ready(function () {
-    $(".bottom_top span").click(function () {
-        $(this).addClass("tab").siblings().removeClass("tab")
+$().ready(function() {
+    $(".bottom_top span").each(function(index) {
+        $(this).click(function() {
+            $(".show").removeClass("show");
+            $(".tab").removeClass("tab");
+            $(".content_bottom .cl").eq(index).addClass("show");
+            $(this).addClass("tab")
+        });
     })
 })
-
 
 
 // 评论切换

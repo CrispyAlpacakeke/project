@@ -412,6 +412,7 @@
             }
         }
         .bottom_evaluate{
+            display: none;
             .evaluate_box{
                 margin-top: 30px;
                 .evaluate_topBox{
@@ -493,21 +494,59 @@
                             }
                         }
                     }
-                    .bottombox_bottom{
+                    .bottomBox_bottom{
                         li{
                             display: flex;
                             border-bottom: 1px solid #dddddd;
-                            .bottombox_left{
+                            .bottomBox_left{
                                 width: 200px;
+                                margin-top: 30px;
+                                display: flex;
+                                flex-flow: row wrap;
+                                justify-content: center;
                                 img{
                                     width: 100px;
                                     height: 100px;
+                                    border-radius: 50%;
+                                }
+                                span{
+                                    width: 200px;
+                                    display: inline-block;
+                                    text-align: center;
+                                    height: 30px;
+                                    line-height: 30px;
+                                }
+                            }
+                            .bottomBox_right{
+                                margin-top: 30px;
+                                span{
+                                    display: inline-block;
+                                }
+                                .one{
+                                    width: 1000px;
+                                    margin-bottom: 20px;
+                                    color: red;
+                                }
+                                .two{
+                                    width: 1000px;
+                                    height: 50px;
+                                    font-size: 14px;
+                                    line-height: 1.5;
+                                }
+                                .three{
+                                    width: 1000px;
+                                    padding-left: 100px;
+                                    font-size: 12px;
+                                    color: @desc;
                                 }
                             }
                         }
                     }
                 }
             }
+        }
+        .show{
+            display: block;
         }
     }
 }

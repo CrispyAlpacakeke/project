@@ -11,6 +11,56 @@ $().ready(function(){
 })
 
 
+
+let brand = document.querySelector('.content_brand_img ul');
+$.ajax({
+    url: ``,
+    // 数据格式
+    dataType: "json"
+}).done(res => {
+    console.log(res);
+    let htmlStr = "";
+    res.data.forEach(item => {
+        htmlStr += `
+        `;
+    })
+    brand.innerHTML = htmlStr;
+}).fail(err => {
+    console.log(err);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // 分页
 
 // var currentpage = 1  // 默认当前页为第一页
