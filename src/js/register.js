@@ -1,6 +1,8 @@
 import "../less/normalized.less"
 import "../less/header-footer.less"
 import "../less/register.less"
+import "../css/sweet-alert.css"
+import "./sweet-alert.min.js"
 
 // 手机验证
 let phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/ //手机号正则 
@@ -125,7 +127,8 @@ $(".btnTwo").click(function(){
         $('.spanOne').toggleClass('show');
     })
     }else{
-        alert("请请阅读用户协议和隐私政策")
+        swal("请阅读用户协议和隐私政策");
+        // alert("请请阅读用户协议和隐私政策")
     }
     console.log(iptTwoval);
     console.log(iptOneVal)
@@ -209,3 +212,26 @@ $('#submit_btn').click(function(){
         }
     })
 })
+
+function d(){
+    swal("Cancelled", "Your imaginary file is safe :)", "error");
+    // swal({
+    //     title: "Are you sure?",
+    //     text: "You will not be able to recover this imaginary file!",
+    //     type: "warning",
+    //     showCancelButton: true,
+    //     confirmButtonColor: "#DD6B55",
+    //     confirmButtonText: "Yes, delete it!",
+    //     cancelButtonText: "No, cancel plx!",
+    //     closeOnConfirm: false,
+    //     closeOnCancel: false
+    //   },
+    //   function(isConfirm){
+    //     if (isConfirm) {
+    //       swal("Deleted!", "Your imaginary file has been deleted.", "success");
+    //     } else {
+    //       swal("Cancelled", "Your imaginary file is safe :)", "error");
+    //     }
+    //   });
+}
+
