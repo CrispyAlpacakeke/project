@@ -638,81 +638,115 @@ body{
     }  
     /*收货地址*/
     .main-box-3{
-        .head-tip{
-            width: 100%;
-            height: 36px;
-            line-height: 36px;
-            box-sizing: border-box;
-            padding-left: 12px;
-            background-color: #fffbf3;
-            font-size: 12px;
-            color: @active;
-        }
-        .addr-form{
-            margin-top: 30px;
-            .item1{
-                margin-bottom: 0px;
+        .add-more{
+            .head-tip{
+                width: 100%;
+                height: 36px;
+                line-height: 36px;
+                box-sizing: border-box;
+                padding-left: 12px;
+                background-color: #fffbf3;
+                font-size: 12px;
+                color: @active;
             }
-            .item{
-                .txt1{
-                    width: 429px;
+            .addr-form{
+                margin-top: 30px;
+                .item1{
+                    margin-bottom: 0px;
                 }
-                .tip{
-                    margin-left: 0;
-                }
-                .checkbox-inner{
-                    display: inline-block;
-                    width: 14px;
-                    height: 14px;
-                    background-color: white;
-                    border-radius: 3px;
-                    border: 1px solid #ccc;
-                    position: relative;
-                    transition: .2s ease;
-                    input{
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        opacity: 0;
-                        width: 16px;
-                        height: 16px;
-                        cursor: pointer;
-                        z-index: 10;
+                .item{
+                    .txt1{
+                        width: 429px;
                     }
-                }
-                .checkbox-label{
-                    vertical-align: 3px;
-                    margin-left: 4px;
-                }
-                .checked{
+                    .tip{
+                        margin-left: 0;
+                    }
                     .checkbox-inner{
-                        background-color:@themeColor;
-                        border-color: transparent;
+                        display: inline-block;
+                        width: 14px;
+                        height: 14px;
+                        background-color: white;
+                        border-radius: 3px;
+                        border: 1px solid #ccc;
                         position: relative;
-                        &::after{
-                            content: '';
-                            width: 3px;
-                            height: 7px;
-                            transform: rotate(45deg);
-                            border-bottom: 2px solid white;
-                            border-right: 2px solid white;
+                        transition: .2s ease;
+                        input{
                             position: absolute;
-                            top: 2px;
-                            left: 4px;
+                            top: 0;
+                            left: 0;
+                            opacity: 0;
+                            width: 16px;
+                            height: 16px;
+                            cursor: pointer;
+                            z-index: 10;
+                        }
+                    }
+                    .checkbox-label{
+                        vertical-align: 3px;
+                        margin-left: 4px;
+                    }
+                    .checked{
+                        .checkbox-inner{
+                            background-color:@themeColor;
+                            border-color: transparent;
+                            position: relative;
+                            &::after{
+                                content: '';
+                                width: 3px;
+                                height: 7px;
+                                transform: rotate(45deg);
+                                border-bottom: 2px solid white;
+                                border-right: 2px solid white;
+                                position: absolute;
+                                top: 2px;
+                                left: 4px;
+                            }
                         }
                     }
                 }
             }
+            select{
+                height: 35px;
+                margin-right: 6px;
+                line-height: 18px;
+                width: 148px;
+                padding-left: 8px;
+                font-size: 12px;
+                color: #666;
+                border: 1px solid #ccc;
+            }            
         }
-        select{
-            height: 35px;
-            margin-right: 6px;
-            line-height: 18px;
-            width: 148px;
-            padding-left: 8px;
-            font-size: 12px;
-            color: #666;
-            border: 1px solid #ccc;
+        .address-list{
+            box-sizing: border-box;
+            border: 1px solid #e6e6e6;
+            .addr-item{
+                .item-head{
+                    height: 40px;
+                    padding-left: 24px;
+                    line-height: 40px;
+                    font-size: 14px;
+                    color: #666;
+                    h3{
+                        display: inline-block;
+                    }
+                    .flag{
+                        margin-left: 4px;
+                        padding: 4px;
+                        background-color: @active;
+                        font-size: 12px;
+                        color: white;
+                    }
+                }
+                .item-cont{
+                    margin-top: 14px;
+                    .item{
+                        margin-bottom: 10px;
+                        .label{
+                            color: @desc;
+                        }
+                    }
+                }
+            }
         }
     } 
 }

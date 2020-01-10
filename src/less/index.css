@@ -1,7 +1,4 @@
 /*轮播图*/
-.home-first {
-  padding-bottom: 24px;
-}
 .home-first #header-swiper {
   cursor: pointer;
 }
@@ -55,23 +52,8 @@
   padding: 4px 0;
   background-color: #F5F5F5;
 }
-.page-main .lazy-img {
-  position: relative;
-}
-.page-main .lazy-img:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background: rgba(0, 0, 0, 0);
-}
-.page-main .lazy-img img {
-  transition: all 0.2s ease;
-}
 .page-main .box-hd {
-  width: 150px;
+  width: 250px;
   height: 65px;
   margin: 24px auto;
   text-align: center;
@@ -89,11 +71,11 @@
 }
 .page-main .box-hd::before {
   background-position: 0 0;
-  left: -32px;
+  left: 0;
 }
 .page-main .box-hd::after {
   background-position: 49px 0;
-  right: -32px;
+  right: 0;
 }
 .page-main .box-hd .hd_title {
   font-size: 28px;
@@ -329,6 +311,13 @@
   padding: 0 16px 16px;
   margin-bottom: 8px;
   background-color: #fff;
+  border: 1px solid transparent;
+  position: relative;
+}
+.page-main .sj-plain .box-bd .brick-list .brick-item:hover {
+  border-color: #84B130;
+  box-shadow: 0 8px 12px 0 rgba(171, 231, 59, 0.2);
+  z-index: 12;
 }
 .page-main .sj-plain .box-bd .brick-list .brick-item .brick-link {
   display: block;
@@ -339,7 +328,7 @@
   background: rgba(0, 0, 0, 0.1);
 }
 .page-main .sj-plain .box-bd .brick-list .brick-item .brick-link:hover .brick-img img {
-  transform: scale(1.25);
+  transform: scale(1.1);
 }
 .page-main .sj-plain .box-bd .brick-list .brick-item .brick-link .brick-img {
   width: 160px;
@@ -397,7 +386,6 @@
 }
 .page-main .sj-plain .box-bd .brick-list .brick-item .brick-link .line-3 {
   height: 22px;
-  margin-bottom: 20px;
   line-height: 22px;
   color: #999;
 }

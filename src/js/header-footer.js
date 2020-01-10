@@ -74,8 +74,8 @@ function isLogin(){
                                                 <i class="iconfont iconarrow-down"></i>
                                             </a>        
                                             <ul class="user-menu">
-                                                <li class="user-item"><a href="//127.0.0.1:8080/static/pages/customerCenter.html#customerCenter">个人中心</a></li>
-                                                <li class="user-item"><a href="//127.0.0.1:8080/static/pages/customerCenter.html#userInfo">账户管理</a></li>
+                                                <li class="user-item"><a href="//192.168.110.47:8080/static/pages/customerCenter.html#customerCenter">个人中心</a></li>
+                                                <li class="user-item"><a href="//192.168.110.47:8080/static/pages/customerCenter.html#userInfo">账户管理</a></li>
                                                 <li class="user-item"><a href="javascript:;" id="user-logout">安全退出</a></li>
                                             </ul>                                        
                                         </span>`
@@ -85,9 +85,9 @@ function isLogin(){
         $('.cart-empty').addClass('hide');
     }    
     else{
-        $('.topbar-info')[0].innerHTML = `<a href="//127.0.0.1:8080/static/pages/login.html" target="_blank" data-login="true">你好，请登录</a>
+        $('.topbar-info')[0].innerHTML = `<a href="//192.168.110.47:8080/static/pages/login.html" target="_blank" data-login="true">你好，请登录</a>
                                             <span class="sep"></span>
-                                        <a href="//127.0.0.1:8080/static/pages/register.html" target="_blank" data-register="true">注册</a>`
+                                        <a href="//192.168.110.47:8080/static/pages/register.html" target="_blank" data-register="true">注册</a>`
         $('.cart-list').addClass('hide');
         $('.cart-total').addClass('hide');
         $('.cart-empty').removeClass('hide');
@@ -99,4 +99,8 @@ isLogin();
 $('#user-logout').click(function(){
     sessionStorage.clear();
     isLogin();
+})
+
+$('.header-logo').click(function(){
+    location.href="//192.168.110.47:8080/index.html"
 })

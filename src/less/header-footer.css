@@ -61,7 +61,7 @@
   text-align: center;
   border: 1px solid #84B130;
   border-top: none;
-  z-index: 12;
+  z-index: 110;
 }
 #head .site-topbar .topbar-info .user .user-menu .user-item {
   height: 28px;
@@ -104,6 +104,8 @@
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  z-index: 100;
+  cursor: pointer;
 }
 #head .site-header .header-logo .logo {
   display: block;
@@ -326,6 +328,7 @@
   top: 120px;
   z-index: 11;
   float: left;
+  opacity: 0.9;
   display: none;
 }
 #head .menu-dropdown .nav-menu .menu-item {

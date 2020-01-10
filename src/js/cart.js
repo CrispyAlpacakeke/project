@@ -2,7 +2,7 @@ import "../less/normalized.less"
 import "../less/header-footer.less"
 import "../less/cart.less"
 import "./header-footer.js"
-import {scrollToTop,b} from './util.js'
+import {myAjaxGet,myAjaxPost} from './util.js'
 
 /***退出登录返回首页***/ 
 function isLogin(){
@@ -34,23 +34,18 @@ window.onscroll = ()=>{
 };
 
 /**回到顶部**/ 
-scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
-    offset >= 700?$('.tool-bar').removeClass('hide'):$('.tool-bar').addClass('hide')
-}});
+// scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
+//     offset >= 700?$('.tool-bar').removeClass('hide'):$('.tool-bar').addClass('hide')
+// }});
 
 /***请求数据加载页面***/
 (function(){
-    addNums();
-    minusNums();
-    printNum();
-    getTotal();
-    maskPopup();
-    iptOnclick()
+
 })();
 /****ajax请求****/ 
 window.onload = function () {
     let brand = document.querySelector('.list-content')
-    $.myAjaxGet(`/add_to_carts/`, function (data) {
+    myAjaxGet(`/carts/`, function (data) {
         console.log(data)
         let htmlStr = "";
         data.forEach(item => {
@@ -70,7 +65,7 @@ window.onload = function () {
                         <em class="price-original"></em>
                     </div>
                     <div class="price-line">
-                        <em class="price-now">${item.goods.goods_price}</em>
+                        <em class="price-now">${item.goods.goods_price}元</em>
                     </div>
                 </div>
                 <div class="col col-num">
@@ -84,6 +79,12 @@ window.onload = function () {
                 `
         })
         brand.innerHTML = htmlStr
+        addNums();
+        minusNums();
+        printNum();
+        getTotal();
+        maskPopup();
+        iptOnclick()        
     });
 }
 
