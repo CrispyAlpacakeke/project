@@ -143,11 +143,11 @@ x0popup = x0p = function() {
 			case 'warning':
 				str += '<i class="xi xi-warning"><span class="xi-warning-circle"></span><span class="xi-warning-line"></span></i>';
 				break;
-			case 'custom':
-				str += '<i class="xi" style="background: url(\'' + config.iconURL + '\') no-repeat center center; background-size: 100% 100%;"></i>';
-				break;
 		}
 		str += '</div>';
+		if(iconType === 'custom'){
+			str = `<div class="icon-wrapper no-icon"></div>`
+		}
 		return str;
 	}
 

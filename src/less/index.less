@@ -6,9 +6,9 @@
 
 /*轮播图*/
 .home-first{
-    // padding-bottom: 24px;
     #header-swiper{
         cursor: pointer;
+        min-width: 1200px;
         img{
             width: 100%;
         }
@@ -61,7 +61,7 @@
     .box-hd{
         width: 250px;
         height: 65px;
-        margin: 24px auto;
+        margin: 36px auto;
         text-align: center;
         position: relative;
         &::before,&::after{
@@ -104,12 +104,21 @@
                 .sec-hd{
                     display: block;
                     position: relative;
-                    padding-left: 18px;
+                    padding-left: 32px;
                     margin: 4px 0;
                     line-height: 50px;
                     font-size: 20px;
                     font-weight: bold;
-                    color: @themeColor;
+                    color: @title;
+                    &::before{
+                        content: '';
+                        width: 4px;
+                        height: 20px;
+                        position: absolute;
+                        top: 15px;
+                        left: 17px;
+                        background-color: @themeColor;
+                    }
                 }
                 #health-swiper{
                     width: 561px;

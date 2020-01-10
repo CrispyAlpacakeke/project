@@ -1,6 +1,7 @@
 
 //服务器 - 导出域名和端口号
-const api_host = "http://192.168.110.33:8000";
+const api_host = "http://192.168.110.33:8000"; //后台端口
+const BASE_URL = "//127.0.0.1:8080"
 
 //=>回到顶部
 /**
@@ -58,48 +59,23 @@ function scrollToTop(options) {
     }
 }
 
-//密钥
-function myAjaxGet(url,data,callback){
-    console.log('myAjaxGet被调用')
-        if (callback==undefined){
-            callback=data;
-            data={}
-        }
-        $.ajax({
-            url: api_host + url,
-            type: 'get',
-            headers: {
-                Authorization: 'Bearer ' + localStorage.getItem('access')
-            },
-            data:data,
-            cache : false,
-            success: function (rsp_data) {
-                callback(rsp_data);
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                if (jqXHR.status==400){
-                    formError(jqXHR)
-                }else if (jqXHR.status==401){
-                    $.ajax({
-                        url:api_host +'/system_user/refresh/',
-                        type: 'post',
-                        data:{'refresh':localStorage.getItem('refresh')},
-                        success:function (rsp_data) {
-                            localStorage.setItem('access',rsp_data['access']);
-                            $.myAjaxGet(url,data,callback)
-                        },
-                        error:function (jqXHR, textStatus, errorThrown) {
-                            window.location.href=projectName+'/polls/login.html'
-                        }
-                    })
-                }
-            }
-        })
-}
-function myAjaxPost(url,data,callback){
+//=>ajax请求密钥
+/**
+ * ajax请求密钥
+ * - url 接口
+ * - method 请求方式
+ * - data 请求发送的数据
+ * - callback 请求完成后回调
+ */
+function myAjax(url,method,data,callback){
+    callback = callback || data;
+    if (callback==undefined){
+        callback=data;
+        data={}
+    }
     $.ajax({
         url: api_host + url,
-        type: 'post',
+        type: method,
         headers: {
             Authorization: 'Bearer ' + localStorage.getItem('access')
         },
@@ -114,90 +90,22 @@ function myAjaxPost(url,data,callback){
             }else if (jqXHR.status==401){
                 $.ajax({
                     url:api_host +'/system_user/refresh/',
-                    type: 'post',
+                    type: method,
                     data:{'refresh':localStorage.getItem('refresh')},
                     success:function (rsp_data) {
                         localStorage.setItem('access',rsp_data['access']);
-                        $.myAjaxGet(url,callback)
+                        $.myAjaxGet(url,data,callback)
                     },
                     error:function (jqXHR, textStatus, errorThrown) {
-                        window.location.href=projectName+'/polls/login.html'
+                        window.location.href='//BASE_URL/static/pages/login.html'
                     }
                 })
             }
         }
-    })
+    })    
 }
-// $.extend({  //全局封装，把函数直接封装到jquery的属性上
-//     myAjaxGet: function (url,data,callback) {
-//         console.log('myAjaxGet被调用')
-//         if (callback==undefined){
-//             callback=data;
-//             data={}
-//         }
-//         $.ajax({
-//             url: api_host + url,
-//             type: 'get',
-//             headers: {
-//                 Authorization: 'Bearer ' + localStorage.getItem('access')
-//             },
-//             data:data,
-//             cache : false,
-//             success: function (rsp_data) {
-//                 callback(rsp_data);
-//             },
-//             error: function (jqXHR, textStatus, errorThrown) {
-//                 if (jqXHR.status==400){
-//                     formError(jqXHR)
-//                 }else if (jqXHR.status==401){
-//                     $.ajax({
-//                         url:api_host +'/system_user/refresh/',
-//                         type: 'post',
-//                         data:{'refresh':localStorage.getItem('refresh')},
-//                         success:function (rsp_data) {
-//                             localStorage.setItem('access',rsp_data['access']);
-//                             $.myAjaxGet(url,data,callback)
-//                         },
-//                         error:function (jqXHR, textStatus, errorThrown) {
-//                             window.location.href=projectName+'/polls/login.html'
-//                         }
-//                     })
-//                 }
-//             }
-//         })
-//     },
-//     myAjaxPost:function (url,data,callback) {
-//         $.ajax({
-//             url: api_host + url,
-//             type: 'post',
-//             headers: {
-//                 Authorization: 'Bearer ' + localStorage.getItem('access')
-//             },
-//             data:data,
-//             cache : false,
-//             success: function (rsp_data) {
-//                 callback(rsp_data);
-//             },
-//             error: function (jqXHR, textStatus, errorThrown) {
-//                 if (jqXHR.status==400){
-//                     formError(jqXHR)
-//                 }else if (jqXHR.status==401){
-//                     $.ajax({
-//                         url:api_host +'/system_user/refresh/',
-//                         type: 'post',
-//                         data:{'refresh':localStorage.getItem('refresh')},
-//                         success:function (rsp_data) {
-//                             localStorage.setItem('access',rsp_data['access']);
-//                             $.myAjaxGet(url,callback)
-//                         },
-//                         error:function (jqXHR, textStatus, errorThrown) {
-//                             window.location.href=projectName+'/polls/login.html'
-//                         }
-//                     })
-//                 }
-//             }
-//         })
-//     }
-// })     
 
-module.exports = {scrollToTop,myAjaxGet,myAjaxPost}
+/*动态加载topbar*/
+
+
+module.exports = {scrollToTop,myAjax,BASE_URL};

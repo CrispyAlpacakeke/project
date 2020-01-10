@@ -58,3 +58,12 @@ scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
 // $.myAjaxGet();
 
 
+/**页面滚动导航栏固定**/ 
+window.onscroll=function(){
+    console.log($('.site-topbar')[0].getBoundingClientRect())
+    if($('.site-topbar')[0].getBoundingClientRect().top < -30){
+        console.log(1)
+        $('.site-header').addClass('site-header-fixed')
+    }
+    else $('.site-header').removeClass('site-header-fixed')
+}

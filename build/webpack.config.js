@@ -24,7 +24,7 @@ module.exports = {
         //[name] - 参数 - 入口的key
         filename: 'static/js/[name]-bundle.js',
         //处理静态资源路径
-        publicPath: `http://192.168.110.47:8080/`
+        publicPath: `http://127.0.0.1:8080/`
     },
     // 加载器
     module:loaders,
@@ -33,7 +33,7 @@ module.exports = {
     // 开发服务
     devServer: {
         contentBase:path.resolve(__dirname,"../dist/"),
-        host: "192.168.110.47",
+        host: "127.0.0.1",
         port: 8080,
         open: true,
         inline: true,   

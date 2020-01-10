@@ -1,3 +1,4 @@
+
 /* Theme Default */
 .x0p.default .icon-wrapper {
 	position: relative;
@@ -7,7 +8,16 @@
 	vertical-align: top;
 	/*text-align: center;*/
 }
-
+.x0p.default .no-icon{
+	width: 0;
+}
+.x0p.default .no-icon~.text-wrapper{
+	width: 100%;
+	text-align: center;
+}
+.x0p.default .no-icon~.text-wrapper>.text-anchor>.title{
+	padding: 0;
+}
 .x0p.default .text-wrapper {
 	position: relative;
 	width: 65%;
@@ -28,9 +38,10 @@
 
 .x0p.default .text-anchor {
 	position: absolute;
+	left: 50%;
 	top: 50%;
 	width: 100%;
-	transform: translateY(-50%);
+	transform: translate(-50%,-50%);
 }
 
 .x0p.default .content {
@@ -60,8 +71,8 @@
 .x0p.default .title {
 	padding: 0 25px;
 	box-sizing: border-box;
-	font-size: 28px;
-	font-weight: bold;
+	font-size: 22px;
+	font-weight: 500;
 	color: #333;
 }
 
@@ -136,13 +147,13 @@
 }
 
 .x0p.default .button-ok {
-	background-color: #60BF80;
-	outline-color: #207F40;
+	background-color: rgb(158, 206, 69);
+	outline-color: rgb(95, 128, 34);
 	color: #fefefe;
 }
 
 .x0p.default .button-ok:hover {
-	background-color: #50AF70;
+	background-color: #84B130;
 }
 
 .x0p.default .button-cancel {

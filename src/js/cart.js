@@ -1,25 +1,32 @@
 import "../less/normalized.less"
 import "../less/header-footer.less"
 import "../less/cart.less"
+import {myAjax,scrollToTop} from './util.js'
 import "./header-footer.js"
-import {myAjaxGet,myAjaxPost} from './util.js'
+
 
 /***退出登录返回首页***/ 
 function isLogin(){
-    let username = sessionStorage.getItem('username');
+    let username = localStorage.getItem('username');
     if(!username){
         window.location.href="../../index.html"
     }    
 }
 isLogin();
 $('#user-logout').click(function(){
-    sessionStorage.clear();
+    localStorage.clear();
     isLogin();
 });
 
 /***监听窗口滚动***/
+if($('.list-content')[0].getBoundingClientRect().height < $('.content-item')[0].getBoundingClientRect().height * 2){
+    $('.list-bottom').removeClass('list-bottom-fixed')
+}
+else{
+    $('.list-bottom').addClass('list-bottom-fixed')
+}
 window.onscroll = ()=>{
-    if(window.scrollY >= (800 - document.body.offsetHeight)){
+    if($('.box-hd')[0].getBoundingClientRect().top < document.body.offsetHeight){
         $('.list-bottom').removeClass('list-bottom-fixed')
     }
     else{
@@ -34,59 +41,62 @@ window.onscroll = ()=>{
 };
 
 /**回到顶部**/ 
-// scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
-//     offset >= 700?$('.tool-bar').removeClass('hide'):$('.tool-bar').addClass('hide')
-// }});
+scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
+    offset >= 700?$('.tool-bar').removeClass('hide'):$('.tool-bar').addClass('hide')
+}});
 
-/***请求数据加载页面***/
-(function(){
-
-})();
-/****ajax请求****/ 
-window.onload = function () {
-    let brand = document.querySelector('.list-content')
-    myAjaxGet(`/carts/`, function (data) {
-        console.log(data)
-        let htmlStr = "";
-        data.forEach(item => {
-            htmlStr += `
-                <div class="content-item" data-id="0" data-num="0">
-                <div class="col col-check">
-                    <i class="iconfont icon-checkbox"></i>
-                </div>
-                <div class="col col-img">
-                        <img alt="" src="${item.goods.goodsimages[0].goods_img}">
-                </div>
-                <div class="col col-name">
-                    ${item.goods.goods_title}
-                </div>
-                <div class="col col-price">
-                    <div class="price-line">
-                        <em class="price-original"></em>
-                    </div>
-                    <div class="price-line">
-                        <em class="price-now">${item.goods.goods_price}元</em>
-                    </div>
-                </div>
-                <div class="col col-num">
-                    <input class="btnReduce" type="button" value="-" />
-                    <input class="buyNum" type="text" value="1" data-num="1"/>
-                    <input class="btnAdd" type="button" value="+" />
-                </div>
-                <div class="col col-total"><span></span>元</div>
-                <div class="col col-action"><span class="delItem">×</span></div>
-                </div>
-                `
-        })
-        brand.innerHTML = htmlStr
-        addNums();
-        minusNums();
-        printNum();
-        getTotal();
-        maskPopup();
-        iptOnclick()        
-    });
-}
+/***ajax请求数据加载页面***/
+// window.onload = function () {
+//     let brand = document.querySelector('.list-content')
+//     myAjax(`/carts/`, 'get',function (data) {
+//         console.log(data)
+//         let htmlStr = '',
+//             priceStr = '';
+//         data.forEach(item => {
+//             if(){
+//                 priceStr = `<div class="col col-price">
+//                                 <div class="price-line">
+//                                     <em class="price-original"></em>
+//                                 </div>
+//                                 <div class="price-line">
+//                                     <em class="price-now">${item.goods.goods_price}元</em>
+//                                 </div>
+//                             </div>`
+//             }
+//             else{
+//                 priceStr = ``
+//             }
+//             htmlStr += `
+//                 <div class="content-item" data-id="0" data-num="0">
+//                     <div class="col col-check">
+//                         <i class="iconfont icon-checkbox"></i>
+//                     </div>
+//                     <div class="col col-img">
+//                             <img alt="" src="${item.goods.goodsimages[0].goods_img}">
+//                     </div>
+//                     <div class="col col-name">
+//                         ${item.goods.goods_title}
+//                     </div>
+//                     ${priceStr}
+//                     <div class="col col-num">
+//                         <input class="btnReduce" type="button" value="-" />
+//                         <input class="buyNum" type="text" value="1" data-num="1"/>
+//                         <input class="btnAdd" type="button" value="+" />
+//                     </div>
+//                     <div class="col col-total"><span></span>元</div>
+//                     <div class="col col-action"><span class="delItem">×</span></div>
+//                 </div>
+//                 `
+//         })
+//         brand.innerHTML = htmlStr
+//         addNums();
+//         minusNums();
+//         printNum();
+//         getTotal();
+//         maskPopup();
+//         iptOnclick()        
+//     });
+// }
 
 /***购买数量增加***/ 
 function addNums() {
@@ -233,7 +243,6 @@ function maskPopup(){
         }
     })
 }
-
 // mask各种点击事件
 function maskAction(el,index) {
     let isDel = false;

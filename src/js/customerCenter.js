@@ -3,8 +3,9 @@ import '../less/header-footer.less'
 import '../less/normalized.less'
 import '../less/customerCenter.less'
 import 'distpicker/dist/distpicker'
-import "x0popup/dist/x0popup.min.css"
-import x0p from "x0popup/dist/x0popup.min.js"
+import "../css/x0popup.default.css"
+import "../css/x0popup.css"
+import x0p from "./x0popup.js"
 
 $('.menu-box .item').click(function(){
     $('.menu-box .item').each(function(){
@@ -163,11 +164,11 @@ $('.order-list .del').click(function(){
     x0p({
         title:'确认删除该订单？',
         animationType:'slideDown',
-        icon:'warning',
+        icon:'custom',
         buttons: [
             {
-                type: 'warning',
-                text: '取消'
+                type: 'cancel',
+                text: '取消'    
             },
             {
                 type: 'ok',
@@ -177,3 +178,67 @@ $('.order-list .del').click(function(){
     });
 })
 
+/*修改收货地址弹窗*/ 
+function maskPopup(){
+    let modItem = [...document.querySelectorAll('.modify')]
+    modItem.forEach((el,idx)=>{
+        el.onclick = (e) =>{
+            //弹框操作
+            console.log('点击')
+            maskAction(el,idx)
+        }
+    })
+}
+maskPopup();
+// mask各种点击事件
+function maskAction(el,index) {
+    let isDel = false;
+    $('#mask').fadeIn();
+    setTimeout(function(){
+        $('#confirmBox').addClass('slideDown');
+    },100)
+    $("#delImg")[0].onclick = close;
+    //删除按钮，需请求接口
+}
+//关闭弹窗
+function close(){
+    $('#confirmBox').removeClass('slideDown');
+    setTimeout(function(){
+        $('#mask').fadeOut();
+    },100)
+}
+/**加载弹窗内容**/
+function loadPopup(){
+    $('#addAddr').click(function(){
+        
+    })
+}
+
+/**显示收货地址数量**/
+function showAddrNum(){
+    let addrItem = [...document.querySelectorAll('.addr-item')];
+    $('.addr-num')[0].innerHTML = ` ${addrItem.length} `;
+} 
+showAddrNum();
+
+/**删除地址**/ 
+function delAddress(){
+    $('.del-addr').click(function(){
+        x0p({
+            title:'确认删除该收货地址？',
+            animationType:'slideDown',
+            icon:'custom',
+            buttons: [
+                {
+                    type: 'cancel',
+                    text: '取消'    
+                },
+                {
+                    type: 'ok',
+                    text: '确认'
+                }
+            ]
+        });
+    })
+}
+delAddress();

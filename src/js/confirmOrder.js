@@ -1,7 +1,11 @@
 import "../less/normalized.less"
 import "../less/header-footer.less"
 import "../less/confirmOrder.less"
+import {myAjax,scrollToTop} from './util.js'
 import "./header-footer.js"
+
+/***加载topbar***/ 
+loadTopbar();
 
 /***退出登录返回首页***/ 
 function isLogin(){

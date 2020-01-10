@@ -86,7 +86,7 @@
 	top: 0;
 	width: 100%;
 	height: 100%;
-	background-color: rgba(180, 180, 180, .8);
+	background-color: rgba(59, 59, 59, 0.521);
 	z-index: 99998;
 	animation: x0pfadeIn .5s ease;
 }
@@ -150,7 +150,7 @@
 	position: absolute;
 	height: 8%;
 	border-radius: 10px;
-	background-color: #60BF80;
+	background-color: #84B130	;
 }
 
 .xi-ok-left::before {
