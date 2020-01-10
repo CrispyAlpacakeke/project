@@ -598,7 +598,7 @@ body {
 #content .main-box-2 .update-img .save-btn {
   margin-top: 10px;
 }
-#content .main-box-3 .add-more .head-tip {
+#content .main-box-3 .head-tip {
   width: 100%;
   height: 36px;
   line-height: 36px;
@@ -670,9 +670,16 @@ body {
   color: #666;
   border: 1px solid #ccc;
 }
-#content .main-box-3 .address-list {
-  box-sizing: border-box;
+#content .main-box-3 .address-list .head-tip {
+  background-color: #f4fff3;
+}
+#content .main-box-3 .address-list .addr-item {
+  padding: 8px 0;
+  margin: 12px 0;
   border: 1px solid #e6e6e6;
+  box-sizing: border-box;
+  transition: 0.2s ease;
+  cursor: pointer;
 }
 #content .main-box-3 .address-list .addr-item .item-head {
   height: 40px;
@@ -692,13 +699,29 @@ body {
   color: white;
 }
 #content .main-box-3 .address-list .addr-item .item-cont {
-  margin-top: 14px;
+  margin-top: 8px;
 }
 #content .main-box-3 .address-list .addr-item .item-cont .item {
   margin-bottom: 10px;
 }
 #content .main-box-3 .address-list .addr-item .item-cont .item .label {
   color: #757575;
+  padding: 6px 0;
+}
+#content .main-box-3 .address-list .addr-item .item-cont .item .action {
+  color: #F1BC18;
+  padding-right: 16px;
+  opacity: 0;
+  transition: 0.2s ease;
+}
+#content .main-box-3 .address-list .addr-item .item-cont .item .action span {
+  margin-right: 12px;
+}
+#content .main-box-3 .address-list .addr-item:hover {
+  border-color: #b0b0b0;
+}
+#content .main-box-3 .address-list .addr-item:hover .action {
+  opacity: 1 !important;
 }
 .x0p.default .title {
   font-size: 22px !important;

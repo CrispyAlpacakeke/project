@@ -638,17 +638,17 @@ body{
     }  
     /*收货地址*/
     .main-box-3{
+        .head-tip{
+            width: 100%;
+            height: 36px;
+            line-height: 36px;
+            box-sizing: border-box;
+            padding-left: 12px;
+            background-color: #fffbf3;
+            font-size: 12px;
+            color: @active;
+        }
         .add-more{
-            .head-tip{
-                width: 100%;
-                height: 36px;
-                line-height: 36px;
-                box-sizing: border-box;
-                padding-left: 12px;
-                background-color: #fffbf3;
-                font-size: 12px;
-                color: @active;
-            }
             .addr-form{
                 margin-top: 30px;
                 .item1{
@@ -717,9 +717,16 @@ body{
             }            
         }
         .address-list{
-            box-sizing: border-box;
-            border: 1px solid #e6e6e6;
+            .head-tip{
+                background-color: #f4fff3;
+            }
             .addr-item{
+                padding: 8px 0;
+                margin: 12px 0;
+                border: 1px solid #e6e6e6;
+                box-sizing: border-box;
+                transition: .2s ease;
+                cursor: pointer;
                 .item-head{
                     height: 40px;
                     padding-left: 24px;
@@ -738,12 +745,28 @@ body{
                     }
                 }
                 .item-cont{
-                    margin-top: 14px;
+                    margin-top: 8px;
                     .item{
                         margin-bottom: 10px;
                         .label{
                             color: @desc;
+                            padding: 6px 0;
                         }
+                        .action{
+                            color: @active;
+                            padding-right: 16px;
+                            opacity: 0;
+                            transition: .2s ease;
+                            span{
+                               margin-right: 12px; 
+                            }
+                        }
+                    }
+                }
+                &:hover{
+                    border-color: #b0b0b0;
+                    .action{
+                        opacity: 1 !important;
                     }
                 }
             }
