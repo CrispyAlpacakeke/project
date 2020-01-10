@@ -2,8 +2,8 @@ import "../less/normalized.less"
 import "../less/header-footer.less"
 import "../less/cart.less"
 import "./header-footer.js"
-import {scrollToTop} from './util.js'
-console.log(1)
+import {scrollToTop,b} from './util.js'
+
 /***退出登录返回首页***/ 
 function isLogin(){
     let username = sessionStorage.getItem('username');
@@ -47,6 +47,45 @@ scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
     maskPopup();
     iptOnclick()
 })();
+/****ajax请求****/ 
+window.onload = function () {
+    let brand = document.querySelector('.list-content')
+    $.myAjaxGet(`/add_to_carts/`, function (data) {
+        console.log(data)
+        let htmlStr = "";
+        data.forEach(item => {
+            htmlStr += `
+                <div class="content-item" data-id="0" data-num="0">
+                <div class="col col-check">
+                    <i class="iconfont icon-checkbox"></i>
+                </div>
+                <div class="col col-img">
+                        <img alt="" src="${item.goods.goodsimages[0].goods_img}">
+                </div>
+                <div class="col col-name">
+                    ${item.goods.goods_title}
+                </div>
+                <div class="col col-price">
+                    <div class="price-line">
+                        <em class="price-original"></em>
+                    </div>
+                    <div class="price-line">
+                        <em class="price-now">${item.goods.goods_price}</em>
+                    </div>
+                </div>
+                <div class="col col-num">
+                    <input class="btnReduce" type="button" value="-" />
+                    <input class="buyNum" type="text" value="1" data-num="1"/>
+                    <input class="btnAdd" type="button" value="+" />
+                </div>
+                <div class="col col-total"><span></span>元</div>
+                <div class="col col-action"><span class="delItem">×</span></div>
+                </div>
+                `
+        })
+        brand.innerHTML = htmlStr
+    });
+}
 
 /***购买数量增加***/ 
 function addNums() {
