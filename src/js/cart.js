@@ -19,26 +19,26 @@ $('#user-logout').click(function(){
 });
 
 /***监听窗口滚动***/
-if($('.list-content')[0].getBoundingClientRect().height < $('.content-item')[0].getBoundingClientRect().height * 2){
-    $('.list-bottom').removeClass('list-bottom-fixed')
-}
-else{
-    $('.list-bottom').addClass('list-bottom-fixed')
-}
-window.onscroll = ()=>{
-    if($('.box-hd')[0].getBoundingClientRect().top < document.body.offsetHeight){
-        $('.list-bottom').removeClass('list-bottom-fixed')
-    }
-    else{
-        $('.list-bottom').addClass('list-bottom-fixed')
-    }
-    if(window.scrollY > 700){
-        $('.tool-bar').removeClass('hide')
-    }
-    else{
-        $('.tool-bar').addClass('hide')
-    }
-};
+// if($('.list-content')[0].getBoundingClientRect().height < $('.content-item')[0].getBoundingClientRect().height * 2){
+//     $('.list-bottom').removeClass('list-bottom-fixed')
+// }
+// else{
+//     $('.list-bottom').addClass('list-bottom-fixed')
+// }
+// window.onscroll = ()=>{
+//     if($('.box-hd')[0].getBoundingClientRect().top < document.body.offsetHeight){
+//         $('.list-bottom').removeClass('list-bottom-fixed')
+//     }
+//     else{
+//         $('.list-bottom').addClass('list-bottom-fixed')
+//     }
+//     if(window.scrollY > 700){
+//         $('.tool-bar').removeClass('hide')
+//     }
+//     else{
+//         $('.tool-bar').addClass('hide')
+//     }
+// };
 
 /**回到顶部**/ 
 scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
@@ -46,57 +46,63 @@ scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
 }});
 
 /***ajax请求数据加载页面***/
-// window.onload = function () {
-//     let brand = document.querySelector('.list-content')
-//     myAjax(`/carts/`, 'get',function (data) {
-//         console.log(data)
-//         let htmlStr = '',
-//             priceStr = '';
-//         data.forEach(item => {
-//             if(){
-//                 priceStr = `<div class="col col-price">
-//                                 <div class="price-line">
-//                                     <em class="price-original"></em>
-//                                 </div>
-//                                 <div class="price-line">
-//                                     <em class="price-now">${item.goods.goods_price}元</em>
-//                                 </div>
-//                             </div>`
-//             }
-//             else{
-//                 priceStr = ``
-//             }
-//             htmlStr += `
-//                 <div class="content-item" data-id="0" data-num="0">
-//                     <div class="col col-check">
-//                         <i class="iconfont icon-checkbox"></i>
-//                     </div>
-//                     <div class="col col-img">
-//                             <img alt="" src="${item.goods.goodsimages[0].goods_img}">
-//                     </div>
-//                     <div class="col col-name">
-//                         ${item.goods.goods_title}
-//                     </div>
-//                     ${priceStr}
-//                     <div class="col col-num">
-//                         <input class="btnReduce" type="button" value="-" />
-//                         <input class="buyNum" type="text" value="1" data-num="1"/>
-//                         <input class="btnAdd" type="button" value="+" />
-//                     </div>
-//                     <div class="col col-total"><span></span>元</div>
-//                     <div class="col col-action"><span class="delItem">×</span></div>
-//                 </div>
-//                 `
-//         })
-//         brand.innerHTML = htmlStr
-//         addNums();
-//         minusNums();
-//         printNum();
-//         getTotal();
-//         maskPopup();
-//         iptOnclick()        
-//     });
-// }
+window.onload = function () {
+    let brand = document.querySelector('.list-content')
+    myAjax(`/carts/`,'get',function(data) {
+        console.log(data)
+        let htmlStr = "";
+        let htmlPrice = '';
+        data.forEach(item => {
+            // console.log(item.goods)
+            if(item.goods.discountgoods_set[0]){
+                // console.log(item.goods.discountgoods_set[0].discounted_price)
+                htmlPrice = `<div class="col col-price">
+                                <div class="price-line">
+                                    <em class="price-original">${item.goods.goods_price}元</em>
+                                </div>
+                                <div class="price-line">
+                                    <em class="price-now">${item.goods.discountgoods_set[0].discounted_price}元</em>
+                                </div>
+                            </div>`
+            }
+            else{
+                htmlPrice = `<div class="col col-price">
+                                <div class="price-line">
+                                    <em class="price-now">${item.goods.goods_price}元</em>
+                                </div>
+                            </div>`
+            }
+            htmlStr += `
+                        <div class="content-item" data-num="0" data-id='${item.id}' data-goodsId='${item.goods.id}'>
+                            <div class="col col-check">
+                                <i class="iconfont icon-checkbox"></i>
+                            </div>
+                            <div class="col col-img">
+                                    <img alt="" src="${item.goods.goods_images[0].goods_img}">
+                            </div>
+                            <div class="col col-name">
+                                ${item.goods.goods_title}
+                            </div>
+                            ${htmlPrice}
+                            <div class="col col-num">
+                                <input class="btnReduce" type="button" value="-" />
+                                <input class="buyNum" type="text" value="${item.goods_number}" data-num="1" id="goodsNum"/>
+                                <input class="btnAdd" type="button" value="+" />
+                            </div>
+                            <div class="col col-total"><span></span>元</div>
+                            <div class="col col-action"><span class="delItem">×</span></div>
+                        </div>
+                        `
+        })
+        brand.innerHTML = htmlStr
+        addNums();
+        minusNums();
+        printNum();
+        getTotal();
+        maskPopup();
+        iptOnclick();        
+    });
+}
 
 /***购买数量增加***/ 
 function addNums() {
@@ -115,6 +121,9 @@ function addNums() {
         // 用函数循环每一个商品购买数量和单价，计算得到商品总价，并将总价相加，得到合计数量
         getTotal();
         printNum();
+        myAjax(`/carts/`,'post',$(this).parent().parent()[0].dataset.goodsId,function(data) {
+            console.log(data)
+        });
     })
 }
 /****购买数量减少****/ 
