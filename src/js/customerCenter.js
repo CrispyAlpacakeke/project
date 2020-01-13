@@ -7,6 +7,7 @@ import "../css/x0popup.default.css"
 import "../css/x0popup.css"
 import x0p from "./x0popup.js"
 import {myAjax,BASE_URL} from "./util.js"
+import {loadMyOrder} from "./loading.js"
 
 $('.menu-box .item').click(function(){
     $('.menu-box .item').each(function(){
@@ -193,47 +194,11 @@ function loadPersonDetail(){
     })   
 }
 //ajax请求加载我的订单
-function loadMyOrder(){
-    myAjax('/order/','get',function(data){
-        let htmlStr = ''
-        let itemStr = ''
-        data.forEach(el=>{
-            htmlStr += `<li class="list-item">
-                        <p>
-                            订单号：
-                            <span class="order-num">${el.order_num}</span>
-                            <span class="del"><i class="iconfont iconshanchu"></i></span>
-                        </p>
-                        <section>
-                            <div class="order-info">
-                                <div class="info-item">
-                                    <img src="${el.goods.goodsimages_set[0].goods_img}" alt="">
-                                    <span class="name">产品名称</span>
-                                    <span class="num">x1</span>                                            
-                                </div>
-                            </div>
-                            <div class="order-username">
-                                <span>${el.user_name}</span>
-                            </div>
-                            <div class="order-pay-method">
-                                <span class="one">0.00</span>
-                                <span class="two">在线支付</span>
-                            </div>
-                            <div class="order-status">
-                                <span>已完成</span>
-                            </div>
-                            <div class="order-action">
-                                <span class="three"><a href="javascript:;">评价</a></span>
-                                <span class="two">立即购买</span>
-                            </div>
-                        </section>
-                    </li>`
-        })
-        $('.order-list')[0].innerHTML = htmlStr
-        console.log(data,'myorder')
-    }) 
-}
-loadMyOrder();
+myAjax('/order/','get',function(data){
+    console.log(data,`myorder`)
+    let orderList =  $('.order-list')[0];
+    loadMyOrder(data,orderList)
+}) 
 loadPersonDetail();
 /**个人信息**/
 //tab切换

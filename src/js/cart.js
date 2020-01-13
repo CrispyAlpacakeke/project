@@ -3,6 +3,7 @@ import "../less/header-footer.less"
 import "../less/cart.less"
 import {myAjax,scrollToTop,BASE_URL} from './util.js'
 import "./header-footer.js"
+import {loadCart} from "./loading.js"
 
 import "../css/x0popup.default.css"
 import "../css/x0popup.css"
@@ -48,49 +49,7 @@ new Promise((resolve,reject)=>{
     let brand = document.querySelector('.list-content')
     myAjax(`/carts/`,'get',function(data) {
         console.log(data,78)
-        let htmlStr = "";
-        let htmlPrice = '';
-        data.forEach(item => {
-            if(item.goods.discountgoods_set[0]){
-                htmlPrice = `<div class="col col-price">
-                                <div class="price-line">
-                                    <em class="price-original">${item.goods.goods_price}元</em>
-                                </div>
-                                <div class="price-line">
-                                    <em class="price-now">${item.goods.discountgoods_set[0].discounted_price}元</em>
-                                </div>
-                            </div>`
-            }
-            else{
-                htmlPrice = `<div class="col col-price">
-                                <div class="price-line">
-                                    <em class="price-now">${item.goods.goods_price}元</em>
-                                </div>
-                            </div>`
-            }
-            htmlStr += `
-                        <div class="content-item" data-num="${item.goods_number}" data-id='${item.id}' data-goods='${item.goods.id}'>
-                            <div class="col col-check">
-                                <i class="iconfont icon-checkbox"></i>
-                            </div>
-                            <div class="col col-img">
-                                    <img alt="" src="${item.goods.goodsimages_set[0].goods_img}">
-                            </div>
-                            <div class="col col-name">
-                                ${item.goods.goods_title}
-                            </div>
-                            ${htmlPrice}
-                            <div class="col col-num">
-                                <input class="btnReduce" type="button" value="-" />
-                                <input class="buyNum" type="text" value="${item.goods_number}" data-num="1" id="goodsNum"/>
-                                <input class="btnAdd" type="button" value="+" />
-                            </div>
-                            <div class="col col-total"><span></span>元</div>
-                            <div class="col col-action"><span class="delItem">×</span></div>
-                        </div>
-                        `
-        })
-        brand.innerHTML = htmlStr;
+        loadCart(data,brand);
         resolve();
     });        
 }).then(res=>{

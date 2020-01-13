@@ -222,13 +222,13 @@ if($('.search-text')[0]){
             data.forEach(obj => {
                 htmlStr += `<li data-key=""><a href="#"> ${obj.goods_title}</a></li>`;
             });
-            $('.result-list')[0].innerHTML = htmlStr;        
+            $('.result-list')[0].innerHTML = htmlStr;   
+            if(data.length != 0){
+              $('.result-list').parent().slideDown(200);  
+            }
         })
-        $('.result-list').parent().slideDown(200);
     }
     $('.search-text').blur(function(){
         $('.result-list').parent().slideUp(200);
-    }).click(function(){
-        $('.result-list').parent().slideDown(200);
-    })    
+    })   
 }

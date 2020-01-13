@@ -105,7 +105,4 @@ function myAjax(url,method,data,callback){
     })    
 }
 
-/*动态加载topbar*/
-
-
 module.exports = {scrollToTop,myAjax,BASE_URL,api_host};
