@@ -89,27 +89,6 @@ module.exports = [
     }),
     new HtmlWebpackPlugin({
         // 模板文件
-        template: "./src/pages/cashier.html",
-        // 标题
-        title: "收银台",
-        // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
-        filename: "static/pages/cashier.html",
-        // 静态资源位置
-        inject: "body",
-        // 是否hash
-        hash: false,
-        // 指定输出文件所依赖的入口文件（*.js）的[name]
-        chunks: ["cashier"],
-        // 控制压缩
-        minify: {
-            collapseWhitespace: false,
-            removeComments: true,
-            removeAttributeQuotes: true,
-            removeEmptyAttributes: true
-        }
-    }),
-    new HtmlWebpackPlugin({
-        // 模板文件
         template: "./src/pages/confirmOrder.html",
         // 标题
         title: "确认订单",
@@ -152,27 +131,6 @@ module.exports = [
     }),   
     new HtmlWebpackPlugin({
         // 模板文件
-        template: "./src/pages/paySuccess.html",
-        // 标题
-        title: "支付成功",
-        // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
-        filename: "static/pages/paySuccess.html",
-        // 静态资源位置
-        inject: "body",
-        // 是否hash
-        hash: false,
-        // 指定输出文件所依赖的入口文件（*.js）的[name]
-        chunks: ["paySuccess"],
-        // 控制压缩
-        minify: {
-            collapseWhitespace: false,
-            removeComments: true,
-            removeAttributeQuotes: true,
-            removeEmptyAttributes: true
-        }
-    }),   
-    new HtmlWebpackPlugin({
-        // 模板文件
         template: "./src/pages/productsDetails.html",
         // 标题
         title: "商品详情页",
@@ -205,27 +163,6 @@ module.exports = [
         hash: false,
         // 指定输出文件所依赖的入口文件（*.js）的[name]
         chunks: ["productsList"],
-        // 控制压缩
-        minify: {
-            collapseWhitespace: false,
-            removeComments: true,
-            removeAttributeQuotes: true,
-            removeEmptyAttributes: true
-        }
-    }),
-    new HtmlWebpackPlugin({
-        // 模板文件
-        template: "./src/pages/wechatPay.html",
-        // 标题
-        title: "微信支付",
-        // 文件名(相对于output.path)，可通过文件名设置目录，如 static/pages/detail.html
-        filename: "static/pages/wechatPay.html",
-        // 静态资源位置
-        inject: "body",
-        // 是否hash
-        hash: false,
-        // 指定输出文件所依赖的入口文件（*.js）的[name]
-        chunks: ["wechatPay"],
         // 控制压缩
         minify: {
             collapseWhitespace: false,

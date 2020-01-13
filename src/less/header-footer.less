@@ -177,6 +177,28 @@
         top: 50%;
         right:160px;
         transform: translateY(-50%);
+        .keyword-list{
+            width: 245px;
+            border: 1px solid @themeColor;
+            position: absolute;
+            top:47px;
+            left: 8px;
+            background: white;
+            z-index: 30;
+            display: none;
+            li{
+                line-height: 24px;
+                &:hover{
+                    background: #fafafa;
+                }
+                a{
+                    color: #424242;
+                    font-size: 12px;
+                    padding: 6px 15px;
+                    display: block;                    
+                }
+            }
+        }
         .search-form{
             position: relative;
             input{

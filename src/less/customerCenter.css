@@ -1,9 +1,53 @@
+/*公共样式*/
+.form .item {
+  margin-bottom: 20px;
+  font-size: 12px;
+  line-height: 30px;
+}
+.form .item .label {
+  float: left;
+  height: 18px;
+  line-height: 18px;
+  padding: 8px 0;
+  width: 100px;
+  text-align: right;
+}
+.form .item .label em {
+  color: #e4393c;
+  text-align: right;
+  line-height: 18px;
+}
+.form .item input[type=text] {
+  height: 18px;
+  line-height: 18px;
+  width: 148px;
+  padding: 8px 24px 8px 8px;
+  border: 1px solid #ccc;
+}
+.form .item .tip {
+  color: #757575;
+  margin-left: 8px;
+}
+.btn {
+  display: inline-block;
+  width: 68px;
+  height: 24px;
+  line-height: 24px;
+  background: linear-gradient(to bottom, #f5fbef 0, #eaf6e2 100%);
+  border-radius: 2px;
+  border: 1px solid #bfd6af;
+  color: #333;
+  text-align: center;
+  font-size: 12px;
+  cursor: pointer;
+}
 .hide {
   display: none;
 }
 body {
   background-color: #f5f5f5;
 }
+/*main*/
 #content {
   /*******我的订单样式写这里********/
   /*个人信息*/
@@ -287,19 +331,25 @@ body {
   display: flex;
   justify-content: center;
   align-content: center;
-  height: 110px;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-one {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-info {
   width: 450px;
-  padding: 10px 0 10px 10px;
+  padding: 0 10px;
   margin: auto 0;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-one img {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-info .info-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #dddddd;
+}
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-info .info-item:last-child {
+  border: none;
+}
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-info img {
   width: 60px;
   height: 60px;
   border: 1px solid #dddddd;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-one .one {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-info .name {
   display: inline-block;
   width: 240px;
   font-size: 12px;
@@ -307,23 +357,23 @@ body {
   cursor: pointer;
   padding-left: 10px;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-one .one:hover {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-info .name:hover {
   color: #F1BC18;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-one .two {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-info .num {
   display: inline-block;
   width: 80px;
-  text-align: center;
+  text-align: right;
   font-size: 12px;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-two {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-username {
   width: 100px;
   text-align: center;
   border-left: 1px solid #dddddd;
   border-right: 1px solid #dddddd;
   position: relative;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-two span {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-username span {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -337,7 +387,7 @@ body {
   -webkit-box-orient: vertical;
   font-size: 12px;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-three {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-pay-method {
   width: 100px;
   display: flex;
   flex-flow: row wrap;
@@ -346,27 +396,40 @@ body {
   text-align: center;
   border-right: 1px solid #dddddd;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-three .one {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-pay-method .one {
   width: 80px;
   height: 30px;
   line-height: 30px;
   font-size: 12px;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-three .two {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-pay-method .two {
   width: 88px;
   height: 30px;
   font-size: 12px;
   padding-top: 10px;
   border-top: 1px solid #dddddd;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-four {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-status {
   width: 100px;
+  position: relative;
   text-align: center;
   border-right: 1px solid #dddddd;
-  padding: 50px 10px;
+}
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-status span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 80px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
   font-size: 12px;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-five {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-action {
   width: 110px;
   text-align: center;
   display: flex;
@@ -375,7 +438,7 @@ body {
   align-content: center;
   position: relative;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-five .one {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-action .one {
   opacity: 0;
   cursor: pointer;
   position: absolute;
@@ -383,11 +446,11 @@ body {
   right: 8px;
   top: -24px;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-five .one:hover {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-action .one:hover {
   color: #F1BC18;
   background-color: white;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-five .two {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-action .two {
   display: inline-block;
   width: 80px;
   height: 30px;
@@ -398,65 +461,23 @@ body {
   line-height: 30px;
   cursor: pointer;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-five .two:hover {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-action .two:hover {
   border: 1px solid #F1BC18;
   color: #F1BC18;
   background-color: white;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-five .three {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-action .three {
   width: 88px;
   height: 30px;
   line-height: 30px;
   font-size: 12px;
   border-bottom: 1px solid #dddddd;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-five .three a {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-action .three a {
   color: #333;
 }
-#content .main-box-1 .order-list-cont .order-list .list-item section .order-five .three a:hover {
+#content .main-box-1 .order-list-cont .order-list .list-item section .order-action .three a:hover {
   color: #F1BC18;
-}
-#content .form .item {
-  margin-bottom: 20px;
-  font-size: 12px;
-  line-height: 30px;
-}
-#content .form .item .label {
-  float: left;
-  height: 18px;
-  line-height: 18px;
-  padding: 8px 0;
-  width: 100px;
-  text-align: right;
-}
-#content .form .item .label em {
-  color: #e4393c;
-  text-align: right;
-  line-height: 18px;
-}
-#content .form .item input[type=text] {
-  height: 18px;
-  line-height: 18px;
-  width: 148px;
-  padding: 8px 24px 8px 8px;
-  border: 1px solid #ccc;
-}
-#content .form .item .tip {
-  color: #757575;
-  margin-left: 8px;
-}
-#content .btn {
-  display: inline-block;
-  width: 68px;
-  height: 24px;
-  line-height: 24px;
-  background: linear-gradient(to bottom, #f5fbef 0, #eaf6e2 100%);
-  border-radius: 2px;
-  border: 1px solid #bfd6af;
-  color: #333;
-  text-align: center;
-  font-size: 12px;
-  cursor: pointer;
 }
 #content .main-box-2 .btn {
   display: inline-block;
@@ -591,87 +612,27 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: url(../images/photo.jpg) no-repeat center;
-  background-size: cover;
   z-index: 5;
 }
 #content .main-box-2 .update-img .save-btn {
   margin-top: 10px;
 }
-#content .main-box-3 .head-tip {
-  width: 100%;
+#content .main-box-3 .add-btn {
+  width: 142px;
   height: 36px;
   line-height: 36px;
-  box-sizing: border-box;
-  padding-left: 12px;
-  background-color: #fffbf3;
-  font-size: 12px;
-  color: #F1BC18;
 }
-#content .main-box-3 .add-more .addr-form {
-  margin-top: 30px;
-}
-#content .main-box-3 .add-more .addr-form .item1 {
-  margin-bottom: 0px;
-}
-#content .main-box-3 .add-more .addr-form .item .txt1 {
-  width: 429px;
-}
-#content .main-box-3 .add-more .addr-form .item .tip {
-  margin-left: 0;
-}
-#content .main-box-3 .add-more .addr-form .item .checkbox-inner {
+#content .main-box-3 .head-tip {
   display: inline-block;
-  width: 14px;
-  height: 14px;
-  background-color: white;
-  border-radius: 3px;
-  border: 1px solid #ccc;
-  position: relative;
-  transition: 0.2s ease;
-}
-#content .main-box-3 .add-more .addr-form .item .checkbox-inner input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  width: 16px;
-  height: 16px;
-  cursor: pointer;
-  z-index: 10;
-}
-#content .main-box-3 .add-more .addr-form .item .checkbox-label {
-  vertical-align: 3px;
-  margin-left: 4px;
-}
-#content .main-box-3 .add-more .addr-form .item .checked .checkbox-inner {
-  background-color: #84B130;
-  border-color: transparent;
-  position: relative;
-}
-#content .main-box-3 .add-more .addr-form .item .checked .checkbox-inner::after {
-  content: '';
-  width: 3px;
-  height: 7px;
-  transform: rotate(45deg);
-  border-bottom: 2px solid white;
-  border-right: 2px solid white;
-  position: absolute;
-  top: 2px;
-  left: 4px;
-}
-#content .main-box-3 .add-more select {
-  height: 35px;
-  margin-right: 6px;
-  line-height: 18px;
-  width: 148px;
-  padding-left: 8px;
+  height: 36px;
+  line-height: 36px;
+  margin-left: 12px;
+  box-sizing: border-box;
   font-size: 12px;
-  color: #666;
-  border: 1px solid #ccc;
+  color: #757575;
 }
-#content .main-box-3 .address-list .head-tip {
-  background-color: #f4fff3;
+#content .main-box-3 .address-list {
+  margin-top: 24px;
 }
 #content .main-box-3 .address-list .addr-item {
   padding: 8px 0;
@@ -723,18 +684,117 @@ body {
 #content .main-box-3 .address-list .addr-item:hover .action {
   opacity: 1 !important;
 }
-.x0p.default .title {
-  font-size: 22px !important;
-  font-weight: 500 !important;
+/*蒙层*/
+#mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: none;
 }
-.x0p.default .button-ok {
-  background-color: #84B130 !important;
+#mask #confirmBox {
+  width: 876px;
+  height: 400px;
+  position: fixed;
+  top: -1000px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  transition: top 0.4s ease-out;
 }
-.x0p.default .button-warning {
-  color: #757575 !important;
-  background-color: #f3f3f3 !important;
+#mask #confirmBox.slideDown {
+  top: 0;
 }
-.xi-ok span::before,
-.xi-ok span::after {
-  background-color: #84B130 !important;
+#mask #confirmBox .delImg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  border-radius: 100%;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+#mask #confirmBox .delImg .iconfont {
+  font-size: 12px;
+  color: #757575;
+  vertical-align: middle;
+}
+#mask #confirmBox .delImg:hover {
+  background-color: #e53935;
+}
+#mask #confirmBox .delImg:hover .iconfont {
+  color: white;
+}
+#mask #confirmBox .add-more .addr-form {
+  margin-top: 30px;
+}
+#mask #confirmBox .add-more .addr-form .item1 {
+  margin-bottom: 0px;
+}
+#mask #confirmBox .add-more .addr-form .item .txt1 {
+  width: 429px;
+}
+#mask #confirmBox .add-more .addr-form .item .tip {
+  margin-left: 0;
+}
+#mask #confirmBox .add-more .addr-form .item .checkbox-inner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  position: relative;
+  transition: 0.2s ease;
+}
+#mask #confirmBox .add-more .addr-form .item .checkbox-inner input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  z-index: 10;
+}
+#mask #confirmBox .add-more .addr-form .item .checkbox-label {
+  vertical-align: 3px;
+  margin-left: 4px;
+}
+#mask #confirmBox .add-more .addr-form .item .checked .checkbox-inner {
+  background-color: #84B130;
+  border-color: transparent;
+  position: relative;
+}
+#mask #confirmBox .add-more .addr-form .item .checked .checkbox-inner::after {
+  content: '';
+  width: 3px;
+  height: 7px;
+  transform: rotate(45deg);
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  position: absolute;
+  top: 2px;
+  left: 4px;
+}
+#mask #confirmBox .add-more select {
+  height: 35px;
+  margin-right: 6px;
+  line-height: 18px;
+  width: 148px;
+  padding-left: 8px;
+  font-size: 12px;
+  color: #666;
+  border: 1px solid #ccc;
+}
+.x0p-no-icon .text-anchor {
+  left: 40%;
 }

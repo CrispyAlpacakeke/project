@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('http://at.alicdn.com/t/font_1582201_xwv7u66jsno.css');
+@import url('http://at.alicdn.com/t/font_1582201_ha6ylgkcibe.css');
 /*去除标签的默认间距*/
 * {
   margin: 0px;
@@ -30,7 +30,7 @@ a {
 html,
 body {
   height: 100%;
-  font-family: Helvetica Neue, Helvetica, Arial, Microsoft Yahei, Hiragino Sans GB, Heiti SC, WenQuanYi Micro Hei, sans-serif;
+  font-family: "PingFang SC", "Lantinghei SC", "Microsoft YaHei", "HanHei SC", "Helvetica Neue", "Open Sans", Arial, "Hiragino Sans GB", "微软雅黑", STHeiti, "WenQuanYi Micro Hei", SimSun, sans-serif;
 }
 /*列表和表单*/
 ul,

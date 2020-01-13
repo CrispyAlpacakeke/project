@@ -1,0 +1,459 @@
+#head .site-header {
+  height: 80px;
+  position: relative;
+  background-color: #84B130;
+}
+#head .site-header .header-title {
+  position: absolute;
+  left: 0;
+  margin-left: 0;
+  line-height: 80px;
+  color: white !important;
+}
+#content {
+  background-color: white;
+}
+#content .collocation {
+  margin-top: 50px;
+}
+#content .collocation p {
+  width: 188px;
+  height: 18px;
+  font-weight: 400;
+  color: #999999;
+}
+#content .collocation h3 {
+  width: 500px;
+  height: 24px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #666666;
+  margin-top: 30px;
+}
+#content .collocation section {
+  margin-top: 50px;
+}
+#content .collocation section .detailsOne {
+  display: flex;
+}
+#content .collocation section .detailsOne .detailsOne_left {
+  width: 400px;
+  height: 400px;
+}
+#content .collocation section .detailsOne .detailsOne_rigth {
+  width: 678px;
+  height: 400px;
+  background: #f5f5f5;
+  position: relative;
+}
+#content .collocation section .detailsOne .detailsOne_rigth .one {
+  display: block;
+  width: 400px;
+  height: 51px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #666666;
+  position: absolute;
+  left: 67px;
+  top: 122px;
+}
+#content .collocation section .detailsOne .detailsOne_rigth .two {
+  display: block;
+  width: 150px;
+  height: 50px;
+  background: #f1bc18;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 50px;
+  text-align: center;
+  color: #fefefe;
+  position: absolute;
+  left: 63px;
+  top: 283px;
+}
+#content .collocation section .detailsOne .detailsOne_rigth .three {
+  display: block;
+  width: 150px;
+  height: 48px;
+  border: 1px solid #f1bc18;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 50px;
+  text-align: center;
+  color: #f1bc18;
+  position: absolute;
+  left: 213px;
+  top: 283px;
+}
+#content .collocation section .detailsOne .detailsOne_rigth .four {
+  width: 96px;
+  height: 18px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #999999;
+  position: absolute;
+  left: 389px;
+  top: 313px;
+}
+#content .collocation section .detailsTwo {
+  margin-top: 30px;
+  display: flex;
+}
+#content .collocation section .detailsTwo .detailsTwo_left {
+  width: 400px;
+  height: 400px;
+}
+#content .collocation section .detailsTwo .detailsTwo_rigth {
+  width: 678px;
+  height: 400px;
+  background: #f5f5f5;
+  position: relative;
+}
+#content .collocation section .detailsTwo .detailsTwo_rigth .one {
+  display: block;
+  width: 400px;
+  height: 51px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #666666;
+  position: absolute;
+  left: 67px;
+  top: 122px;
+}
+#content .collocation section .detailsTwo .detailsTwo_rigth .two {
+  display: block;
+  width: 150px;
+  height: 50px;
+  background: #f1bc18;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 50px;
+  text-align: center;
+  color: #fefefe;
+  position: absolute;
+  left: 63px;
+  top: 283px;
+}
+#content .collocation section .detailsTwo .detailsTwo_rigth .three {
+  display: block;
+  width: 150px;
+  height: 48px;
+  border: 1px solid #f1bc18;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 50px;
+  text-align: center;
+  color: #f1bc18;
+  position: absolute;
+  left: 213px;
+  top: 283px;
+}
+#content .collocation section .detailsTwo .detailsTwo_rigth .four {
+  width: 96px;
+  height: 18px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666666;
+  position: absolute;
+  left: 396px;
+  top: 313px;
+}
+#content .collocation .recommend {
+  margin: 50px 0;
+}
+#content .collocation .recommend .recommend_top ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#content .collocation .recommend .recommend_top ul .one {
+  width: 9px;
+  height: 9px;
+  background: #f1bc18;
+  border-radius: 50%;
+  margin-left: 8px;
+}
+#content .collocation .recommend .recommend_top ul .two {
+  width: 12px;
+  height: 12px;
+  background: #f1bc18;
+  border-radius: 50%;
+  margin-left: 8px;
+}
+#content .collocation .recommend .recommend_top ul .three {
+  width: 16px;
+  height: 16px;
+  background: #f1bc18;
+  border-radius: 50%;
+  margin-left: 8px;
+}
+#content .collocation .recommend .recommend_top ul .four {
+  width: 121px;
+  height: 24px;
+  font-size: 24px;
+  font-weight: 400;
+  color: #333333;
+  line-height: 20px;
+  margin: 0 15px;
+}
+#content .collocation .recommend .recommend_top ul .five {
+  width: 16px;
+  height: 16px;
+  background: #f1bc18;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+#content .collocation .recommend .recommend_top ul .six {
+  width: 12px;
+  height: 12px;
+  background: #f1bc18;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+#content .collocation .recommend .recommend_top ul .seven {
+  width: 9px;
+  height: 9px;
+  background: #f1bc18;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+#content .collocation .recommend .recommend_bottom {
+  margin-top: 20px;
+}
+#content .collocation .recommend .recommend_bottom ul {
+  display: flex;
+  justify-content: space-between;
+}
+#content .collocation .recommend .recommend_bottom ul li {
+  width: 217px;
+  height: 296px;
+  background: #ffffff;
+  border-radius: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .one img {
+  width: 200px;
+  height: 200px;
+  background: #5d5d5d;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .one h3 {
+  width: 90px;
+  height: 17px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666666;
+  line-height: 23px;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .one span {
+  display: block;
+  width: 180px;
+  height: 13px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #999999;
+  line-height: 23px;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .one p {
+  display: inline-block;
+  width: 101px;
+  height: 22px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #f1bc18;
+  line-height: 23px;
+  margin: 10px 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .one section {
+  display: inline-block;
+  width: 66px;
+  height: 14px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
+  line-height: 23px;
+  margin: 10px 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .two img {
+  width: 200px;
+  height: 200px;
+  background: #5d5d5d;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .two h3 {
+  width: 90px;
+  height: 17px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666666;
+  line-height: 23px;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .two span {
+  display: block;
+  width: 180px;
+  height: 13px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #999999;
+  line-height: 23px;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .two p {
+  display: inline-block;
+  width: 101px;
+  height: 22px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #f1bc18;
+  line-height: 23px;
+  margin: 10px 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .two section {
+  display: inline-block;
+  width: 66px;
+  height: 14px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
+  line-height: 23px;
+  margin: 10px 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .three img {
+  width: 200px;
+  height: 200px;
+  background: #5d5d5d;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .three h3 {
+  width: 90px;
+  height: 17px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666666;
+  line-height: 23px;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .three span {
+  display: block;
+  width: 180px;
+  height: 13px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #999999;
+  line-height: 23px;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .three p {
+  display: inline-block;
+  width: 101px;
+  height: 22px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #f1bc18;
+  line-height: 23px;
+  margin: 10px 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .three section {
+  display: inline-block;
+  width: 66px;
+  height: 14px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
+  line-height: 23px;
+  margin: 10px 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .four img {
+  width: 200px;
+  height: 200px;
+  background: #5d5d5d;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .four h3 {
+  width: 90px;
+  height: 17px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666666;
+  line-height: 23px;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .four span {
+  display: block;
+  width: 180px;
+  height: 13px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #999999;
+  line-height: 23px;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .four p {
+  display: inline-block;
+  width: 101px;
+  height: 22px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #f1bc18;
+  line-height: 23px;
+  margin: 10px 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .four section {
+  display: inline-block;
+  width: 66px;
+  height: 14px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
+  line-height: 23px;
+  margin: 10px 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .five img {
+  width: 200px;
+  height: 200px;
+  background: #5d5d5d;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .five h3 {
+  width: 90px;
+  height: 17px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #666666;
+  line-height: 23px;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .five span {
+  display: block;
+  width: 180px;
+  height: 13px;
+  font-size: 12px;
+  font-weight: 300;
+  color: #999999;
+  line-height: 23px;
+  margin: 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .five p {
+  display: inline-block;
+  width: 101px;
+  height: 22px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #f1bc18;
+  line-height: 23px;
+  margin: 10px 5px;
+}
+#content .collocation .recommend .recommend_bottom ul .five section {
+  display: inline-block;
+  width: 66px;
+  height: 14px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #999999;
+  line-height: 23px;
+  margin: 10px 5px;
+}

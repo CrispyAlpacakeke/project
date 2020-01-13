@@ -1,7 +1,10 @@
 import "../less/normalized.less"
 import "../less/header-footer.less"
 import "../less/login.less"
-
+import {BASE_URL,api_host} from "./util.js"
+import "../css/x0popup.default.css"
+import "../css/x0popup.css"
+import x0p from "./x0popup.js"
 
 let tabBtns = [...$(".loginContent_nav a")]
 let tabCons = [...$(".loginContent .lC")]
@@ -31,28 +34,33 @@ $('#login-btn').click(function(){
     let pwd = $("#pwd").val()
     // console.log(username,pwd)
     $.ajax({
-        url: `http://192.168.110.33:8000/api/token/`,
+        url: `${api_host}/api/token/`,
         type: "POST",
         dataType: "json",
-        // contentType: "application/json",
-        // headers: {
-        //     Authorization: 'Bearer ' + localStorage.getItem('access')
-        // },
         data: {
             username: `${username}`,
             password: `${pwd}` 
         }
     }).done(res=>{
         localStorage.setItem('access',`${res.access}`)
+        localStorage.setItem('refresh',`${res.refresh}`)
+        x0p({
+            title:`&nbsp;&nbsp;&nbsp;登录成功！`,
+            animationType:'slideDown',
+            icon:'ok',
+            maxWidth:'370px',
+            maxHeight:'168px',
+            buttons: [],
+            showLoading: true,
+            autoClose:2000
+        });
         console.log('成功！')
-        console.log(res.access)
-        
+        console.log(res)
         $('.err').css('display','none')
-        window.location.href = "../../index.html"
-
+        setTimeout(function(){
+            window.location.href = `${BASE_URL}/index.html`
+        },2000)
     }).fail(err=>{
-        // $('.err')[0].innerText = '用户名或者密码不正确';
-        // $('.err').toggle()
         console.log(err)
         if(err.responseJSON.non_field_errors){
             $('.err')[0].innerText = err.responseJSON.non_field_errors[0];

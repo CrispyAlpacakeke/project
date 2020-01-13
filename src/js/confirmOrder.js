@@ -4,13 +4,28 @@ import "../less/confirmOrder.less"
 import {myAjax,scrollToTop} from './util.js'
 import "./header-footer.js"
 
-/***加载topbar***/ 
-loadTopbar();
+/**ajax请求加载页面**/ 
+// myAjax('')
+
+/**获取订单id**/ 
+let orderId = getUrlQueryString('orderId');
+ 
+function getUrlQueryString(names, urls) {
+	urls = urls || window.location.href;
+	urls && urls.indexOf("?") > -1 ? urls = urls
+			.substring(urls.indexOf("?") + 1) : "";
+	var reg = new RegExp("(^|&)" + names + "=([^&]*)(&|$)", "i");
+	var r = urls ? urls.match(reg) : window.location.search.substr(1)
+			.match(reg);
+	if (r != null && r[2] != "")
+		return unescape(r[2]);
+    return null;
+}
 
 /***退出登录返回首页***/ 
 function isLogin(){
-    let username = sessionStorage.getItem('username');
-    if(!username){
+    let access = localStorage.getItem('access');
+    if(!access){
         window.location.href="../../index.html"
     }    
 }
@@ -65,4 +80,17 @@ $('#shipment_normal').click(function(){
 })
 $('#shipment_fast').click(function(){
     $('.shipment-date .mode-info .days')[0].innerText = ' 2 '
+})
+
+/**提交订单跳转支付**/ 
+$('#order-submit').click(function () {
+    let req_data = {
+        order_id: orderId,
+        csrfmiddlewaretoken: "{{ csrf_token }}"
+    };
+    console.log(req_data)
+    myAjax("/pay/",'post', req_data, function (data) {
+        console.log(data,100)
+        window.open(data.url)
+    })
 })

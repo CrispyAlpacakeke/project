@@ -44,7 +44,7 @@
   width: 210px;
 }
 #content .regbox .renone .btnOne {
-  width: 106px;
+  width: 105px;
   height: 50px;
   border: 1px solid #e0e0e0;
   padding-bottom: 2px;
@@ -52,7 +52,7 @@
 }
 #content .regbox .renone span {
   display: inline-block;
-  width: 172px;
+  width: 171px;
   height: 15px;
   font-size: 15px;
 }
@@ -145,4 +145,8 @@
 }
 #content .regbox .equally {
   display: none;
+}
+.sweet-alert h2 {
+  font-size: 24px !important;
+  font-weight: 500 !important;
 }

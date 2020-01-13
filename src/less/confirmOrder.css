@@ -8,9 +8,6 @@ body {
 #head {
   border-bottom: 2px solid #84B130;
 }
-#head .header-title p {
-  margin-left: 220px;
-}
 #content {
   padding: 32px 0;
   background-color: #f5f5f5;
@@ -265,7 +262,7 @@ body {
   width: 180px;
 }
 #content .section-goods .good-list .col-total {
-  width: 160px;
+  width: 159px;
 }
 #content .section-goods .good-list .list-content {
   margin: 24px 0;

@@ -1,0 +1,255 @@
+#content {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+#content .content_choice {
+  margin-bottom: 60px;
+}
+#content .content_choice h3 {
+  height: 48px;
+  line-height: 48px;
+  padding-left: 12px;
+  background-color: #f3f3f3;
+  margin-bottom: 30px;
+}
+#content .content_choice .content_choice_box {
+  border: 1px solid #dddddd;
+  border-right: none;
+}
+#content .content_choice .content_choice_box dl {
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+}
+#content .content_choice .content_choice_box dl dt {
+  width: 100px;
+  padding-left: 30px;
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #dddddd;
+  text-align: center;
+}
+#content .content_choice .content_choice_box dl dd {
+  width: 1100px;
+  padding-left: 30px;
+  border-bottom: 1px solid #dddddd;
+}
+#content .content_choice .content_choice_box dl dd ul {
+  display: flex;
+}
+#content .content_choice .content_choice_box dl dd ul li {
+  margin-right: 50px;
+  width: 80px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  margin-top: 10px;
+}
+#content .content_choice .content_choice_box dl dd ul li a {
+  color: #333;
+}
+#content .content_choice .content_choice_box dl dd ul li a:hover {
+  color: #84B130;
+}
+#content .content_choice .content_choice_box .asd {
+  background-color: #84B130;
+}
+#content .content_choice .content_choice_box .asd a {
+  color: #fff;
+}
+#content .content_choice .content_choice_box .asd a:hover {
+  color: #fff;
+}
+#content .content_screen {
+  height: 50px;
+  background-color: #F1F1F1;
+  display: flex;
+  justify-content: space-between;
+}
+#content .content_screen .content_left {
+  padding: 10px;
+}
+#content .content_screen .content_left button {
+  width: 80px;
+  height: 30px;
+  border: 1px solid #dddddd;
+  margin-right: -6px;
+  background-color: white;
+  cursor: pointer;
+}
+#content .content_screen .content_left .selection {
+  background-color: #84B130;
+  color: white;
+}
+#content .content_screen .content_right {
+  display: flex;
+}
+#content .content_screen .content_right p {
+  width: 150px;
+  line-height: 50px;
+}
+#content .content_screen .content_right p .number {
+  color: #84B130;
+}
+#content .content_screen .content_right .btn {
+  width: 50px;
+  height: 30px;
+  margin: auto;
+  text-align: center;
+  line-height: 30px;
+  background-color: white;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+}
+#content .content_commodity .box-bd .brick-list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-content: space-between;
+  flex-wrap: wrap;
+}
+#content .content_commodity .box-bd .brick-list .brick-item {
+  width: 234px;
+  box-sizing: border-box;
+  padding: 0 16px 16px;
+  margin-bottom: 8px;
+  background-color: #fff;
+  position: relative;
+}
+#content .content_commodity .box-bd .brick-list .brick-item:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #84B130;
+  transition: 0.2s ease;
+}
+#content .content_commodity .box-bd .brick-list .brick-item:hover {
+  outline: 1px solid #84B130;
+}
+#content .content_commodity .box-bd .brick-list .brick-item .brick-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#content .content_commodity .box-bd .brick-list .brick-item .brick-link:hover .brick-img:after {
+  background: rgba(0, 0, 0, 0.1);
+}
+#content .content_commodity .box-bd .brick-list .brick-item .brick-link:hover .brick-img img {
+  transform: scale(1.1);
+}
+#content .content_commodity .box-bd .brick-list .brick-item .brick-link .brick-img {
+  width: 160px;
+  height: 160px;
+  margin: 30px auto;
+  overflow: hidden;
+  cursor: pointer;
+}
+#content .content_commodity .box-bd .brick-list .brick-item .brick-link .brick-img img {
+  width: 160px;
+  height: 160px;
+  transition: transform 0.2s ease;
+}
+#content .content_commodity .box-bd .brick-list .brick-item .brick-link .line-1 {
+  width: 100%;
+  height: 48px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 8px;
+  color: #666;
+  font-size: 14px;
+  line-height: 24px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+#content .content_commodity .box-bd .brick-list .brick-item .line-2 {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 14px;
+}
+#content .content_commodity .box-bd .brick-list .brick-item .line-2 .comment,
+#content .content_commodity .box-bd .brick-list .brick-item .line-2 .collect {
+  display: inline-block;
+  margin-right: 10px;
+}
+#content .content_commodity .box-bd .brick-list .brick-item .line-2 span {
+  margin-left: 6px;
+}
+#content .content_commodity .box-bd .brick-list .brick-item .line-3 {
+  height: 22px;
+  line-height: 22px;
+  color: #999;
+}
+#content .content_commodity .box-bd .brick-list .brick-item .line-3 .price {
+  float: left;
+  color: #F1BC18;
+  font-size: 22px;
+}
+#content .content_commodity .box-bd .brick-list .brick-item .line-3 .price span {
+  font-size: 12px;
+  margin-right: 2px;
+}
+#content .content_commodity .box-bd .brick-list .brick-item .line-3 .discount {
+  margin-left: 2px;
+  font-size: 12px;
+}
+#content .content_commodity .box-bd .brick-list .brick-item .line-3 .sell {
+  font-size: 12px;
+  float: right;
+  margin-top: 2px;
+}
+#content .content_paging {
+  margin-top: 30px;
+  text-align: center;
+  user-select: none;
+}
+#content .content_paging .page_div {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  color: #666666;
+  margin-right: 10px;
+  padding-left: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 前后翻页样式 */
+  /* 总页数 */
+  /* 总记录 */
+}
+#content .content_paging .page_div a {
+  min-width: 40px;
+  border: 1px solid #E3E3E3;
+  height: 40px;
+  text-align: center;
+  margin: 0 4px;
+  cursor: pointer;
+  line-height: 40px;
+  border-radius: 4px;
+  font-size: 13px;
+  display: inline-block;
+}
+#content .content_paging .page_div a:hover {
+  background: #84B130;
+  color: #fff;
+}
+#content .content_paging .page_div #prePage,
+#content .content_paging .page_div #nextPage {
+  width: 50px;
+}
+#content .content_paging .page_div .current {
+  background-color: #84B130;
+  border-color: #84B130;
+  color: #FFFFFF;
+}
+#content .content_paging .page_div .totalPages {
+  margin: 0 10px;
+}
+#content .content_paging .page_div .totalPages span,
+#content .content_paging .page_div .totalSize span {
+  color: #84B130;
+  margin: 0 5px;
+}

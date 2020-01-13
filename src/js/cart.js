@@ -1,14 +1,17 @@
 import "../less/normalized.less"
 import "../less/header-footer.less"
 import "../less/cart.less"
-import {myAjax,scrollToTop} from './util.js'
+import {myAjax,scrollToTop,BASE_URL} from './util.js'
 import "./header-footer.js"
 
+import "../css/x0popup.default.css"
+import "../css/x0popup.css"
+import x0p from "./x0popup.js"
 
 /***退出登录返回首页***/ 
 function isLogin(){
-    let username = localStorage.getItem('username');
-    if(!username){
+    let access = localStorage.getItem('access');
+    if(!access){
         window.location.href="../../index.html"
     }    
 }
@@ -19,26 +22,20 @@ $('#user-logout').click(function(){
 });
 
 /***监听窗口滚动***/
-// if($('.list-content')[0].getBoundingClientRect().height < $('.content-item')[0].getBoundingClientRect().height * 2){
-//     $('.list-bottom').removeClass('list-bottom-fixed')
-// }
-// else{
-//     $('.list-bottom').addClass('list-bottom-fixed')
-// }
-// window.onscroll = ()=>{
-//     if($('.box-hd')[0].getBoundingClientRect().top < document.body.offsetHeight){
-//         $('.list-bottom').removeClass('list-bottom-fixed')
-//     }
-//     else{
-//         $('.list-bottom').addClass('list-bottom-fixed')
-//     }
-//     if(window.scrollY > 700){
-//         $('.tool-bar').removeClass('hide')
-//     }
-//     else{
-//         $('.tool-bar').addClass('hide')
-//     }
-// };
+window.onscroll = ()=>{
+    if($('.box-hd')[0].getBoundingClientRect().top < document.body.offsetHeight){
+        $('.list-bottom').removeClass('list-bottom-fixed')
+    }
+    else{
+        $('.list-bottom').addClass('list-bottom-fixed')
+    }
+    if(window.scrollY > 700){
+        $('.tool-bar').removeClass('hide')
+    }
+    else{
+        $('.tool-bar').addClass('hide')
+    }
+};
 
 /**回到顶部**/ 
 scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
@@ -46,16 +43,15 @@ scrollToTop({el:$('.tool-bar .backtop')[0],duration:200,pageScroll:(offset)=>{
 }});
 
 /***ajax请求数据加载页面***/
-window.onload = function () {
+/**加载购物车列表**/
+new Promise((resolve,reject)=>{
     let brand = document.querySelector('.list-content')
     myAjax(`/carts/`,'get',function(data) {
-        console.log(data)
+        console.log(data,78)
         let htmlStr = "";
         let htmlPrice = '';
         data.forEach(item => {
-            // console.log(item.goods)
             if(item.goods.discountgoods_set[0]){
-                // console.log(item.goods.discountgoods_set[0].discounted_price)
                 htmlPrice = `<div class="col col-price">
                                 <div class="price-line">
                                     <em class="price-original">${item.goods.goods_price}元</em>
@@ -73,12 +69,12 @@ window.onload = function () {
                             </div>`
             }
             htmlStr += `
-                        <div class="content-item" data-num="0" data-id='${item.id}' data-goodsId='${item.goods.id}'>
+                        <div class="content-item" data-num="${item.goods_number}" data-id='${item.id}' data-goods='${item.goods.id}'>
                             <div class="col col-check">
                                 <i class="iconfont icon-checkbox"></i>
                             </div>
                             <div class="col col-img">
-                                    <img alt="" src="${item.goods.goods_images[0].goods_img}">
+                                    <img alt="" src="${item.goods.goodsimages_set[0].goods_img}">
                             </div>
                             <div class="col col-name">
                                 ${item.goods.goods_title}
@@ -94,14 +90,31 @@ window.onload = function () {
                         </div>
                         `
         })
-        brand.innerHTML = htmlStr
-        addNums();
-        minusNums();
-        printNum();
-        getTotal();
-        maskPopup();
-        iptOnclick();        
-    });
+        brand.innerHTML = htmlStr;
+        resolve();
+    });        
+}).then(res=>{
+    addNums();
+    minusNums();
+    printNum();
+    getTotal();
+    maskPopup();
+    iptOnclick();      
+    initListbottom();         
+})
+
+/**初始化list-bottom的位置**/ 
+function initListbottom(){
+    let item = document.querySelectorAll('.content-item')
+    $('.list-bottom').removeClass('list-bottom-fixed')
+    if(item){
+        if(item.length <=6 ){
+            $('.list-bottom').removeClass('list-bottom-fixed')
+        }
+        else{
+            $('.list-bottom').addClass('list-bottom-fixed')
+        }        
+    }
 }
 
 /***购买数量增加***/ 
@@ -109,20 +122,21 @@ function addNums() {
     $('.btnAdd').click(function(){
         // 获取购买数量，购买数量加1
         let buyNum = $(this).prev()[0];
+        let item = $(this).parent().parent()[0];
         let buyNumVal = Number(buyNum.value)
         if(buyNumVal < 201){
             buyNumVal += 1
         } else {
             return
         }
-        buyNum.value = buyNumVal;
-        buyNum.dataset.num = buyNumVal;
-        $(this).parent().parent()[0].dataset.num = buyNumVal;
+        buyNum.value = buyNum.dataset.num = item.dataset.num = buyNumVal;
         // 用函数循环每一个商品购买数量和单价，计算得到商品总价，并将总价相加，得到合计数量
         getTotal();
         printNum();
-        myAjax(`/carts/`,'post',$(this).parent().parent()[0].dataset.goodsId,function(data) {
+        let goodsId = Number($(this).parent().parent()[0].dataset.goods)
+        myAjax(`/carts/`,'post',{'goods':goodsId},function(data){
             console.log(data)
+            buyNum.value = buyNum.dataset.num = item.dataset.num = data.goods_number;
         });
     })
 }
@@ -131,18 +145,23 @@ function minusNums() {
     $('.btnReduce').click(function(){
         // 获取购买数量，购买数量加1
         let buyNum = $(this).next()[0];
+        let item = $(this).parent().parent()[0];
         let buyNumVal = Number(buyNum.value)
         if(buyNumVal > 1){
             buyNumVal-=1
         } else {
             return
         }
-        buyNum.value = buyNumVal
-        buyNum.dataset.num = buyNumVal;
-        $(this).parent().parent()[0].dataset.num = buyNumVal;
+        buyNum.value = buyNum.dataset.num = item.dataset.num = buyNumVal;
         // 用函数循环每一个商品购买数量和单价，计算得到商品总价，并将总价相加，得到合计数量
         getTotal();
         printNum();
+        let goodsNum = Number(buyNum.dataset.num);
+        let id = Number($(this).parent().parent()[0].dataset.id)
+        myAjax(`/carts/${id}/`,'put',{'id':id,'goods_number':goodsNum},function(data) {
+            console.log(data)
+            buyNum.value = buyNum.dataset.num = item.dataset.num = data.goods_number;
+        });
     })
 }
 
@@ -162,6 +181,15 @@ function printNum() {
                 $(this)[0].value = $(this)[0].dataset.num;
             }
             getTotal();
+            console.log($(this)[0].dataset.num)
+            let buyNum = $(this)[0];
+            let item = $(this).parent().parent()[0];
+            let goodsNum = Number(buyNum.dataset.num);
+            let id = Number($(this).parent().parent()[0].dataset.id);
+            myAjax(`/carts/${id}/`,'put',{'id':id,'goods_number':goodsNum},function(data) {
+                buyNum.value = buyNum.dataset.num = item.dataset.num = data.goods_number;
+                console.log(data)
+            });            
         })
     })
 }
@@ -242,18 +270,17 @@ function iptOnclick() {
     })
 }
 
+/**弹框操作**/ 
 // 删除弹框
 function maskPopup(){
-    let delItem = [...document.getElementsByClassName('delItem')]
-    delItem.forEach((el,idx)=>{
-        el.onclick = (e) =>{
-            //弹框操作
-            maskAction(el,idx)
-        }
+    let delItem = document.querySelectorAll('.delItem')
+    $('.delItem').click(function(){
+        maskAction($(this).parent().parent())
     })
 }
 // mask各种点击事件
-function maskAction(el,index) {
+function maskAction(delItem) {
+    console.log(delItem)
     let isDel = false;
     $('#mask').fadeIn();
     setTimeout(function(){
@@ -261,7 +288,30 @@ function maskAction(el,index) {
     },100)
     $("#cancelBtn")[0].onclick = close;
     $("#delImg")[0].onclick = close;
-    //删除按钮，需请求接口
+    //确认删除按钮，需请求接口
+    $('#confirmDelBtn').click(function(){
+        let id = delItem[0].dataset.id;
+        myAjax(`/carts/${id}/`,'delete',{'id':id},function(data) {
+            if(!data){
+                x0p({
+                    title:'删除成功',
+                    animationType:'slideDown',
+                    icon:'ok',
+                    maxWidth:'370px',
+                    maxHeight:'168px',
+                    buttons: [
+                        {
+                            type: 'ok',
+                            text: '关闭'
+                        }
+                    ]
+                });
+                close();
+                loadCart();                
+            }
+            else console.log(data)
+        });
+    })
 }
 //关闭弹窗
 function close(){
@@ -273,7 +323,17 @@ function close(){
 
 /**跳转确认订单页面**/
 $('#goBuy').click(function(){
-    if($(this)[0].classList.contains('allow')){
-        window.location = "./confirmOrder.html"
-    }
+    let contItem = $('.list-content .icon-checkbox-selected').parent().parent()
+    let idStr = '';
+    contItem.each(function(){
+        idStr += `${$(this)[0].dataset.id}-`
+    })
+    idStr = idStr.slice(0,idStr.length-1)
+    console.log(idStr,600)
+    myAjax(`/order_goods/`,'post',{'shop_cart_ids':idStr},function(data){
+        console.log(data,100)
+        if(data.id){
+            location.href = `${BASE_URL}/static/pages/confirmOrder.html?orderId=${data.id}`        
+        }
+    })
 })

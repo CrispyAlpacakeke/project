@@ -6,6 +6,7 @@ import 'distpicker/dist/distpicker'
 import "../css/x0popup.default.css"
 import "../css/x0popup.css"
 import x0p from "./x0popup.js"
+import {myAjax,BASE_URL} from "./util.js"
 
 $('.menu-box .item').click(function(){
     $('.menu-box .item').each(function(){
@@ -39,6 +40,201 @@ $('.avatar').click(function(){
     location.hash = '#userInfo'
 })
 
+//ajax请求加载个人中心
+function loadPersonCenter(){
+    myAjax('/personal_center/','get',function(data){
+        $('#customerCenter .potral-main')[0].innerHTML = `  <div class="user-card">
+                                                                <div class="avatar">
+                                                                    <img src="" alt="用户头像" class="avatar-img" data-src="${data.user_img}">
+                                                                </div>
+                                                                <h2 class="username">${data.username}</h2>
+                                                                <p class="tip">早上好</p>
+                                                                <a href="#address" class="link">我的收货地址</a>                         
+                                                            </div>
+                                                            <div class="user-actions">
+                                                                <div class="action-list">
+                                                                    <li>
+                                                                        账户安全：
+                                                                        <span class="level">普通</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        绑定手机：
+                                                                        <span>13795595234</span>
+                                                                    </li>
+                                                                    <li>
+                                                                        绑定邮箱：
+                                                                        <span>1589889867@qq.com</span>
+                                                                    </li>
+                                                                </div>
+                                                            </div>`
+        $('.avatar img')[0].src =  data.user_img?`${data.user_img}`:"../images/photo.jpg"     
+        //点击头像跳转个人信息  
+        $('.avatar').click(function(){
+            location.href = `${BASE_URL}/static/pages/customerCenter.html#userInfo`
+        })                                            
+        console.log(data)
+    })    
+}
+loadPersonCenter();
+//ajax请求加载个人信息
+function loadPersonDetail(){
+    myAjax('/personal_center/','get',function(data){
+        $('#userInfo .user-set')[0].innerHTML = `<div class="userinfo-form form">
+                                                    <div class="item clearFix">
+                                                        <span class="label">
+                                                            <em>*</em>
+                                                            用户名：
+                                                        </span>
+                                                        <div class="fl">
+                                                            <input type="text" value="${data.username}" class="txt txt-err">
+                                                            <span class="tip">可用于登录，请牢记哦~</span>
+                                                            <div class="err">错误提示</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item clearFix">
+                                                        <span class="label">性别：</span>
+                                                        <div class="fl">
+                                                            <input type="radio" name="sex" class="radio" value="0">
+                                                            <label class="gender">男</label>
+                                                            <input type="radio" name="sex" class="radio" value="0">
+                                                            <label class="gender">女</label>
+                                                            <input type="radio" name="sex" class="radio" value="0">
+                                                            <label class="gender">保密</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item clearFix">
+                                                        <span class="label">兴趣爱好：</span>
+                                                        <div class="fl interest">
+                                                            <p>请选择您感兴趣的分类，给您最精准的推荐</p>
+                                                            <ul class="interest-list clearFix">
+                                                                <li class="interest-item">
+                                                                    纤体瘦身<b></b>
+                                                                </li>
+                                                                <li class="interest-item">
+                                                                    纤体瘦身<b></b>
+                                                                </li>
+                                                                <li class="interest-item">
+                                                                    纤体瘦身<b></b>
+                                                                </li>
+                                                                <li class="interest-item">
+                                                                    纤体瘦身<b></b>
+                                                                </li>
+                                                                <li class="interest-item">
+                                                                    纤体瘦身<b></b>
+                                                                </li>
+                                                                <li class="interest-item">
+                                                                    纤体瘦身<b></b>
+                                                                </li>
+                                                                <li class="interest-item">
+                                                                    纤体瘦身<b></b>
+                                                                </li>
+                                                                <li class="interest-item">
+                                                                    纤体瘦身<b></b>
+                                                                </li>
+                                                                <li class="interest-item">
+                                                                    纤体瘦身<b></b>
+                                                                </li>
+                                                                <li class="interest-item">
+                                                                    纤体瘦身<b></b>
+                                                                </li>
+                                                                <li class="interest-item">
+                                                                    纤体瘦身<b></b>
+                                                                </li>
+                                                                <li class="interest-item">
+                                                                    纤体瘦身<b></b>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item clearFix">
+                                                        <span class="label">
+                                                            <em>*</em>
+                                                            邮箱：
+                                                        </span>
+                                                        <div class="fl">
+                                                            <input type="text" value="15*****36@qq.com" class="txt txt-succ">
+                                                            <span class="tip">已验证</span>
+                                                            <div class="err"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="item clearFix">
+                                                        <span class="label"></span>
+                                                        <div class="fl">
+                                                            <a href="javascript:;" class="btn">提交</a>
+                                                        </div>
+                                                    </div>
+                                                </div>`
+                                                  
+        console.log(data)
+        //->兴趣爱好选中状态
+        $('.interest-item').click(function(){
+            $(this).toggleClass('item-this')
+        })
+        /*保存个人信息*/ 
+        $('.user-set .btn').click(function(){
+            x0p({
+                title:'提交资料成功',
+                animationType:'slideDown',
+                icon:'ok',
+                maxWidth:'370px',
+                maxHeight:'168px',
+                buttons: [
+                    {
+                        type: 'ok',
+                        text: '关闭'
+                    }
+                ]
+            });
+        })
+        console.log($('.update-img .img-cont')[0])
+        let imgUrl = data.user_img? data.user_img:"../images/photo.jpg"
+        console.log(imgUrl)
+        $('.update-img .img-cont')[0].style.background = `url(${imgUrl}) no-repeat center/cover` 
+    })   
+}
+//ajax请求加载我的订单
+function loadMyOrder(){
+    myAjax('/order/','get',function(data){
+        let htmlStr = ''
+        let itemStr = ''
+        data.forEach(el=>{
+            htmlStr += `<li class="list-item">
+                        <p>
+                            订单号：
+                            <span class="order-num">${el.order_num}</span>
+                            <span class="del"><i class="iconfont iconshanchu"></i></span>
+                        </p>
+                        <section>
+                            <div class="order-info">
+                                <div class="info-item">
+                                    <img src="${el.goods.goodsimages_set[0].goods_img}" alt="">
+                                    <span class="name">产品名称</span>
+                                    <span class="num">x1</span>                                            
+                                </div>
+                            </div>
+                            <div class="order-username">
+                                <span>${el.user_name}</span>
+                            </div>
+                            <div class="order-pay-method">
+                                <span class="one">0.00</span>
+                                <span class="two">在线支付</span>
+                            </div>
+                            <div class="order-status">
+                                <span>已完成</span>
+                            </div>
+                            <div class="order-action">
+                                <span class="three"><a href="javascript:;">评价</a></span>
+                                <span class="two">立即购买</span>
+                            </div>
+                        </section>
+                    </li>`
+        })
+        $('.order-list')[0].innerHTML = htmlStr
+        console.log(data,'myorder')
+    }) 
+}
+loadMyOrder();
+loadPersonDetail();
 /**个人信息**/
 //tab切换
 $('.filter-list li').click(function(){
@@ -49,12 +245,6 @@ $('.filter-list .txt').click(function(){
     if(!$(this)[0].classList.contains('txt-this')){
        $(this).toggleClass('txt-this').parent().siblings().find('a').removeClass('txt-this') 
     }
-})
-
-//基本信息
-//->兴趣爱好选中状态
-$('.interest-item').click(function(){
-    $(this).toggleClass('item-this')
 })
 
 //头像照片
@@ -140,23 +330,6 @@ function uploadSuccess(){
 
 $('.checkbox-inner').click(function(){
     $(this).parent().toggleClass('checked')
-})
-
-/*保存个人信息*/ 
-$('.user-set .btn').click(function(){
-    x0p({
-        title:'提交资料成功',
-        animationType:'slideDown',
-        icon:'ok',
-        maxWidth:'370px',
-        maxHeight:'168px',
-        buttons: [
-            {
-                type: 'ok',
-                text: '关闭'
-            }
-        ]
-    });
 })
 
 /*删除订单*/

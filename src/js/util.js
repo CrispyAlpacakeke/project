@@ -1,7 +1,7 @@
 
 //服务器 - 导出域名和端口号
-const api_host = "http://192.168.110.33:8000"; //后台端口
-const BASE_URL = "//127.0.0.1:8080"
+const api_host = "http://192.168.110.12:8000"; //后台端口
+const BASE_URL = "http://192.168.110.47:8080"
 
 //=>回到顶部
 /**
@@ -89,15 +89,15 @@ function myAjax(url,method,data,callback){
                 formError(jqXHR)
             }else if (jqXHR.status==401){
                 $.ajax({
-                    url:api_host +'/system_user/refresh/',
-                    type: method,
+                    url:api_host +'/api/token/refresh/',
+                    type: `POST`,
                     data:{'refresh':localStorage.getItem('refresh')},
                     success:function (rsp_data) {
                         localStorage.setItem('access',rsp_data['access']);
                         $.myAjaxGet(url,data,callback)
                     },
                     error:function (jqXHR, textStatus, errorThrown) {
-                        window.location.href='//BASE_URL/static/pages/login.html'
+                        window.location.href=`${BASE_URL}/static/pages/login.html`
                     }
                 })
             }
@@ -108,4 +108,4 @@ function myAjax(url,method,data,callback){
 /*动态加载topbar*/
 
 
-module.exports = {scrollToTop,myAjax,BASE_URL};
+module.exports = {scrollToTop,myAjax,BASE_URL,api_host};

@@ -9,7 +9,12 @@ $().ready(function(){
         $(this).addClass("selection").siblings().removeClass("selection")
     })
 })
-
+/**导航筛选**/ 
+$().ready(function(){
+    $(".cl").click(function(){
+        $(this).addClass("asd").siblings().removeClass("asd")
+    })
+})
 
 
 let brand = document.querySelector('.content_brand_img ul');

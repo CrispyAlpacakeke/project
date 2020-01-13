@@ -3,6 +3,10 @@ import "../less/header-footer.less"
 import "../less/register.less"
 import "../css/sweet-alert.css"
 import "./sweet-alert.min.js"
+import {api_host} from "./util.js"
+import x0p from "./x0popup.js"
+import "../css/x0popup.default.css"
+import "../css/x0popup.css"
 
 // 手机验证
 let phoneReg = /(^1[3|4|5|7|8]\d{9}$)|(^09\d{8}$)/ //手机号正则 
@@ -80,7 +84,7 @@ $(".btnOne").click(function(){
     let telVal = $(".telreg").val()
     console.log(telVal)
     $.ajax({
-        url: `http://192.168.110.33:8000/phone_code/`,
+        url: `${api_host}/phone_code/`,
         type: "POST",
         dataType: "json",
         // contentType: "application/json",
@@ -103,7 +107,7 @@ $(".btnTwo").click(function(){
     let iptTwoval=$("#iptTwo").prop("checked");
     if(iptTwoval){
         $.ajax({
-        url: `http://192.168.110.33:8000/check/`,
+        url: `${api_host}/check/`,
         type: "POST",
         dataType: "json",
         // contentType: "application/json",
@@ -143,7 +147,7 @@ $(".iptOne").on("change",function(){
 
     
     $.ajax({
-        url: `http://192.168.110.33:8000/check/`,
+        url: `${api_host}/check/`,
         type: "POST",
         dataType: "json",
         // contentType: "application/json",
@@ -181,7 +185,7 @@ $('#submit_btn').click(function(){
     let telVal = $(".telreg").val()
     
     $.ajax({
-        url: `http://192.168.110.33:8000/register/`,
+        url: `${api_host}/register/`,
         type: "POST",
         dataType: "json",
         // contentType: "application/json",
@@ -193,11 +197,22 @@ $('#submit_btn').click(function(){
             phone_code: `${iptOneVal}`
         }
     }).done(res=>{
-        alert("注册成功")
         console.log(res)
         localStorage.setItem('refresh',res.refresh)
         localStorage.setItem('access',res.access)
-        window.location.href = "../../index.html"
+        x0p({
+            title:`&nbsp;&nbsp;&nbsp;注册成功！`,
+            animationType:'slideDown',
+            icon:'ok',
+            maxWidth:'370px',
+            maxHeight:'168px',
+            buttons: [],
+            showLoading: true,
+            autoClose:2000
+        });
+        setTimeout(function(){
+            window.location.href = "../../index.html"
+        },2000)
     }).fail(err=>{
         console.log(err)
         if(err.status === 400){
